@@ -1,0 +1,63 @@
+{"id": "terminal-001", "category": "terminal", "instruction": "手机 Termux 里 node 版本太低装不上依赖怎么办", "input": "", "output": "用 pkg 装新版 node（>=18），别用系统自带旧源。装完 node -v 确认，再 npm ci，慢就换 npmmirror 镜像。"}
+{"id": "terminal-002", "category": "terminal", "instruction": "tmux 断开后怎么找回之前的终端会话", "input": "", "output": "tmux attach 找回，tmux ls 看列表。跑长任务前先 tmux new -s work，断网也不丢。"}
+{"id": "terminal-003", "category": "terminal", "instruction": "管道给 CLI 传输入没反应怎么查（情形3）", "input": "echo hi | mini-code -p 总结 -q", "output": "先确认 stdin 非 TTY 且上游有输出：上游加 head 验证，接收端读到 end 事件才处理，空输入要提示用法。"}
+{"id": "terminal-004", "category": "terminal", "instruction": "git 只看状态最短命令是什么（情形4）", "input": "", "output": "git status -sb，一行看分支+改动。mini-code 里直接 /git status -sb。"}
+{"id": "terminal-005", "category": "terminal", "instruction": "grep 默认搜出一堆 node_modules 怎么排除（情形5）", "input": "", "output": "mini-code 的 grep 已默认排除 node_modules/.git/dist 等；手写 grep 加 --exclude-dir=node_modules。"}
+{"id": "terminal-006", "category": "terminal", "instruction": "run_command 卡住不动怎么处理（情形6）", "input": "", "output": "先加小超时（如 10 秒）试探，长任务拆步跑，输出只看前几十行定位。"}
+{"id": "terminal-007", "category": "terminal", "instruction": "手机上怎么让服务一直跑不断（情形7）", "input": "", "output": "tmux 里跑，退出用 detach 不杀进程；再配 Termux:Boot 或 acquire wakelock 防休眠杀后台。"}
+{"id": "terminal-008", "category": "terminal", "instruction": "Ollama 本地模型接 mini-code 怎么配（情形8）", "input": "", "output": "export OPENAI_BASE_URL=http://localhost:11434/v1，模型名填 ollama 已 pull 的。"}
+{"id": "terminal-009", "category": "terminal", "instruction": "npm ci 和 npm install 用哪个（情形9）", "input": "", "output": "CI/复现环境用 npm ci（锁版本干净装）；日常加包用 npm install。提交前跑 npm run check。"}
+{"id": "terminal-010", "category": "terminal", "instruction": "输出被截断只显示前一部分怎么办（情形10）", "input": "", "output": "看到截断提示就缩小范围：先 grep 定行号，再 read_file 分段看，不要整盘读。"}
+{"id": "terminal-011", "category": "terminal", "instruction": "怎么看当前分支和改动文件（情形11）", "input": "", "output": "git branch --show-current 看分支，git diff --stat 看改动概览。"}
+{"id": "terminal-012", "category": "terminal", "instruction": "写文件提示权限/越界被拒绝怎么办（情形12）", "input": "", "output": "只能写 cwd 内的相对路径，.env/.ssh/credentials 等敏感路径默认拒绝，换路径重试。"}
+{"id": "terminal-013", "category": "terminal", "instruction": "Ctrl+C 把程序直接退出了是为什么（情形13）", "input": "", "output": "空闲按 Ctrl+C 是退出；运行中按才是中止任务。想继续就重进，会话文件还在。"}
+{"id": "terminal-014", "category": "terminal", "instruction": "怎么清空对话重新开始（情形14）", "input": "", "output": "/clear 清空显示，/undo 撤回上一轮；文件改动不受影响，要新会话直接重启。"}
+{"id": "terminal-015", "category": "terminal", "instruction": "shell 提示找不到 mini-code 命令（情形15）", "input": "", "output": "没 npm link 就只能 node src/index.js；link 后检查 PATH 是否含 npm 全局 bin。"}
+{"id": "terminal-016", "category": "terminal", "instruction": "怎么给长命令加超时（情形16）", "input": "", "output": "run_command 传 timeout_ms，如 10000；超时会被终止并报错，按步拆小再跑。"}
+{"id": "terminal-017", "category": "terminal", "instruction": "git log 太长刷屏怎么办（情形17）", "input": "", "output": "加 --oneline -10，先看最近 10 条；要细节再 git show 单条。"}
+{"id": "terminal-018", "category": "terminal", "instruction": "两个 tmux 会话来回切快捷键是什么（情形18）", "input": "", "output": "Ctrl+b s 选会话，Ctrl+b d detach。起名字 tmux new -s code 好找。"}
+{"id": "terminal-019", "category": "terminal", "instruction": "手机存储不足 npm 报错怎么办（情形19）", "input": "", "output": "npm cache clean --force，清旧包和 node_modules 重装；大文件别放仓库。"}
+{"id": "terminal-020", "category": "terminal", "instruction": "怎么确认代理/镜像生效了（情形20）", "input": "", "output": "npm config get registry 看地址，curl -sI 镜像测连通，装一个小包验证速度。"}
+{"id": "terminal-021", "category": "terminal", "instruction": "管道里中文乱码怎么查（情形21）", "input": "", "output": "两端统一 UTF-8，locale 看LANG，文件用 file 确认编码再转。"}
+{"id": "terminal-022", "category": "terminal", "instruction": "查端口占用最顺手的一行命令是？（例1）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：查端口占用。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-023", "category": "terminal", "instruction": "看磁盘用量最顺手的一行命令是？（例2）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：看磁盘用量。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-024", "category": "terminal", "instruction": "找大文件最顺手的一行命令是？（例3）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：找大文件。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-025", "category": "terminal", "instruction": "批量改后缀最顺手的一行命令是？（例4）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：批量改后缀。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-026", "category": "terminal", "instruction": "定时备份最顺手的一行命令是？（例5）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：定时备份。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-027", "category": "terminal", "instruction": "日志关键词最顺手的一行命令是？（例6）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：日志关键词。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-028", "category": "terminal", "instruction": "进程重启最顺手的一行命令是？（例7）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：进程重启。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-029", "category": "terminal", "instruction": "环境变量最顺手的一行命令是？（例8）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：环境变量。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-030", "category": "terminal", "instruction": "软链管理最顺手的一行命令是？（例9）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：软链管理。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-031", "category": "terminal", "instruction": "压缩解包最顺手的一行命令是？（例10）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：压缩解包。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-032", "category": "terminal", "instruction": "ssh 免密最顺手的一行命令是？（例11）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：ssh 免密。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-033", "category": "terminal", "instruction": "防火墙最顺手的一行命令是？（例12）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：防火墙。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-034", "category": "terminal", "instruction": "cron 定时最顺手的一行命令是？（例13）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：cron 定时。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-035", "category": "terminal", "instruction": "curl 调试最顺手的一行命令是？（例14）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：curl 调试。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-036", "category": "terminal", "instruction": "jq 解析最顺手的一行命令是？（例15）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：jq 解析。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-037", "category": "terminal", "instruction": "sed 替换最顺手的一行命令是？（例16）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：sed 替换。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-038", "category": "terminal", "instruction": "awk 取列最顺手的一行命令是？（例17）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：awk 取列。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-039", "category": "terminal", "instruction": "xargs 并行最顺手的一行命令是？（例18）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：xargs 并行。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-040", "category": "terminal", "instruction": "rsync 同步最顺手的一行命令是？（例19）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：rsync 同步。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-041", "category": "terminal", "instruction": "chmod 修复最顺手的一行命令是？（例20）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：chmod 修复。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-042", "category": "terminal", "instruction": "history 回找最顺手的一行命令是？（例21）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：history 回找。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-043", "category": "terminal", "instruction": "alias 简化最顺手的一行命令是？（例22）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：alias 简化。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-044", "category": "terminal", "instruction": "查端口占用最顺手的一行命令是？（例23）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：查端口占用。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-045", "category": "terminal", "instruction": "看磁盘用量最顺手的一行命令是？（例24）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：看磁盘用量。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-046", "category": "terminal", "instruction": "找大文件最顺手的一行命令是？（例25）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：找大文件。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-047", "category": "terminal", "instruction": "批量改后缀最顺手的一行命令是？（例26）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：批量改后缀。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-048", "category": "terminal", "instruction": "定时备份最顺手的一行命令是？（例27）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：定时备份。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-049", "category": "terminal", "instruction": "日志关键词最顺手的一行命令是？（例28）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：日志关键词。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-050", "category": "terminal", "instruction": "进程重启最顺手的一行命令是？（例29）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：进程重启。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-051", "category": "terminal", "instruction": "环境变量最顺手的一行命令是？（例30）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：环境变量。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-052", "category": "terminal", "instruction": "软链管理最顺手的一行命令是？（例31）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：软链管理。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-053", "category": "terminal", "instruction": "压缩解包最顺手的一行命令是？（例32）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：压缩解包。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-054", "category": "terminal", "instruction": "ssh 免密最顺手的一行命令是？（例33）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：ssh 免密。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-055", "category": "terminal", "instruction": "防火墙最顺手的一行命令是？（例34）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：防火墙。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-056", "category": "terminal", "instruction": "cron 定时最顺手的一行命令是？（例35）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：cron 定时。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-057", "category": "terminal", "instruction": "curl 调试最顺手的一行命令是？（例36）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：curl 调试。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-058", "category": "terminal", "instruction": "jq 解析最顺手的一行命令是？（例37）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：jq 解析。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-059", "category": "terminal", "instruction": "sed 替换最顺手的一行命令是？（例38）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：sed 替换。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-060", "category": "terminal", "instruction": "awk 取列最顺手的一行命令是？（例39）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：awk 取列。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-061", "category": "terminal", "instruction": "xargs 并行最顺手的一行命令是？（例40）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：xargs 并行。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-062", "category": "terminal", "instruction": "rsync 同步最顺手的一行命令是？（例41）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：rsync 同步。路径用相对路径，危险操作先加 echo 预演。"}
+{"id": "terminal-063", "category": "terminal", "instruction": "chmod 修复最顺手的一行命令是？（例42）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：chmod 修复。路径用相对路径，危险操作先加 echo 预演。"}

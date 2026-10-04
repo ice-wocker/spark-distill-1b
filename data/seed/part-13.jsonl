@@ -1,0 +1,64 @@
+{"id": "math-011", "category": "math", "instruction": "鸡兔同笼：头18只脚52只，鸡兔各几只（变式1）", "input": "", "output": "设鸡 x 兔 y：x+y=18，2x+4y=52，得 y=(f-2h)/2=8，x=10。代入验算：10+8=18，20+32=52。"}
+{"id": "math-012", "category": "math", "instruction": "鸡兔同笼：头20只脚58只，鸡兔各几只（变式2）", "input": "", "output": "设鸡 x 兔 y：x+y=20，2x+4y=58，得 y=(f-2h)/2=9，x=11。代入验算：11+9=20，22+36=58。"}
+{"id": "math-013", "category": "math", "instruction": "鸡兔同笼：头22只脚64只，鸡兔各几只（变式3）", "input": "", "output": "设鸡 x 兔 y：x+y=22，2x+4y=64，得 y=(f-2h)/2=10，x=12。代入验算：12+10=22，24+40=64。"}
+{"id": "math-014", "category": "math", "instruction": "鸡兔同笼：头24只脚70只，鸡兔各几只（变式4）", "input": "", "output": "设鸡 x 兔 y：x+y=24，2x+4y=70，得 y=(f-2h)/2=11，x=13。代入验算：13+11=24，26+44=70。"}
+{"id": "math-015", "category": "math", "instruction": "鸡兔同笼：头26只脚76只，鸡兔各几只（变式5）", "input": "", "output": "设鸡 x 兔 y：x+y=26，2x+4y=76，得 y=(f-2h)/2=12，x=14。代入验算：14+12=26，28+48=76。"}
+{"id": "math-016", "category": "math", "instruction": "鸡兔同笼：头23只脚62只，鸡兔各几只（变式6）", "input": "", "output": "设鸡 x 兔 y：x+y=23，2x+4y=62，得 y=(f-2h)/2=8，x=15。代入验算：15+8=23，30+32=62。"}
+{"id": "math-017", "category": "math", "instruction": "鸡兔同笼：头25只脚68只，鸡兔各几只（变式7）", "input": "", "output": "设鸡 x 兔 y：x+y=25，2x+4y=68，得 y=(f-2h)/2=9，x=16。代入验算：16+9=25，32+36=68。"}
+{"id": "math-018", "category": "math", "instruction": "鸡兔同笼：头27只脚74只，鸡兔各几只（变式8）", "input": "", "output": "设鸡 x 兔 y：x+y=27，2x+4y=74，得 y=(f-2h)/2=10，x=17。代入验算：17+10=27，34+40=74。"}
+{"id": "math-019", "category": "math", "instruction": "鸡兔同笼：头29只脚80只，鸡兔各几只（变式9）", "input": "", "output": "设鸡 x 兔 y：x+y=29，2x+4y=80，得 y=(f-2h)/2=11，x=18。代入验算：18+11=29，36+44=80。"}
+{"id": "math-020", "category": "math", "instruction": "鸡兔同笼：头31只脚86只，鸡兔各几只（变式10）", "input": "", "output": "设鸡 x 兔 y：x+y=31，2x+4y=86，得 y=(f-2h)/2=12，x=19。代入验算：19+12=31，38+48=86。"}
+{"id": "math-021", "category": "math", "instruction": "鸡兔同笼：头28只脚72只，鸡兔各几只（变式11）", "input": "", "output": "设鸡 x 兔 y：x+y=28，2x+4y=72，得 y=(f-2h)/2=8，x=20。代入验算：20+8=28，40+32=72。"}
+{"id": "math-022", "category": "math", "instruction": "鸡兔同笼：头30只脚78只，鸡兔各几只（变式12）", "input": "", "output": "设鸡 x 兔 y：x+y=30，2x+4y=78，得 y=(f-2h)/2=9，x=21。代入验算：21+9=30，42+36=78。"}
+{"id": "math-023", "category": "math", "instruction": "鸡兔同笼：头32只脚84只，鸡兔各几只（变式13）", "input": "", "output": "设鸡 x 兔 y：x+y=32，2x+4y=84，得 y=(f-2h)/2=10，x=22。代入验算：22+10=32，44+40=84。"}
+{"id": "math-024", "category": "math", "instruction": "鸡兔同笼：头34只脚90只，鸡兔各几只（变式14）", "input": "", "output": "设鸡 x 兔 y：x+y=34，2x+4y=90，得 y=(f-2h)/2=11，x=23。代入验算：23+11=34，46+44=90。"}
+{"id": "math-025", "category": "math", "instruction": "鸡兔同笼：头36只脚96只，鸡兔各几只（变式15）", "input": "", "output": "设鸡 x 兔 y：x+y=36，2x+4y=96，得 y=(f-2h)/2=12，x=24。代入验算：24+12=36，48+48=96。"}
+{"id": "math-026", "category": "math", "instruction": "鸡兔同笼：头33只脚82只，鸡兔各几只（变式16）", "input": "", "output": "设鸡 x 兔 y：x+y=33，2x+4y=82，得 y=(f-2h)/2=8，x=25。代入验算：25+8=33，50+32=82。"}
+{"id": "math-027", "category": "math", "instruction": "鸡兔同笼：头35只脚88只，鸡兔各几只（变式17）", "input": "", "output": "设鸡 x 兔 y：x+y=35，2x+4y=88，得 y=(f-2h)/2=9，x=26。代入验算：26+9=35，52+36=88。"}
+{"id": "math-028", "category": "math", "instruction": "鸡兔同笼：头37只脚94只，鸡兔各几只（变式18）", "input": "", "output": "设鸡 x 兔 y：x+y=37，2x+4y=94，得 y=(f-2h)/2=10，x=27。代入验算：27+10=37，54+40=94。"}
+{"id": "math-029", "category": "math", "instruction": "鸡兔同笼：头39只脚100只，鸡兔各几只（变式19）", "input": "", "output": "设鸡 x 兔 y：x+y=39，2x+4y=100，得 y=(f-2h)/2=11，x=28。代入验算：28+11=39，56+44=100。"}
+{"id": "math-030", "category": "math", "instruction": "鸡兔同笼：头41只脚106只，鸡兔各几只（变式20）", "input": "", "output": "设鸡 x 兔 y：x+y=41，2x+4y=106，得 y=(f-2h)/2=12，x=29。代入验算：29+12=41，58+48=106。"}
+{"id": "reasoning-011", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题1）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-012", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题2）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-013", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题3）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-014", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题4）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-015", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题5）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-016", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题6）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-017", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题7）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-018", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题8）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-019", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题9）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-020", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题10）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-021", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题11）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-022", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题12）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-023", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题13）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-024", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题14）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-025", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题15）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-026", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题16）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-027", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题17）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-028", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题18）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-029", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题19）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-030", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题20）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "zh-073", "category": "zh", "instruction": "一句话讲清缓存（补1）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-074", "category": "zh", "instruction": "一句话讲清索引（补2）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-075", "category": "zh", "instruction": "一句话讲清备份（补3）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-076", "category": "zh", "instruction": "一句话讲清复利（补4）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-077", "category": "zh", "instruction": "一句话讲清拖延（补5）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-078", "category": "zh", "instruction": "一句话讲清熬夜（补6）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-079", "category": "zh", "instruction": "一句话讲清租房（补7）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-080", "category": "zh", "instruction": "一句话讲清面试（补8）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-081", "category": "zh", "instruction": "一句话讲清带团队（补9）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-082", "category": "zh", "instruction": "一句话讲清写文档（补10）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-083", "category": "zh", "instruction": "一句话讲清时间管理（补11）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-084", "category": "zh", "instruction": "一句话讲清健康作息（补12）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "en-061", "category": "en", "instruction": "One-line guide to env config (extra 1)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-062", "category": "en", "instruction": "One-line guide to code review (extra 2)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-063", "category": "en", "instruction": "One-line guide to standup notes (extra 3)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-064", "category": "en", "instruction": "One-line guide to deadlines (extra 4)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-065", "category": "en", "instruction": "One-line guide to backups (extra 5)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-066", "category": "en", "instruction": "One-line guide to monitoring (extra 6)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-067", "category": "en", "instruction": "One-line guide to onboarding (extra 7)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-068", "category": "en", "instruction": "One-line guide to refactoring (extra 8)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-069", "category": "en", "instruction": "One-line guide to time zones (extra 9)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-070", "category": "en", "instruction": "One-line guide to rate limits (extra 10)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-071", "category": "en", "instruction": "One-line guide to webhooks (extra 11)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-072", "category": "en", "instruction": "One-line guide to caching (extra 12)", "input": "", "output": "One line verdict, then one example. Under 100 words."}

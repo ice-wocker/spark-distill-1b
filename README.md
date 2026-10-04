@@ -19,25 +19,28 @@ API 拿不到 Muse 的 logits，所以是**黑盒数据蒸馏**：老师（Muse 
 - 方法：Unsloth QLoRA（r16），3 epoch，T4 免费卡约半小时。
 - 目标形态：GGUF Q4_K_M，直接塞进 Termux llama.cpp / iceLLM 跑。
 
-## 数据（200 条种子）
+## 数据（700 条：200 种子 + 500 扩量 part-06..13）
 
 | 分类 | 数量 | 内容 |
 |---|---|---|
-| code-zh | 40 | Python/shell 调试、解释、改写 |
-| code-agent | 30 | 终端助手工作法（读文件先行、todo、验证） |
-| zh | 40 | 中文问答、写作、概念解释 |
-| en | 30 | 英文通用问答 |
-| math | 10 | 带步骤的数学 |
-| reasoning | 10 | 逻辑谜题 |
-| translation | 10 | 中英互译（技术语境） |
-| tool-use | 15 | 工具调用式问答 |
-| safety | 10 | 拒绝模板（把老师的安全行为一起蒸下去） |
-| misc | 5 | 杂项 |
+| code-zh | 80 | Python/shell 调试、解释、改写 |
+| code-agent | 52 | 终端助手工作法（读文件先行、todo、验证） |
+| code-en | 125 | 英文代码问答（Python/JS/Node/调试） |
+| terminal | 125 | 终端操作（Termux/tmux/shell/git/npm） |
+| zh | 84 | 中文问答、写作、概念解释 |
+| en | 72 | 英文通用问答 |
+| math | 30 | 带步骤的数学 |
+| reasoning | 30 | 逻辑谜题 |
+| translation | 20 | 中英互译（技术语境） |
+| tool-use | 45 | 工具调用式问答 |
+| safety | 22 | 拒绝模板（把老师的安全行为一起蒸下去） |
+| misc | 15 | 杂项 |
 
 格式见 [`data/schema.md`](data/schema.md)，
-合并校验：`python3 scripts/make_dataset.py`（输出 `train.jsonl` 173 / `eval_split.jsonl` 27）。
-扩量：`python3 scripts/expand.py --n 500` 生成新 instruction 骨架，
-找老师要答案后按 `part-06.jsonl` 格式入库。
+合并校验：`python3 scripts/make_dataset.py`（输出 `distill.jsonl` 700 /
+`train.jsonl` 630 / `eval_split.jsonl` 70）。
+扩量脚本：`python3 scripts/gen_expand_700.py` 生成 `part-06..13`
+（`expand.py` 只出 instruction 骨架，答案需找老师模型要）。
 
 ## 训练（三步，你只点三次鼠标）
 
@@ -61,6 +64,7 @@ python train/eval.py --adapter spark-1b-lora   # eval 集打分 + 生成抽查 g
 | 版本 | 数据量 | eval 说明 | 备注 |
 |---|---|---|---|
 | v0.1-seed | 173 train | 待跑 | 种子链路验证 |
+| v0.2-700 | 630 train | 待跑 | 200 种子 + 500 扩量（含 code-en/terminal） |
 
 ## 导出上手机
 

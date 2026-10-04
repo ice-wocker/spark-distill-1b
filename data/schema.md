@@ -10,7 +10,8 @@
 
 - `id` 全局唯一，前缀即分类。
 - 分类：`code-zh` / `code-agent` / `zh` / `en` / `math` /
-  `reasoning` / `translation` / `misc` / `safety` / `tool-use`。
+  `reasoning` / `translation` / `misc` / `safety` / `tool-use` /
+  `code-en`（英文代码问答） / `terminal`（终端/Termux/shell/git 操作）。
 - `output` 是蒸馏信号：要 Muse Spark 的风格（简洁、直接、先给答案），
   不要长篇大论（超 2000 字符校验会挂）。
 - `data/eval_prompts.jsonl` 是纯问题集（无答案），留着给人出题用；
