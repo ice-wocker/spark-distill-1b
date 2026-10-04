@@ -1,62 +1,62 @@
-{"id": "terminal-064", "category": "terminal", "instruction": "怎么看端口被谁占了", "input": "", "output": "ss -lntp 或 lsof -i :端口，看 PID 后再决定 kill 还是换端口。"}
-{"id": "terminal-065", "category": "terminal", "instruction": "磁盘满了先查哪里", "input": "", "output": "df -h 看分区，du -sh * 找大户，先清缓存和旧日志再动数据。"}
-{"id": "terminal-066", "category": "terminal", "instruction": "怎么找大于100M的文件（情形3）", "input": "", "output": "find . -size +100M -exec ls -lh {} \\;，先看再删。"}
-{"id": "terminal-067", "category": "terminal", "instruction": "批量把 .txt 改成 .md 怎么做（情形4）", "input": "", "output": "for f in *.txt; do mv $f ${f%.txt}.md; done，先 echo 预演。"}
-{"id": "terminal-068", "category": "terminal", "instruction": "每天自动备份一个目录怎么做（情形5）", "input": "", "output": "cron 加 tar -czf 带日期的包，保留最近 7 份，定期演练恢复。"}
-{"id": "terminal-069", "category": "terminal", "instruction": "日志里只看报错前后 5 行怎么做（情形6）", "input": "", "output": "grep -n -C5 'ERROR' app.log，先定位再看上下文。"}
-{"id": "terminal-070", "category": "terminal", "instruction": "进程死了怎么自动拉起（情形7）", "input": "", "output": "用 systemd/tmux + 循环脚本，拉起前先写日志，连续失败要告警别死循环。"}
-{"id": "terminal-071", "category": "terminal", "instruction": "环境变量改完不生效怎么查（情形8）", "input": "", "output": "export 只对当前 shell 有效，写 ~/.bashrc 并 source；脚本里用 env 确认。"}
-{"id": "terminal-072", "category": "terminal", "instruction": "软链断了怎么查（情形9）", "input": "", "output": "find . -xtype l 找断链，ls -l 看指向，重建用 ln -sf。"}
-{"id": "terminal-073", "category": "terminal", "instruction": "解压不知道格式怎么办（情形10）", "input": "", "output": "file 看类型再选 tar/unzip，解到空目录防覆盖。"}
-{"id": "terminal-074", "category": "terminal", "instruction": "ssh 每次都要输密码怎么办（情形11）", "input": "", "output": "ssh-copy-id 传公钥，私钥 600 权限，跳板机用 ProxyJump。"}
-{"id": "terminal-075", "category": "terminal", "instruction": "curl 调接口只看状态码怎么做（情形12）", "input": "", "output": "curl -s -o /dev/null -w '%{http_code}' URL，先通再看体。"}
-{"id": "terminal-076", "category": "terminal", "instruction": "jq 取 JSON 字段怎么做（情形13）", "input": "", "output": "jq -r '.data.list[].name'，先 jq . 裸看结构再取。"}
-{"id": "terminal-077", "category": "terminal", "instruction": "sed 批量替换怎么做才安全（情形14）", "input": "", "output": "先不加 -i 预览，确认再 -i.bak 备份改，保留一份可回滚。"}
-{"id": "terminal-078", "category": "terminal", "instruction": "awk 取第 2 列怎么做（情形15）", "input": "", "output": "awk '{print $2}'，分隔符特殊用 -F 指定。"}
-{"id": "terminal-079", "category": "terminal", "instruction": "xargs 并行跑任务怎么做（情形16）", "input": "", "output": "find . -name '*.log' | xargs -P4 -I{} gzip {}，先小批量试。"}
-{"id": "terminal-080", "category": "terminal", "instruction": "两台机器同步目录怎么做（情形17）", "input": "", "output": "rsync -avz --delete 两边先 dry-run -n，确认方向再真跑。"}
-{"id": "terminal-081", "category": "terminal", "instruction": "chmod 改错了怎么救（情形18）", "input": "", "output": "先别递归乱改，用备份或 git checkout 权限，目录 755 文件 644 起步。"}
-{"id": "terminal-082", "category": "terminal", "instruction": "history 里找上次跑的命令怎么做（情形19）", "input": "", "output": "history | grep 关键字，或 Ctrl+r 反向搜，找到先核对再执行。"}
-{"id": "terminal-083", "category": "terminal", "instruction": "常用长命令怎么省 keystrokes（情形20）", "input": "", "output": "alias 写进 .bashrc，如 alias gs='git status -sb'，脚本里用全称。"}
-{"id": "terminal-084", "category": "terminal", "instruction": "日志关键词排错先看哪三处？（例101）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：日志关键词。修完跑一遍最小验证。"}
-{"id": "terminal-085", "category": "terminal", "instruction": "进程重启排错先看哪三处？（例102）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：进程重启。修完跑一遍最小验证。"}
-{"id": "terminal-086", "category": "terminal", "instruction": "环境变量排错先看哪三处？（例103）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：环境变量。修完跑一遍最小验证。"}
-{"id": "terminal-087", "category": "terminal", "instruction": "软链管理排错先看哪三处？（例104）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：软链管理。修完跑一遍最小验证。"}
-{"id": "terminal-088", "category": "terminal", "instruction": "压缩解包排错先看哪三处？（例105）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：压缩解包。修完跑一遍最小验证。"}
-{"id": "terminal-089", "category": "terminal", "instruction": "ssh 免密排错先看哪三处？（例106）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：ssh 免密。修完跑一遍最小验证。"}
-{"id": "terminal-090", "category": "terminal", "instruction": "防火墙排错先看哪三处？（例107）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：防火墙。修完跑一遍最小验证。"}
-{"id": "terminal-091", "category": "terminal", "instruction": "cron 定时排错先看哪三处？（例108）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：cron 定时。修完跑一遍最小验证。"}
-{"id": "terminal-092", "category": "terminal", "instruction": "curl 调试排错先看哪三处？（例109）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：curl 调试。修完跑一遍最小验证。"}
-{"id": "terminal-093", "category": "terminal", "instruction": "jq 解析排错先看哪三处？（例110）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：jq 解析。修完跑一遍最小验证。"}
-{"id": "terminal-094", "category": "terminal", "instruction": "sed 替换排错先看哪三处？（例111）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：sed 替换。修完跑一遍最小验证。"}
-{"id": "terminal-095", "category": "terminal", "instruction": "awk 取列排错先看哪三处？（例112）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：awk 取列。修完跑一遍最小验证。"}
-{"id": "terminal-096", "category": "terminal", "instruction": "xargs 并行排错先看哪三处？（例113）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：xargs 并行。修完跑一遍最小验证。"}
-{"id": "terminal-097", "category": "terminal", "instruction": "rsync 同步排错先看哪三处？（例114）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：rsync 同步。修完跑一遍最小验证。"}
-{"id": "terminal-098", "category": "terminal", "instruction": "chmod 修复排错先看哪三处？（例115）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：chmod 修复。修完跑一遍最小验证。"}
-{"id": "terminal-099", "category": "terminal", "instruction": "history 回找排错先看哪三处？（例116）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：history 回找。修完跑一遍最小验证。"}
-{"id": "terminal-100", "category": "terminal", "instruction": "alias 简化排错先看哪三处？（例117）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：alias 简化。修完跑一遍最小验证。"}
-{"id": "terminal-101", "category": "terminal", "instruction": "查端口占用排错先看哪三处？（例118）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：查端口占用。修完跑一遍最小验证。"}
-{"id": "terminal-102", "category": "terminal", "instruction": "看磁盘用量排错先看哪三处？（例119）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：看磁盘用量。修完跑一遍最小验证。"}
-{"id": "terminal-103", "category": "terminal", "instruction": "找大文件排错先看哪三处？（例120）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：找大文件。修完跑一遍最小验证。"}
-{"id": "terminal-104", "category": "terminal", "instruction": "批量改后缀排错先看哪三处？（例121）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：批量改后缀。修完跑一遍最小验证。"}
-{"id": "terminal-105", "category": "terminal", "instruction": "定时备份排错先看哪三处？（例122）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：定时备份。修完跑一遍最小验证。"}
-{"id": "terminal-106", "category": "terminal", "instruction": "日志关键词排错先看哪三处？（例123）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：日志关键词。修完跑一遍最小验证。"}
-{"id": "terminal-107", "category": "terminal", "instruction": "进程重启排错先看哪三处？（例124）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：进程重启。修完跑一遍最小验证。"}
-{"id": "terminal-108", "category": "terminal", "instruction": "环境变量排错先看哪三处？（例125）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：环境变量。修完跑一遍最小验证。"}
-{"id": "terminal-109", "category": "terminal", "instruction": "软链管理排错先看哪三处？（例126）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：软链管理。修完跑一遍最小验证。"}
-{"id": "terminal-110", "category": "terminal", "instruction": "压缩解包排错先看哪三处？（例127）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：压缩解包。修完跑一遍最小验证。"}
-{"id": "terminal-111", "category": "terminal", "instruction": "ssh 免密排错先看哪三处？（例128）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：ssh 免密。修完跑一遍最小验证。"}
-{"id": "terminal-112", "category": "terminal", "instruction": "防火墙排错先看哪三处？（例129）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：防火墙。修完跑一遍最小验证。"}
-{"id": "terminal-113", "category": "terminal", "instruction": "cron 定时排错先看哪三处？（例130）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：cron 定时。修完跑一遍最小验证。"}
-{"id": "terminal-114", "category": "terminal", "instruction": "curl 调试排错先看哪三处？（例131）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：curl 调试。修完跑一遍最小验证。"}
-{"id": "terminal-115", "category": "terminal", "instruction": "jq 解析排错先看哪三处？（例132）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：jq 解析。修完跑一遍最小验证。"}
-{"id": "terminal-116", "category": "terminal", "instruction": "sed 替换排错先看哪三处？（例133）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：sed 替换。修完跑一遍最小验证。"}
-{"id": "terminal-117", "category": "terminal", "instruction": "awk 取列排错先看哪三处？（例134）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：awk 取列。修完跑一遍最小验证。"}
-{"id": "terminal-118", "category": "terminal", "instruction": "xargs 并行排错先看哪三处？（例135）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：xargs 并行。修完跑一遍最小验证。"}
-{"id": "terminal-119", "category": "terminal", "instruction": "rsync 同步排错先看哪三处？（例136）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：rsync 同步。修完跑一遍最小验证。"}
-{"id": "terminal-120", "category": "terminal", "instruction": "chmod 修复排错先看哪三处？（例137）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：chmod 修复。修完跑一遍最小验证。"}
-{"id": "terminal-121", "category": "terminal", "instruction": "history 回找排错先看哪三处？（例138）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：history 回找。修完跑一遍最小验证。"}
-{"id": "terminal-122", "category": "terminal", "instruction": "alias 简化排错先看哪三处？（例139）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：alias 简化。修完跑一遍最小验证。"}
-{"id": "terminal-123", "category": "terminal", "instruction": "查端口占用排错先看哪三处？（例140）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：查端口占用。修完跑一遍最小验证。"}
-{"id": "terminal-124", "category": "terminal", "instruction": "看磁盘用量排错先看哪三处？（例141）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：看磁盘用量。修完跑一遍最小验证。"}
-{"id": "terminal-125", "category": "terminal", "instruction": "找大文件排错先看哪三处？（例142）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：找大文件。修完跑一遍最小验证。"}
+{"id": "terminal-064", "category": "terminal", "instruction": "git 误删已推送的分支怎么恢复", "input": "", "output": "reflog 找 commit 重建本地分支，再 git push origin 重建远端。远端垃圾回收前都在，尽快动手。"}
+{"id": "terminal-065", "category": "terminal", "instruction": "merge 冲突标准流程是什么", "input": "", "output": "git status 看冲突文件，逐个修完 git add，最后 commit 收尾。没把握别 --hard。"}
+{"id": "terminal-066", "category": "terminal", "instruction": "stash 存了东西忘了怎么办", "input": "", "output": "git stash push -m 说明，切回来 pop。stash 别放过夜，尽快落盘成提交。"}
+{"id": "terminal-067", "category": "terminal", "instruction": "查出肇事提交后下一步做什么", "input": "", "output": "git blame -L 起止行 文件定位人，再 git show 那次提交看上下文。"}
+{"id": "terminal-068", "category": "terminal", "instruction": "ssh 加 -v 看卡在哪一步", "input": "", "output": "sshd 在跑、authorized_keys 600、一行完整公钥。三处全对才能进。"}
+{"id": "terminal-069", "category": "terminal", "instruction": "cron 里中文乱码/命令找不到怎么办", "input": "", "output": "确认 cron 服务在，再看 /var/log/cron。脚本用绝对路径，环境变量脚本内重设。"}
+{"id": "terminal-070", "category": "terminal", "instruction": "curl 报证书错误怎么办", "input": "", "output": "curl -v 看证书链，先对系统时间，再 --cacert 指定 CA。-k 只临时调试用。"}
+{"id": "terminal-071", "category": "terminal", "instruction": "jq 内存爆了有什么替代", "input": "", "output": "换 jq --stream 流式，或 python 边读边过。别 cat 全读进内存。"}
+{"id": "terminal-072", "category": "terminal", "instruction": "systemd 和 tmux 跑服务怎么选", "input": "", "output": "要回看输出、多轮交互选 tmux；一次跑完选 nohup。长期服务用 systemd。"}
+{"id": "terminal-073", "category": "terminal", "instruction": "flock 锁没释放怎么办", "input": "", "output": "flock -n 锁文件拿锁，拿不到直接退出。每分钟跑的 cron 任务必备。"}
+{"id": "terminal-074", "category": "terminal", "instruction": "tar 包里有绝对路径怎么办", "input": "", "output": "tar -xzf 包 -C 目标目录，目标先 mkdir -p。先 -tzf 列内容防路径穿越。"}
+{"id": "terminal-075", "category": "terminal", "instruction": "怎么看文件编码再转码", "input": "", "output": "file 先看个大概再 iconv -f 从 -t 到。转前备份，乱码确认编码再动手。"}
+{"id": "terminal-076", "category": "terminal", "instruction": "scp 大文件中断怎么办", "input": "", "output": "换 rsync --partial --progress 断点续传。先看对端已有大小再续传。"}
+{"id": "terminal-077", "category": "terminal", "instruction": "怎么看系统瓶颈在哪", "input": "", "output": "uptime 看 load，top 看 CPU 内存，iowait 高先查磁盘而不是加内存。"}
+{"id": "terminal-078", "category": "terminal", "instruction": "怎么看是谁吃掉了内存", "input": "", "output": "free -h 确认后找内存大户，重启泄漏进程或加内存。swap 是止痛不是解法。"}
+{"id": "terminal-079", "category": "terminal", "instruction": "怎么定时清 30 天前日志", "input": "", "output": "find logs -mtime +30 先 -ls 预览，确认再 -delete，放进 cron 每天跑。"}
+{"id": "terminal-080", "category": "terminal", "instruction": "容器里没有 shell 怎么排查", "input": "", "output": "docker exec -it <name> sh，只读排查。别顺手改容器内文件，改了也随容器丢。"}
+{"id": "terminal-081", "category": "terminal", "instruction": "apt 被锁住怎么办", "input": "", "output": "看报错分网络还是源：换源或查代理，apt clean 后重试。锁被占就等进程结束。"}
+{"id": "terminal-082", "category": "terminal", "instruction": "两块盘怎么看各剩多少", "input": "", "output": "df -hT 连类型一起看，挂载点对不上先 mount | grep 确认再扩容。"}
+{"id": "terminal-083", "category": "terminal", "instruction": "怎么看谁在吃带宽", "input": "", "output": "iftop 或 nethogs 按进程看，云上先看费用告警再抓包，别上来就 tcpdump。"}
+{"id": "terminal-084", "category": "terminal", "instruction": "ssh 断线后命令停了怎么办", "input": "", "output": "事前 tmux，事后只能重跑。关键任务加 nohup 或写成可重入脚本。"}
+{"id": "terminal-085", "category": "terminal", "instruction": "怎么批量杀一类进程", "input": "", "output": "先 pgrep -f 看名单，确认再 pkill -f。名单里有无辜进程就逐个 kill。"}
+{"id": "terminal-086", "category": "terminal", "instruction": "history 不记录了怎么查", "input": "", "output": "看 HISTFILE 指向、磁盘满没满、是不是多 shell 覆盖写。重要命令顺手记文档。"}
+{"id": "terminal-087", "category": "terminal", "instruction": "新机器装机必跑哪几步", "input": "", "output": "换源、装 git/tmux/vim、配 ssh、拉 dotfiles。每步跑通再下一步，别一键脚本梭哈。"}
+{"id": "terminal-088", "category": "terminal", "instruction": "怎么验证备份真能恢复", "input": "", "output": "定期拿一份恢复到空目录跑通。没演练过的备份等于没有。"}
+{"id": "terminal-089", "category": "terminal", "instruction": "rm 删错了还有救吗", "input": "rm -rf /tmp/work", "output": "ext4 基本没救，xfs 更没救。事前 alias rm='rm -i'、重要目录快照，事后只能翻备份。"}
+{"id": "terminal-090", "category": "terminal", "instruction": "find 删文件怎么先预演", "input": "find . -name '*.tmp'", "output": "先不加 -delete 跑一遍看名单，确认再加。-name 模式先用 -ls 输出核对。"}
+{"id": "terminal-091", "category": "terminal", "instruction": "ln 硬链和软链怎么选", "input": "", "output": "跨分区、指目录用软链；同分区防误删用硬链。ln -s 目标 链接名别写反。"}
+{"id": "terminal-092", "category": "terminal", "instruction": "df 和 du 对不上怎么办", "input": "", "output": "删掉但被进程占着的文件：lsof | grep deleted 找到重启进程，空间立刻回来。"}
+{"id": "terminal-093", "category": "terminal", "instruction": "怎么看文件被哪个进程占用", "input": "", "output": "lsof 文件名或 fuser -v，umount 提示 busy 时就用它找元凶。"}
+{"id": "terminal-094", "category": "terminal", "instruction": "内核日志报错去哪看", "input": "", "output": "dmesg | tail，OOM、磁盘错都在这。云机器配串口日志留底。"}
+{"id": "terminal-095", "category": "terminal", "instruction": "服务开机自启怎么做", "input": "", "output": "systemctl enable 服务名，enable 后 reboot 验证一次。只 start 不 enable 重启就没。"}
+{"id": "terminal-096", "category": "terminal", "instruction": "怎么看服务为什么启动失败", "input": "", "output": "systemctl status 看最后一屏，再 journalctl -u 服务名 -e 看完整日志。"}
+{"id": "terminal-097", "category": "terminal", "instruction": "journal 日志把盘写满怎么办", "input": "", "output": "journalctl --vacuum-size=500M 立刻瘦身，/etc/systemd/journald.conf 限额防再犯。"}
+{"id": "terminal-098", "category": "terminal", "instruction": "怎么给普通用户 sudo 免密", "input": "", "output": "visudo 加 NOPASSWD，只给具体命令。ALL 免密等于没密码，想清楚再给。"}
+{"id": "terminal-099", "category": "terminal", "instruction": "ssh 端口被扫爆了怎么办", "input": "", "output": "改端口+fail2ban 限频，公钥登录关密码。别只改端口，扫描器全端口扫。"}
+{"id": "terminal-100", "category": "terminal", "instruction": "怎么看登录失败记录", "input": "", "output": "journalctl _COMM=sshd | grep Failed，或 lastb 看坏登录。配告警别天天人肉看。"}
+{"id": "terminal-101", "category": "terminal", "instruction": "证书还有几天过期怎么查", "input": "", "output": "openssl s_client -connect 域名:443 | openssl x509 -noout -dates，剩 30 天就续。"}
+{"id": "terminal-102", "category": "terminal", "instruction": "nginx 改完配置怎么热加载", "input": "", "output": "nginx -t 先测语法，通过再 nginx -s reload。直接 restart 会断连接。"}
+{"id": "terminal-103", "category": "terminal", "instruction": "怎么抓 http 明文看问题", "input": "", "output": "curl -v 看握手和头，tcpdump 只抓包头。生产抓包先脱敏再存文件。"}
+{"id": "terminal-104", "category": "terminal", "instruction": "DNS 不生效先查哪", "input": "", "output": "getent hosts 看解析结果，再看 /etc/resolv.conf 和缓存。改 hosts 立刻生效好验证。"}
+{"id": "terminal-105", "category": "terminal", "instruction": "ping 通但 curl 不通怎么查", "input": "", "output": "ping 走 ICMP，curl 走 TCP：telnet 端口看通不通，再查防火墙和代理变量。"}
+{"id": "terminal-106", "category": "terminal", "instruction": "怎么看路由走哪", "input": "", "output": "traceroute 或 mtr 看路径，云上先查安全组，本地先查默认网关。"}
+{"id": "terminal-107", "category": "terminal", "instruction": "网卡名变了怎么办", "input": "", "output": "ip link 看现名，netplan/网卡配置跟现名对齐。别硬背 eth0，新系统名不一样。"}
+{"id": "terminal-108", "category": "terminal", "instruction": "scp 慢怎么提速", "input": "", "output": "换 rsync + 压缩 -z，跨国加 -e 'ssh -C'。先测带宽，加密算法一般不是瓶颈。"}
+{"id": "terminal-109", "category": "terminal", "instruction": "两个文件不同但看不出差别怎么办", "input": "", "output": "diff <(cat -A a) <(cat -A b) 看不可见字符，八成是换行或尾空格。"}
+{"id": "terminal-110", "category": "terminal", "instruction": "Windows 传来的脚本跑不动怎么办", "input": "bash build.sh", "output": "八成 CRLF：sed -i 's/\\r$//' 转 LF，再 chmod +x。先 file 确认。"}
+{"id": "terminal-111", "category": "terminal", "instruction": "脚本在本机行、CI 不行怎么办", "input": "", "output": "对照环境：bash 版本、换行符、PATH、env。CI 首行加 set -x 打展开日志。"}
+{"id": "terminal-112", "category": "terminal", "instruction": "make 报 missing separator 怎么办", "input": "", "output": "配方行必须 Tab 开头，空格不行。cat -A 看到 ^I 才是 Tab，重写那一行。"}
+{"id": "terminal-113", "category": "terminal", "instruction": "gcc 找不到头文件怎么办", "input": "", "output": "apt-file 或 -dev 包名补头文件，-I 指定路径。先看报错到底缺哪个 .h。"}
+{"id": "terminal-114", "category": "terminal", "instruction": "python 编译扩展缺 Python.h 怎么办", "input": "", "output": "装 python3-dev，再 pip install。venv 里装也一样要系统头文件。"}
+{"id": "terminal-115", "category": "terminal", "instruction": "pip 源超时怎么办", "input": "", "output": "pip config 换国内源，或 pip -i 单次指定。公司网先查代理变量。"}
+{"id": "terminal-116", "category": "terminal", "instruction": "npm 装包卡在 idealTree 怎么办", "input": "", "output": "删 package-lock 重装是下策，先清缓存 npm cache clean --force，再看是不是 registry 抽风。"}
+{"id": "terminal-117", "category": "terminal", "instruction": "git clone 大仓库太慢怎么办", "input": "", "output": "--depth 1 浅克隆，或 --filter=blob:none 按需取。历史真要再 git fetch --unshallow。"}
+{"id": "terminal-118", "category": "terminal", "instruction": "git push 被拒绝非快进怎么办", "input": "", "output": "git pull --rebase 同步再推，冲突修完 continue。别 --force 推公共分支。"}
+{"id": "terminal-119", "category": "terminal", "instruction": "想撤回上次提交但保留改动怎么做", "input": "", "output": "git reset --soft HEAD~1，改动回暂存区。已 push 的用 revert，别 reset 公共历史。"}
+{"id": "terminal-120", "category": "terminal", "instruction": "怎么只提交部分改动", "input": "", "output": "git add -p 逐块挑， unrelated 改动分两次提交。一坨提交 review 的人想打人。"}
+{"id": "terminal-121", "category": "terminal", "instruction": "子模块更新不动怎么办", "input": "", "output": "git submodule update --init --recursive，URL 变了先 sync。能不用子模块就别用。"}
+{"id": "terminal-122", "category": "terminal", "instruction": "tag 打错了怎么改", "input": "", "output": "本地删了重打，推过的用 git push --delete origin tag 再重推。CI 已跑的版本别改 tag。"}
+{"id": "terminal-123", "category": "terminal", "instruction": "git 大文件推不上去怎么办", "input": "", "output": "git lfs track 大文件类型，或从历史里清掉。先看远端单文件限制，再决定 LFS 还是网盘。"}
+{"id": "terminal-124", "category": "terminal", "instruction": "服务器时间不对怎么办", "input": "", "output": "timedatectl 看 NTP 状态，云机器打开时间同步。时间错了证书全挂，先对时再查别的。"}
+{"id": "terminal-125", "category": "terminal", "instruction": "怎么看谁重启了机器", "input": "", "output": "last reboot 看重启记录，journalctl -b -1 看上次启动日志。云上再查控制台系统事件。"}

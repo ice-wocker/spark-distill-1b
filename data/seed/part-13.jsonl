@@ -1,64 +1,64 @@
-{"id": "math-011", "category": "math", "instruction": "鸡兔同笼：头18只脚52只，鸡兔各几只（变式1）", "input": "", "output": "设鸡 x 兔 y：x+y=18，2x+4y=52，得 y=(f-2h)/2=8，x=10。代入验算：10+8=18，20+32=52。"}
-{"id": "math-012", "category": "math", "instruction": "鸡兔同笼：头20只脚58只，鸡兔各几只（变式2）", "input": "", "output": "设鸡 x 兔 y：x+y=20，2x+4y=58，得 y=(f-2h)/2=9，x=11。代入验算：11+9=20，22+36=58。"}
-{"id": "math-013", "category": "math", "instruction": "鸡兔同笼：头22只脚64只，鸡兔各几只（变式3）", "input": "", "output": "设鸡 x 兔 y：x+y=22，2x+4y=64，得 y=(f-2h)/2=10，x=12。代入验算：12+10=22，24+40=64。"}
-{"id": "math-014", "category": "math", "instruction": "鸡兔同笼：头24只脚70只，鸡兔各几只（变式4）", "input": "", "output": "设鸡 x 兔 y：x+y=24，2x+4y=70，得 y=(f-2h)/2=11，x=13。代入验算：13+11=24，26+44=70。"}
-{"id": "math-015", "category": "math", "instruction": "鸡兔同笼：头26只脚76只，鸡兔各几只（变式5）", "input": "", "output": "设鸡 x 兔 y：x+y=26，2x+4y=76，得 y=(f-2h)/2=12，x=14。代入验算：14+12=26，28+48=76。"}
-{"id": "math-016", "category": "math", "instruction": "鸡兔同笼：头23只脚62只，鸡兔各几只（变式6）", "input": "", "output": "设鸡 x 兔 y：x+y=23，2x+4y=62，得 y=(f-2h)/2=8，x=15。代入验算：15+8=23，30+32=62。"}
-{"id": "math-017", "category": "math", "instruction": "鸡兔同笼：头25只脚68只，鸡兔各几只（变式7）", "input": "", "output": "设鸡 x 兔 y：x+y=25，2x+4y=68，得 y=(f-2h)/2=9，x=16。代入验算：16+9=25，32+36=68。"}
-{"id": "math-018", "category": "math", "instruction": "鸡兔同笼：头27只脚74只，鸡兔各几只（变式8）", "input": "", "output": "设鸡 x 兔 y：x+y=27，2x+4y=74，得 y=(f-2h)/2=10，x=17。代入验算：17+10=27，34+40=74。"}
-{"id": "math-019", "category": "math", "instruction": "鸡兔同笼：头29只脚80只，鸡兔各几只（变式9）", "input": "", "output": "设鸡 x 兔 y：x+y=29，2x+4y=80，得 y=(f-2h)/2=11，x=18。代入验算：18+11=29，36+44=80。"}
-{"id": "math-020", "category": "math", "instruction": "鸡兔同笼：头31只脚86只，鸡兔各几只（变式10）", "input": "", "output": "设鸡 x 兔 y：x+y=31，2x+4y=86，得 y=(f-2h)/2=12，x=19。代入验算：19+12=31，38+48=86。"}
-{"id": "math-021", "category": "math", "instruction": "鸡兔同笼：头28只脚72只，鸡兔各几只（变式11）", "input": "", "output": "设鸡 x 兔 y：x+y=28，2x+4y=72，得 y=(f-2h)/2=8，x=20。代入验算：20+8=28，40+32=72。"}
-{"id": "math-022", "category": "math", "instruction": "鸡兔同笼：头30只脚78只，鸡兔各几只（变式12）", "input": "", "output": "设鸡 x 兔 y：x+y=30，2x+4y=78，得 y=(f-2h)/2=9，x=21。代入验算：21+9=30，42+36=78。"}
-{"id": "math-023", "category": "math", "instruction": "鸡兔同笼：头32只脚84只，鸡兔各几只（变式13）", "input": "", "output": "设鸡 x 兔 y：x+y=32，2x+4y=84，得 y=(f-2h)/2=10，x=22。代入验算：22+10=32，44+40=84。"}
-{"id": "math-024", "category": "math", "instruction": "鸡兔同笼：头34只脚90只，鸡兔各几只（变式14）", "input": "", "output": "设鸡 x 兔 y：x+y=34，2x+4y=90，得 y=(f-2h)/2=11，x=23。代入验算：23+11=34，46+44=90。"}
-{"id": "math-025", "category": "math", "instruction": "鸡兔同笼：头36只脚96只，鸡兔各几只（变式15）", "input": "", "output": "设鸡 x 兔 y：x+y=36，2x+4y=96，得 y=(f-2h)/2=12，x=24。代入验算：24+12=36，48+48=96。"}
-{"id": "math-026", "category": "math", "instruction": "鸡兔同笼：头33只脚82只，鸡兔各几只（变式16）", "input": "", "output": "设鸡 x 兔 y：x+y=33，2x+4y=82，得 y=(f-2h)/2=8，x=25。代入验算：25+8=33，50+32=82。"}
-{"id": "math-027", "category": "math", "instruction": "鸡兔同笼：头35只脚88只，鸡兔各几只（变式17）", "input": "", "output": "设鸡 x 兔 y：x+y=35，2x+4y=88，得 y=(f-2h)/2=9，x=26。代入验算：26+9=35，52+36=88。"}
-{"id": "math-028", "category": "math", "instruction": "鸡兔同笼：头37只脚94只，鸡兔各几只（变式18）", "input": "", "output": "设鸡 x 兔 y：x+y=37，2x+4y=94，得 y=(f-2h)/2=10，x=27。代入验算：27+10=37，54+40=94。"}
-{"id": "math-029", "category": "math", "instruction": "鸡兔同笼：头39只脚100只，鸡兔各几只（变式19）", "input": "", "output": "设鸡 x 兔 y：x+y=39，2x+4y=100，得 y=(f-2h)/2=11，x=28。代入验算：28+11=39，56+44=100。"}
-{"id": "math-030", "category": "math", "instruction": "鸡兔同笼：头41只脚106只，鸡兔各几只（变式20）", "input": "", "output": "设鸡 x 兔 y：x+y=41，2x+4y=106，得 y=(f-2h)/2=12，x=29。代入验算：29+12=41，58+48=106。"}
-{"id": "reasoning-011", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题1）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-012", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题2）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-013", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题3）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-014", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题4）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-015", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题5）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-016", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题6）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-017", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题7）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-018", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题8）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-019", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题9）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-020", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题10）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-021", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题11）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-022", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题12）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-023", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题13）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-024", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题14）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-025", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题15）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-026", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题16）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-027", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题17）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-028", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题18）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-029", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题19）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-030", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题20）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "zh-073", "category": "zh", "instruction": "一句话讲清缓存（补1）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-074", "category": "zh", "instruction": "一句话讲清索引（补2）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-075", "category": "zh", "instruction": "一句话讲清备份（补3）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-076", "category": "zh", "instruction": "一句话讲清复利（补4）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-077", "category": "zh", "instruction": "一句话讲清拖延（补5）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-078", "category": "zh", "instruction": "一句话讲清熬夜（补6）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-079", "category": "zh", "instruction": "一句话讲清租房（补7）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-080", "category": "zh", "instruction": "一句话讲清面试（补8）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-081", "category": "zh", "instruction": "一句话讲清带团队（补9）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-082", "category": "zh", "instruction": "一句话讲清写文档（补10）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-083", "category": "zh", "instruction": "一句话讲清时间管理（补11）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-084", "category": "zh", "instruction": "一句话讲清健康作息（补12）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "en-061", "category": "en", "instruction": "One-line guide to env config (extra 1)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-062", "category": "en", "instruction": "One-line guide to code review (extra 2)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-063", "category": "en", "instruction": "One-line guide to standup notes (extra 3)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-064", "category": "en", "instruction": "One-line guide to deadlines (extra 4)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-065", "category": "en", "instruction": "One-line guide to backups (extra 5)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-066", "category": "en", "instruction": "One-line guide to monitoring (extra 6)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-067", "category": "en", "instruction": "One-line guide to onboarding (extra 7)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-068", "category": "en", "instruction": "One-line guide to refactoring (extra 8)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-069", "category": "en", "instruction": "One-line guide to time zones (extra 9)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-070", "category": "en", "instruction": "One-line guide to rate limits (extra 10)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-071", "category": "en", "instruction": "One-line guide to webhooks (extra 11)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-072", "category": "en", "instruction": "One-line guide to caching (extra 12)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "math-011", "category": "math", "instruction": "鸡兔同笼：头28只脚76只，各几只", "input": "", "output": "设鸡 x 兔 y：x+y=28，2x+4y=76，得 y=10，x=18。验算：18+10=28，36+40=76。"}
+{"id": "math-012", "category": "math", "instruction": "鸡兔同笼：头35只脚94只，各几只", "input": "", "output": "x+y=35，2x+4y=94，得 y=12，x=23。验算：23+12=35，46+48=94。"}
+{"id": "math-013", "category": "math", "instruction": "鸡兔同笼：头41只脚112只，各几只", "input": "", "output": "x+y=41，2x+4y=112，得 y=15，x=26。验算：26+15=41，52+60=112。"}
+{"id": "math-014", "category": "math", "instruction": "鸡兔同笼：头50只脚140只，各几只", "input": "", "output": "x+y=50，2x+4y=140，得 y=20，x=30。验算：30+20=50，60+80=140。"}
+{"id": "math-015", "category": "math", "instruction": "鸡兔同笼：头22只脚60只，各几只", "input": "", "output": "x+y=22，2x+4y=60，得 y=8，x=14。验算：14+8=22，28+32=60。"}
+{"id": "math-016", "category": "math", "instruction": "袋里 5 红 3 白球，摸两次都红的概率", "input": "", "output": "不放回：5/8 × 4/7 = 20/56 ≈ 35.7%。放回则是 25/64，先确认规则。"}
+{"id": "math-017", "category": "math", "instruction": "抛硬币连出 4 次正面，下次反面概率", "input": "", "output": "还是 50%。硬币没记忆，连出是过去，概率只看这一次。赌反面加倍是经典坑。"}
+{"id": "math-018", "category": "math", "instruction": "1 到 100 所有偶数和是多少", "input": "", "output": "2+4+...+100 = 2×(1+...+50) = 2×1275 = 2550。配对法：首尾相加 102，共 25 对。"}
+{"id": "math-019", "category": "math", "instruction": "等差数列 3,7,11,…第 n 项和通项", "input": "", "output": "通项 4n-1，求和 n(首+末)/2 = n(3+4n-1)/2 = 2n²+n。代 n=1 验算得 3。"}
+{"id": "math-020", "category": "math", "instruction": "解方程 2x+5=17", "input": "", "output": "移项 2x=12，得 x=6。代回验算 12+5=17，一步一验防符号错。"}
+{"id": "math-021", "category": "math", "instruction": "商品先涨 20% 再降 20%，亏赚", "input": "", "output": "设原价 100：涨后 120，降后 96，净亏 4%。涨降基数不同，先涨后降必亏。"}
+{"id": "math-022", "category": "math", "instruction": "存款年利 3%，10 年翻几倍", "input": "", "output": "1.03^10 ≈ 1.344，十年涨约 34%。别用单利乘，利滚利才对。"}
+{"id": "math-023", "category": "math", "instruction": "班级 40 人，至少两人同月生日概率", "input": "", "output": "1 - P(40,12)/12^40，40 人远超 12 个月，几乎 100%。这是鸽巢不是巧合。"}
+{"id": "math-024", "category": "math", "instruction": "骰子连掷两次和为 9 有几种", "input": "", "output": "36 种等可能里 (3,6)(4,5)(5,4)(6,3) 共 4 种，概率 1/9。列表数清别猜。"}
+{"id": "math-025", "category": "math", "instruction": "数列 1,1,2,3,5,…第 10 项", "input": "", "output": "斐波那契：前两项和得后项，数到第 10 项是 55。写前几项验规律再往后推。"}
+{"id": "math-026", "category": "math", "instruction": "梯形上底 6 下底 10 高 4 面积", "input": "", "output": "(6+10)×4/2 = 32。公式是上下底和乘高除二，别忘除二。"}
+{"id": "math-027", "category": "math", "instruction": "圆半径 3 面积约多少", "input": "", "output": "πr² = 9π ≈ 28.3。估算用 π≈3.14，精确再按计算器。"}
+{"id": "math-028", "category": "math", "instruction": "2 的 10 次方是多少", "input": "", "output": "1024，程序员的老朋友。2^10≈10^3，估算内存数量级就靠它。"}
+{"id": "math-029", "category": "math", "instruction": "一件衬衫 200 打 8 折再满 100 减 20 实付", "input": "", "output": "先 8 折 160，再满减 20，实付 140。顺序不同结果不同，先问收银顺序。"}
+{"id": "math-030", "category": "math", "instruction": "一小时 50 公里，180 公里要多久", "input": "", "output": "180/50 = 3.6 小时即 3 小时 36 分。单位先对齐再除，别拿分钟除公里。"}
+{"id": "reasoning-011", "category": "reasoning", "instruction": "三盏灯三个开关，一次进屋怎么对应", "input": "", "output": "开 A 长时间后关，开 B 保持，长亮是 B、灯泡热是 A、凉灭是 C。状态三分靠温度凑。"}
+{"id": "reasoning-012", "category": "reasoning", "instruction": "小球落下每次弹回一半，第三次多高", "input": "", "output": "16 米落下：8、4、2，第三次 2 米。每次乘 1/2，连乘三次就是答案。"}
+{"id": "reasoning-013", "category": "reasoning", "instruction": "四人过桥一盏灯，最快怎么过", "input": "", "output": "1 和 2 先过 2 分，1 回 1 分，9 和 10 过 10 分，2 回 2 分，1 和 2 过 2 分，共 17 分。"}
+{"id": "reasoning-014", "category": "reasoning", "instruction": "三盒标签全错，拿一次怎么纠正", "input": "", "output": "从标混合的盒拿：出苹果则它是苹果盒，剩下两盒对调。全错是关键信息。"}
+{"id": "reasoning-015", "category": "reasoning", "instruction": "先有鸡还是先有蛋", "input": "", "output": "演化视角：蛋先，鸡是蛋里突变出来的。问题偷换了物种不变的前提。"}
+{"id": "reasoning-016", "category": "reasoning", "instruction": "水桶 5 升 3 升怎么量出 4 升", "input": "", "output": "5 升倒满倒进 3 升剩 2 升，倒掉 3 升，把 2 升倒进去，再满 5 升倒满 3 升剩 4 升。"}
+{"id": "reasoning-017", "category": "reasoning", "instruction": "天平 12 球一坏球，三次怎么找", "input": "", "output": "4-4-4 分组称：平则坏在剩下 4 里，不平则在轻/重端。每轮三选一排除三分之二。"}
+{"id": "reasoning-018", "category": "reasoning", "instruction": "100 层楼两鸡蛋，最少几次试出临界", "input": "", "output": "14 次：第一颗从 14、27、39…试，碎了第二颗线性补。步长递减是关键。"}
+{"id": "reasoning-019", "category": "reasoning", "instruction": "三扇门换不换（蒙提霍尔）", "input": "", "output": "换：初选对 1/3，剩下两扇占 2/3，主持人帮你排除了一个错的。直觉错在没更新信息。"}
+{"id": "reasoning-020", "category": "reasoning", "instruction": "乌龟和阿基里斯谁快", "input": "", "output": "阿基里斯快。芝诺把有限路切成无限段，但无限段求和收敛，追上只需有限时间。"}
+{"id": "reasoning-021", "category": "reasoning", "instruction": "房间里至少几人必有同生日", "input": "", "output": "366 人（算 2 月 29）。鸽巢原理：367 天格子，366 人是填满的边界。"}
+{"id": "reasoning-022", "category": "reasoning", "instruction": "假币 8 枚一轻，两次天平怎么找", "input": "", "output": "3-3-2：平则在 2 里再称一次，不平在轻端 3 里任取两枚称。每次排除三分之二。"}
+{"id": "reasoning-023", "category": "reasoning", "instruction": "电梯超载先下谁最公平", "input": "", "output": "按下楼层从高到低出，出的步行差最小。公平按成本分摊，不是按体重。"}
+{"id": "reasoning-024", "category": "reasoning", "instruction": "两根不均匀绳烧完都一小时，怎么计时 45 分", "input": "", "output": "一根两头点，一根一头点：两头烧完 30 分，此时另一根剩 30 分量，点另一头得 15 分。"}
+{"id": "reasoning-025", "category": "reasoning", "instruction": "硬币 10 枚 3 假币，盲拿两枚都真的概率", "input": "", "output": "C(7,2)/C(10,2) = 21/45 ≈ 46.7%。组合数直接算，别列举。"}
+{"id": "reasoning-026", "category": "reasoning", "instruction": "猜数字 1 到 100 几次必中", "input": "", "output": "7 次二分：每次砍一半，2^7=128 覆盖。对抗出题人也一样，最坏 7 次。"}
+{"id": "reasoning-027", "category": "reasoning", "instruction": "红蓝袜子各 5 只，摸几只必成双", "input": "", "output": "3 只：两色三只必有同色。鸽巢 n+1，颜色数加一就是答案。"}
+{"id": "reasoning-028", "category": "reasoning", "instruction": "鸡尾酒会 10 人握手几次", "input": "", "output": "C(10,2)=45。n 人就是 n(n-1)/2，别一个个数。"}
+{"id": "reasoning-029", "category": "reasoning", "instruction": "蜗牛白天爬 3 米夜滑 2 米，10 米井几天", "input": "", "output": "8 天：前 7 天净 1 米到 7 米，第 8 天白天直接出。最后一天不下滑，别按 10 天算。"}
+{"id": "reasoning-030", "category": "reasoning", "instruction": "农夫狼羊菜过河怎么运", "input": "", "output": "先运羊，回空船，运狼，回带羊，运菜，回空船，运羊。羊不能和狼菜独处是约束。"}
+{"id": "zh-073", "category": "zh", "instruction": "一句话讲清复利（补1）", "input": "", "output": "复利是利息再生利息，时间越长威力越大。定投靠的就是它，短期看不出，十年拉开差距。"}
+{"id": "zh-074", "category": "zh", "instruction": "一句话讲清缓存击穿（补2）", "input": "", "output": "热点 key 同时过期，大量请求打穿到数据库。解法：过期加随机、热点永不过期。"}
+{"id": "zh-075", "category": "zh", "instruction": "一句话讲清幂等（补3）", "input": "", "output": "同样请求做一次和做十次结果一样。写接口先保证幂等，重试才敢放开。"}
+{"id": "zh-076", "category": "zh", "instruction": "一句话讲清灰度（补4）", "input": "", "output": "新版本先放 1% 用户试，有问题只影响一小片。没灰度就全量等于裸奔。"}
+{"id": "zh-077", "category": "zh", "instruction": "一句话讲清回滚（补5）", "input": "", "output": "回滚是回到上一个能跑的版本，5 分钟内必须能执行。上线前先演练回滚。"}
+{"id": "zh-078", "category": "zh", "instruction": "一句话讲清技术债（补6）", "input": "", "output": "今天省事欠的代码，明天连本带利还。每次迭代还一小笔，别攒到还不起。"}
+{"id": "zh-079", "category": "zh", "instruction": "一句话讲清单点故障（补7）", "input": "", "output": "一个节点挂了全挂就叫单点。解法是冗余加自动切换，关键链路逐个排查。"}
+{"id": "zh-080", "category": "zh", "instruction": "一句话讲清长尾延迟（补8）", "input": "", "output": "平均很快、偶尔巨慢就是长尾。看 p99 别看平均，慢的那 1% 决定体验。"}
+{"id": "zh-081", "category": "zh", "instruction": "一句话讲清惊群效应（补9）", "input": "", "output": "大量客户端同时重试打垮服务。退避加抖动错开，本质是别让大家同频。"}
+{"id": "zh-082", "category": "zh", "instruction": "一句话讲清数据倾斜（补10）", "input": "", "output": "一个 key 占了大半数据，分布式变单机。加盐打散或单独处理热点 key。"}
+{"id": "zh-083", "category": "zh", "instruction": "一句话讲清缓存雪崩（补11）", "input": "", "output": "大批 key 同时过期，数据库被冲垮。过期时间加随机，错峰是最便宜的解。"}
+{"id": "zh-084", "category": "zh", "instruction": "一句话讲清熔断（补12）", "input": "", "output": "下游挂了就快速失败别硬等，恢复后再半开试探。熔断保的是调用方不被拖死。"}
+{"id": "en-061", "category": "en", "instruction": "One-line guide to retries (extra 1)", "input": "", "output": "Retry 3 times with exponential backoff and jitter. Idempotent writes only — blind retries duplicate orders."}
+{"id": "en-062", "category": "en", "instruction": "One-line guide to caching (extra 2)", "input": "", "output": "Cache reads, expire writes; randomize TTLs to avoid stampedes. A cache without expiry is a bug farm."}
+{"id": "en-063", "category": "en", "instruction": "One-line guide to logging (extra 3)", "input": "", "output": "Log decisions with ids, not dumps. Future you debugs with these lines — write for that reader."}
+{"id": "en-064", "category": "en", "instruction": "One-line guide to alerts (extra 4)", "input": "", "output": "Alert on symptoms users feel, not every metric wiggle. Each alert needs an owner and a runbook."}
+{"id": "en-065", "category": "en", "instruction": "One-line guide to rollbacks (extra 5)", "input": "", "output": "Rollbacks must run in minutes, practiced before launch day. Keep migrations reversible or rollback is fiction."}
+{"id": "en-066", "category": "en", "instruction": "One-line guide to code review (extra 6)", "input": "", "output": "Review small diffs fast, big diffs get split. Correctness first, style last, kindness always."}
+{"id": "en-067", "category": "en", "instruction": "One-line guide to standups (extra 7)", "input": "", "output": "Done, next, blocked — thirty seconds each. Details move to a thread, not the meeting."}
+{"id": "en-068", "category": "en", "instruction": "One-line guide to estimates (extra 8)", "input": "", "output": "Split until pieces fit half a day, then add integration buffer. Lumpy estimates hide the risk."}
+{"id": "en-069", "category": "en", "instruction": "One-line guide to postmortems (extra 9)", "input": "", "output": "Timeline, root cause, action items with owners. Blame the system, fix the process."}
+{"id": "en-070", "category": "en", "instruction": "One-line guide to onboarding (extra 10)", "input": "", "output": "Green build day one, first merged PR week one. Momentum beats documentation dumps."}
+{"id": "en-071", "category": "en", "instruction": "One-line guide to feature flags (extra 11)", "input": "", "output": "Flags decouple deploy from release. Every flag needs an owner and a removal date."}
+{"id": "en-072", "category": "en", "instruction": "One-line guide to runbooks (extra 12)", "input": "", "output": "A runbook answers: symptoms, diagnosis steps, fix commands, escalation. If it lacks commands, it is an essay."}

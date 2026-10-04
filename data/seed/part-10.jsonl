@@ -1,62 +1,62 @@
-{"id": "code-zh-041", "category": "code-zh", "instruction": "这段 Python 报 KeyError 怎么修", "input": "d={}\nprint(d['k'])", "output": "键不存在。用 d.get('k') 给默认值，或先 if 'k' in d。别 try 包大段。"}
-{"id": "code-zh-042", "category": "code-zh", "instruction": "这段代码怎么更快", "input": "for i in range(n):\n  f(open(f))", "output": "先 profile 找热点再动：循环里去重、IO 合并、缓存结果。别凭感觉优化。"}
-{"id": "code-zh-043", "category": "code-zh", "instruction": "写一个读 CSV 并按列求和的脚本", "input": "a,b\n1,2\nx,3", "output": "csv.DictReader 逐行读，try 转 float，跳过坏行并计数，最后打印总数。"}
-{"id": "code-zh-044", "category": "code-zh", "instruction": "这个 SQL 怎么优化", "input": "SELECT * FROM t WHERE name LIKE '%x%'", "output": "先 EXPLAIN 看是否走索引：条件列加索引，避免 SELECT *，分页用键集代替大 OFFSET。"}
-{"id": "code-zh-045", "category": "code-zh", "instruction": "帮我 review 这段删文件 diff", "input": "+rm -rf $dir", "output": "先看意图再看边界：空值、越界、并发、回滚。能小步拆就别一大坨。"}
-{"id": "code-zh-046", "category": "code-zh", "instruction": "怎么给这个函数写单测", "input": "def add(a,b): return a+b", "output": "正常/边界/异常各一例：空输入、最大值、抛错。用最小断言锁住行为。"}
-{"id": "code-zh-047", "category": "code-zh", "instruction": "这个正则什么意思", "input": "^\\d{11}$", "output": "逐段拆：^ 开头、\\d 数字、+ 重复、$ 结尾。拿两个正反例子验证。"}
-{"id": "code-zh-048", "category": "code-zh", "instruction": "容器起不来先查什么", "input": "", "output": "docker logs 看退出原因，再 docker inspect 看挂载和端口，最后进容器复现。"}
-{"id": "code-zh-049", "category": "code-zh", "instruction": "列表推导和循环选哪个", "input": "", "output": "简单转换推导，一步了然；带复杂分支用循环，下一行注释意图。"}
-{"id": "code-zh-050", "category": "code-zh", "instruction": "怎么处理 JSON 解析失败", "input": "", "output": "try json.loads 抓 JSONDecodeError，给默认值并记日志，别让坏输入炸全程。"}
-{"id": "code-zh-051", "category": "code-zh", "instruction": "深拷贝和浅拷贝区别", "input": "", "output": "浅拷只拷引用，改嵌套会互相影响；深拷全复制。用 copy.deepcopy 前先想清要不要。"}
-{"id": "code-zh-052", "category": "code-zh", "instruction": "线程和进程怎么选", "input": "", "output": "CPU 密集用进程，IO 密集用线程/协程。共享状态越少越好。"}
-{"id": "code-zh-053", "category": "code-zh", "instruction": "怎么防 SQL 注入", "input": "f\"select * where name='{n}'\"", "output": "永远用参数化查询，别拼字符串。表名动态就白名单校验。"}
-{"id": "code-zh-054", "category": "code-zh", "instruction": "分页 OFFSET 越来越慢怎么办", "input": "", "output": "改键集分页：WHERE id > 上页末位 LIMIT n。OFFSET 是跳多少读多少。"}
-{"id": "code-zh-055", "category": "code-zh", "instruction": "怎么给报错加上下文", "input": "", "output": "raise 时带上关键 id 和输入摘要，别只抛裸错。日志同理。"}
-{"id": "code-zh-056", "category": "code-zh", "instruction": "递归太深爆栈怎么办", "input": "", "output": "改循环+显式栈，或加 sys 递归上限+分治。先确认能不能迭代。"}
-{"id": "code-zh-057", "category": "code-zh", "instruction": "怎么验证删文件安全", "input": "rm *.log", "output": "先 ls/glob 确认范围，再 mv 到回收站或 git 干净，最后删。rm 加 -i 或先 echo。"}
-{"id": "code-zh-058", "category": "code-zh", "instruction": "测试挂了但代码看着没错先看什么", "input": "", "output": "先看报错第一行和堆栈顶，再复现最小用例，最后 git stash 二分最近改动。"}
-{"id": "code-zh-059", "category": "code-zh", "instruction": "线上 bug 处理顺序是什么", "input": "", "output": "止血第一：回滚/限流/摘流量，再定位根因，最后复盘加单测。"}
-{"id": "code-zh-060", "category": "code-zh", "instruction": "重构第一步做什么", "input": "", "output": "先补单测锁住行为，再小步改+频繁跑测，一次只动一处。"}
-{"id": "code-zh-061", "category": "code-zh", "instruction": "这段 Python 报 KeyError 怎么修（变式21）", "input": "d={}\nprint(d['k'])", "output": "键不存在。用 d.get('k') 给默认值，或先 if 'k' in d。别 try 包大段。变式21：换个输入再验证一次。"}
-{"id": "code-zh-062", "category": "code-zh", "instruction": "这段代码怎么更快（变式22）", "input": "for i in range(n):\n  f(open(f))", "output": "先 profile 找热点再动：循环里去重、IO 合并、缓存结果。别凭感觉优化。变式22：换个输入再验证一次。"}
-{"id": "code-zh-063", "category": "code-zh", "instruction": "写一个读 CSV 并按列求和的脚本（变式23）", "input": "a,b\n1,2\nx,3", "output": "csv.DictReader 逐行读，try 转 float，跳过坏行并计数，最后打印总数。变式23：换个输入再验证一次。"}
-{"id": "code-zh-064", "category": "code-zh", "instruction": "这个 SQL 怎么优化（变式24）", "input": "SELECT * FROM t WHERE name LIKE '%x%'", "output": "先 EXPLAIN 看是否走索引：条件列加索引，避免 SELECT *，分页用键集代替大 OFFSET。变式24：换个输入再验证一次。"}
-{"id": "code-zh-065", "category": "code-zh", "instruction": "帮我 review 这段删文件 diff（变式25）", "input": "+rm -rf $dir", "output": "先看意图再看边界：空值、越界、并发、回滚。能小步拆就别一大坨。变式25：换个输入再验证一次。"}
-{"id": "code-zh-066", "category": "code-zh", "instruction": "怎么给这个函数写单测（变式26）", "input": "def add(a,b): return a+b", "output": "正常/边界/异常各一例：空输入、最大值、抛错。用最小断言锁住行为。变式26：换个输入再验证一次。"}
-{"id": "code-zh-067", "category": "code-zh", "instruction": "这个正则什么意思（变式27）", "input": "^\\d{11}$", "output": "逐段拆：^ 开头、\\d 数字、+ 重复、$ 结尾。拿两个正反例子验证。变式27：换个输入再验证一次。"}
-{"id": "code-zh-068", "category": "code-zh", "instruction": "容器起不来先查什么（变式28）", "input": "", "output": "docker logs 看退出原因，再 docker inspect 看挂载和端口，最后进容器复现。变式28：换个输入再验证一次。"}
-{"id": "code-zh-069", "category": "code-zh", "instruction": "列表推导和循环选哪个（变式29）", "input": "", "output": "简单转换推导，一步了然；带复杂分支用循环，下一行注释意图。变式29：换个输入再验证一次。"}
-{"id": "code-zh-070", "category": "code-zh", "instruction": "怎么处理 JSON 解析失败（变式30）", "input": "", "output": "try json.loads 抓 JSONDecodeError，给默认值并记日志，别让坏输入炸全程。变式30：换个输入再验证一次。"}
-{"id": "code-zh-071", "category": "code-zh", "instruction": "深拷贝和浅拷贝区别（变式31）", "input": "", "output": "浅拷只拷引用，改嵌套会互相影响；深拷全复制。用 copy.deepcopy 前先想清要不要。变式31：换个输入再验证一次。"}
-{"id": "code-zh-072", "category": "code-zh", "instruction": "线程和进程怎么选（变式32）", "input": "", "output": "CPU 密集用进程，IO 密集用线程/协程。共享状态越少越好。变式32：换个输入再验证一次。"}
-{"id": "code-zh-073", "category": "code-zh", "instruction": "怎么防 SQL 注入（变式33）", "input": "f\"select * where name='{n}'\"", "output": "永远用参数化查询，别拼字符串。表名动态就白名单校验。变式33：换个输入再验证一次。"}
-{"id": "code-zh-074", "category": "code-zh", "instruction": "分页 OFFSET 越来越慢怎么办（变式34）", "input": "", "output": "改键集分页：WHERE id > 上页末位 LIMIT n。OFFSET 是跳多少读多少。变式34：换个输入再验证一次。"}
-{"id": "code-zh-075", "category": "code-zh", "instruction": "怎么给报错加上下文（变式35）", "input": "", "output": "raise 时带上关键 id 和输入摘要，别只抛裸错。日志同理。变式35：换个输入再验证一次。"}
-{"id": "code-zh-076", "category": "code-zh", "instruction": "递归太深爆栈怎么办（变式36）", "input": "", "output": "改循环+显式栈，或加 sys 递归上限+分治。先确认能不能迭代。变式36：换个输入再验证一次。"}
-{"id": "code-zh-077", "category": "code-zh", "instruction": "怎么验证删文件安全（变式37）", "input": "rm *.log", "output": "先 ls/glob 确认范围，再 mv 到回收站或 git 干净，最后删。rm 加 -i 或先 echo。变式37：换个输入再验证一次。"}
-{"id": "code-zh-078", "category": "code-zh", "instruction": "测试挂了但代码看着没错先看什么（变式38）", "input": "", "output": "先看报错第一行和堆栈顶，再复现最小用例，最后 git stash 二分最近改动。变式38：换个输入再验证一次。"}
-{"id": "code-zh-079", "category": "code-zh", "instruction": "线上 bug 处理顺序是什么（变式39）", "input": "", "output": "止血第一：回滚/限流/摘流量，再定位根因，最后复盘加单测。变式39：换个输入再验证一次。"}
-{"id": "code-zh-080", "category": "code-zh", "instruction": "重构第一步做什么（变式40）", "input": "", "output": "先补单测锁住行为，再小步改+频繁跑测，一次只动一处。变式40：换个输入再验证一次。"}
-{"id": "code-agent-031", "category": "code-agent", "instruction": "用户让你重构，第一步做什么", "input": "", "output": "先读相关文件锁住现状，补最小单测，再 todo 列步小步改。"}
-{"id": "code-agent-032", "category": "code-agent", "instruction": "测试挂了但代码看着没错怎么办", "input": "", "output": "读第一报错行，最小复现，二分最近改动，别全量重写。"}
-{"id": "code-agent-033", "category": "code-agent", "instruction": "怎么确认删文件安全", "input": "", "output": "glob 确认范围+git 状态干净，先移回收站再真删。"}
-{"id": "code-agent-034", "category": "code-agent", "instruction": "线上 bug 处理顺序", "input": "", "output": "止血（回滚/限流）→定位→修复→复盘加测。"}
-{"id": "code-agent-035", "category": "code-agent", "instruction": "怎么写 commit message", "input": "", "output": "动词开头一句话：改了什么+为什么。 unrelated 别塞一起。"}
-{"id": "code-agent-036", "category": "code-agent", "instruction": "探索陌生仓库从哪开始", "input": "", "output": "glob 看结构，grep 找入口，read 读关键三文件。"}
-{"id": "code-agent-037", "category": "code-agent", "instruction": "多步任务怎么不跑偏", "input": "", "output": "todo_write 先列计划，做完一步勾一步，偏了回看清单。"}
-{"id": "code-agent-038", "category": "code-agent", "instruction": "改前为什么要先读文件", "input": "", "output": "防改错：了解现状再 edit 精确替换，diff 预览确认。"}
-{"id": "code-agent-039", "category": "code-agent", "instruction": "什么时候该停下来问用户", "input": "", "output": "需求模糊、破坏性操作、高成本试错前先确认。"}
-{"id": "code-agent-040", "category": "code-agent", "instruction": "自动压缩后丢了上下文怎么办", "input": "", "output": "关键决定写 AGENTS.md/MEMORY.md，压缩只保最近+摘要。"}
-{"id": "code-agent-041", "category": "code-agent", "instruction": "code review 重点看什么", "input": "", "output": "边界、错误处理、并发、安全，其次才是风格。"}
-{"id": "code-agent-042", "category": "code-agent", "instruction": "用户让你重构，第一步做什么（变式12）", "input": "", "output": "先读相关文件锁住现状，补最小单测，再 todo 列步小步改。"}
-{"id": "code-agent-043", "category": "code-agent", "instruction": "测试挂了但代码看着没错怎么办（变式13）", "input": "", "output": "读第一报错行，最小复现，二分最近改动，别全量重写。"}
-{"id": "code-agent-044", "category": "code-agent", "instruction": "怎么确认删文件安全（变式14）", "input": "", "output": "glob 确认范围+git 状态干净，先移回收站再真删。"}
-{"id": "code-agent-045", "category": "code-agent", "instruction": "线上 bug 处理顺序（变式15）", "input": "", "output": "止血（回滚/限流）→定位→修复→复盘加测。"}
-{"id": "code-agent-046", "category": "code-agent", "instruction": "怎么写 commit message（变式16）", "input": "", "output": "动词开头一句话：改了什么+为什么。 unrelated 别塞一起。"}
-{"id": "code-agent-047", "category": "code-agent", "instruction": "探索陌生仓库从哪开始（变式17）", "input": "", "output": "glob 看结构，grep 找入口，read 读关键三文件。"}
-{"id": "code-agent-048", "category": "code-agent", "instruction": "多步任务怎么不跑偏（变式18）", "input": "", "output": "todo_write 先列计划，做完一步勾一步，偏了回看清单。"}
-{"id": "code-agent-049", "category": "code-agent", "instruction": "改前为什么要先读文件（变式19）", "input": "", "output": "防改错：了解现状再 edit 精确替换，diff 预览确认。"}
-{"id": "code-agent-050", "category": "code-agent", "instruction": "什么时候该停下来问用户（变式20）", "input": "", "output": "需求模糊、破坏性操作、高成本试错前先确认。"}
-{"id": "code-agent-051", "category": "code-agent", "instruction": "自动压缩后丢了上下文怎么办（变式21）", "input": "", "output": "关键决定写 AGENTS.md/MEMORY.md，压缩只保最近+摘要。"}
-{"id": "code-agent-052", "category": "code-agent", "instruction": "code review 重点看什么（变式22）", "input": "", "output": "边界、错误处理、并发、安全，其次才是风格。"}
+{"id": "code-zh-041", "category": "code-zh", "instruction": "这段 Python 报 KeyError 怎么修", "input": "d={}\nprint(d['k'])", "output": "键不存在。用 d.get('k') 给默认值，或先 if 'k' in d 再取。别拿 try 包大段代码。"}
+{"id": "code-zh-042", "category": "code-zh", "instruction": "循环里反复 open 怎么改快", "input": "for i in range(n):\n  f(open(f))", "output": "把 open 移出循环，或一次读入内存。IO 在循环里是头号慢源，先搬出来再谈别的。"}
+{"id": "code-zh-043", "category": "code-zh", "instruction": "写一个读 CSV 按列求和的脚本", "input": "a,b\n1,2\nx,3", "output": "csv.DictReader 逐行读，float 转失败跳过并计数，最后打印总数和坏行数。"}
+{"id": "code-zh-044", "category": "code-zh", "instruction": "这个 LIKE 前缀通配查询怎么优化", "input": "SELECT * FROM t WHERE name LIKE '%x%'", "output": "EXPLAIN 先看走没走索引：'%x%' 走不了，改全文索引或前缀匹配，顺手把 SELECT * 缩成要的列。"}
+{"id": "code-zh-045", "category": "code-zh", "instruction": "帮我 review 这段删文件 diff", "input": "+rm -rf $dir", "output": "意图先行再看边界：变量为空会删哪、通配符展开范围、有没有备份。rm 相关 diff 默认按危险品审。"}
+{"id": "code-zh-046", "category": "code-zh", "instruction": "怎么给 add 写单测", "input": "def add(a,b): return a+b", "output": "正常、边界、异常各一例：1+2、0+0、字符串相加。用最小断言锁住行为，别测实现细节。"}
+{"id": "code-zh-047", "category": "code-zh", "instruction": "这个匹配 11 位数字的正则什么意思", "input": "^\\d{11}$", "output": "逐段拆：^ 行首、\\d 数字、{11} 十一个、$ 行尾。拿 10 位和 12 位反例验证。"}
+{"id": "code-zh-048", "category": "code-zh", "instruction": "容器起不来先查什么", "input": "", "output": "docker logs 看退出原因，再 inspect 看挂载和端口映射，最后 --rm -it 进镜像复现。"}
+{"id": "code-zh-049", "category": "code-zh", "instruction": "推导和循环到底选哪个", "input": "", "output": "纯转换用推导，一眼看完；带分支、异常、日志用循环。可读性优先于行数。"}
+{"id": "code-zh-050", "category": "code-zh", "instruction": "JSON 解析失败怎么兜底", "input": "", "output": "try 抓 JSONDecodeError，给默认值并记原文前 100 字。坏输入只能污染一条，不许炸全程。"}
+{"id": "code-zh-051", "category": "code-zh", "instruction": "浅拷贝踩坑了怎么理解", "input": "b = a.copy()", "output": "浅拷只拷第一层，嵌套还是同一引用。改嵌套互相影响就换 deepcopy，或重构掉共享。"}
+{"id": "code-zh-052", "category": "code-zh", "instruction": "CPU 密集任务开多线程没用怎么办", "input": "", "output": "换 multiprocessing 真并行，线程只适合 IO 等待。先确认瓶颈真是 CPU 再换。"}
+{"id": "code-zh-053", "category": "code-zh", "instruction": "这段拼接 SQL 怎么改才安全", "input": "f\"select * where name='{n}'\"", "output": "改参数化查询：cursor.execute(sql, (n,))。表名动态就走白名单，别拼。"}
+{"id": "code-zh-054", "category": "code-zh", "instruction": "OFFSET 翻页越来越慢怎么办", "input": "", "output": "改键集分页 WHERE id > 上页末位 LIMIT n。OFFSET 是跳过多少读多少，页越深越慢。"}
+{"id": "code-zh-055", "category": "code-zh", "instruction": "报错信息太秃怎么加上下文", "input": "", "output": "raise 时带上关键 id 和输入摘要：f'pay failed id={id}'。日志同理，没 id 的报错等于没报。"}
+{"id": "code-zh-056", "category": "code-zh", "instruction": "递归爆栈了怎么改", "input": "RecursionError", "output": "改循环加显式栈；必须递归就分治缩小深度。先确认能不能迭代，能就别递归。"}
+{"id": "code-zh-057", "category": "code-zh", "instruction": "删日志文件前怎么确认安全", "input": "rm *.log", "output": "ls 先看名单，确认只有 .log，再 git status 确认干净，最后删。通配符先 echo 展开看。"}
+{"id": "code-zh-058", "category": "code-zh", "instruction": "测试挂了代码看着没错先看什么", "input": "", "output": "看第一行报错和堆栈顶，写最小复现，最后 git stash 二分最近改动。别通读代码猜。"}
+{"id": "code-zh-059", "category": "code-zh", "instruction": "线上出 bug 先干什么", "input": "", "output": "先止血：回滚、限流、摘流量。定位根因第二，复盘加单测第三。顺序错了越修越炸。"}
+{"id": "code-zh-060", "category": "code-zh", "instruction": "重构第一步做什么最稳", "input": "", "output": "先给要动的函数补单测锁住行为，再小步改、频繁跑。一次只动一处，绿了再往下。"}
+{"id": "code-zh-061", "category": "code-zh", "instruction": "字典 get 和 setdefault 分不清", "input": "", "output": "只读用 get('k', 默认)，累积用 setdefault('k', [])。后者会写入字典，别在只读处用。"}
+{"id": "code-zh-062", "category": "code-zh", "instruction": "except 裸奔有什么坏处", "input": "try:\n ...\nexcept:\n pass", "output": "裸 except 连 KeyboardInterrupt 都吞，还掩盖 bug。只抓你预期的异常，末尾别跟万能 except。"}
+{"id": "code-zh-063", "category": "code-zh", "instruction": "lambda 里循环变量全一样为什么", "input": "", "output": "闭包抓的是变量不是值：循环结束全指向末值。用默认参数 lambda x, i=i: ... 冻结当前值。"}
+{"id": "code-zh-064", "category": "code-zh", "instruction": "pip 装包互相打架怎么办", "input": "ERROR: conflict", "output": "pip check 看冲突，venv 隔离项目，pip-tools 锁版本。系统 python 别装包。"}
+{"id": "code-zh-065", "category": "code-zh", "instruction": "怎么判断该用缓存", "input": "", "output": "读多写少、结果可复算、能容忍过期，三条全中才加。缓存先定过期和淘汰，再写代码。"}
+{"id": "code-zh-066", "category": "code-zh", "instruction": "接口超时重试几次合适", "input": "", "output": "读接口 3 次带退避，写接口先保证幂等再谈重试。无脑重试写接口会造出重复单。"}
+{"id": "code-zh-067", "category": "code-zh", "instruction": "日志打太多把盘写满怎么办", "input": "", "output": "级别先调 info 起步，debug 按需开；加轮转和上限。日志是证据，不是作文。"}
+{"id": "code-zh-068", "category": "code-zh", "instruction": "单测跑得慢怎么提速", "input": "pytest 10min", "output": "先 -x --lf 只跑失败，再并行 -n auto，最后把睡死的 time.sleep 换成 fake。"}
+{"id": "code-zh-069", "category": "code-zh", "instruction": "类型注解到底值不值", "input": "def f(a, b):", "output": "公共函数签名值得：调用方一眼看懂，mypy 提前抓错。内部三行小函数别折腾。"}
+{"id": "code-zh-070", "category": "code-zh", "instruction": "怎么给老代码加测试", "input": "", "output": "从 bug 修起：复现单测先红再绿，逐步包围核心路径。别立项重写测试体系。"}
+{"id": "code-zh-071", "category": "code-zh", "instruction": "code review 被打回来怎么办", "input": "", "output": "先改事实问题（bug/边界），再谈品味分歧。一次只争一个点，别整单全驳回。"}
+{"id": "code-zh-072", "category": "code-zh", "instruction": "魔法数字满天飞怎么治", "input": "if x > 30: ...", "output": "命名常量收拢：TIMEOUT=30。散在各处的 30 改一个漏一个， Review 见到就标。"}
+{"id": "code-zh-073", "category": "code-zh", "instruction": "函数 200 行怎么拆", "input": "", "output": "按步骤提小函数，一屏一个，名字说清意图。拆完主流程像目录，细节各自成章。"}
+{"id": "code-zh-074", "category": "code-zh", "instruction": "注释写什么不写什么", "input": "", "output": "写为什么不写是什么：hack 原因、坑的编号。代码能说清的别复读。"}
+{"id": "code-zh-075", "category": "code-zh", "instruction": "异常该抛还是该返回", "input": "", "output": "跨层用异常，同层可预期用返回值。别用异常做正常分支，性能可读双输。"}
+{"id": "code-zh-076", "category": "code-zh", "instruction": "性能优化第一步是什么", "input": "", "output": "先测：profile 找热点，优化第一行。凭感觉优化等于随机改代码。"}
+{"id": "code-zh-077", "category": "code-zh", "instruction": "并发 bug 复现不了怎么办", "input": "", "output": "加日志和确定性种子，把并发压成串行复现。修完用压力循环验证，别跑一遍就收。"}
+{"id": "code-zh-078", "category": "code-zh", "instruction": "上线前 checklist 都有啥", "input": "", "output": "单测绿、灰度、回滚方案、监控告警、数据备份。缺一个都别全量。"}
+{"id": "code-zh-079", "category": "code-zh", "instruction": "技术债怎么跟业务谈", "input": "", "output": "翻译成风险和成本：不还，下次需求多几天。每次迭代带一小块，别攒大单。"}
+{"id": "code-zh-080", "category": "code-zh", "instruction": "新人接手老项目先看什么", "input": "", "output": "README、依赖、启动命令、一条 happy path。跑起来再读代码，跑不起来读啥都没用。"}
+{"id": "code-agent-031", "category": "code-agent", "instruction": "用户让你重构，第一步做什么", "input": "", "output": "先读相关文件摸清现状，补最小单测锁行为，再 todo 列步小步改。没单测的重构是裸奔。"}
+{"id": "code-agent-032", "category": "code-agent", "instruction": "测试挂了但代码看着没错怎么办", "input": "", "output": "读第一报错行，写最小复现，git stash 二分最近改动。三板斧下来基本定位。"}
+{"id": "code-agent-033", "category": "code-agent", "instruction": "怎么确认删文件是安全的", "input": "", "output": "glob 看范围，git status 确认干净，先 mv 到 /tmp 放一天再真删。rm 没有后悔药。"}
+{"id": "code-agent-034", "category": "code-agent", "instruction": "线上 bug 的处理顺序", "input": "", "output": "止血第一：回滚限流摘流量；定位第二；复盘加测第三。顺序反了就是次生事故。"}
+{"id": "code-agent-035", "category": "code-agent", "instruction": "给这段代码写 commit message", "input": "", "output": "动词开头一句话：改了什么加为什么，如 fix(retry): 指数退避防惊群。 unrelated 别塞一单。"}
+{"id": "code-agent-036", "category": "code-agent", "instruction": "探索陌生仓库从哪开始", "input": "", "output": "glob 看结构，grep 找入口（main/serve），read 读关键三文件。半小时画出调用链。"}
+{"id": "code-agent-037", "category": "code-agent", "instruction": "多步任务怎么不跑偏", "input": "", "output": "todo_write 先列计划，做完一步勾一步。每偏一次回看清单，清单是方向盘。"}
+{"id": "code-agent-038", "category": "code-agent", "instruction": "改前为什么要先读文件", "input": "", "output": "防改错：先看现状再 edit 精确替换，diff 预览按 y 确认。盲改等于盲焊。"}
+{"id": "code-agent-039", "category": "code-agent", "instruction": "什么时候该停下来问用户", "input": "", "output": "需求模糊、删数据、长时间试错三处先问。问一句省两小时返工。"}
+{"id": "code-agent-040", "category": "code-agent", "instruction": "上下文压缩后丢东西怎么办", "input": "", "output": "关键决定落盘 AGENTS.md/MEMORY.md，压缩只保最近加摘要。内存靠不住，文件靠得住。"}
+{"id": "code-agent-041", "category": "code-agent", "instruction": "code review 重点看什么", "input": "", "output": "先看正确性边界并发安全，再看可读可测。风格分歧放最后，别拿格式挡 bug。"}
+{"id": "code-agent-042", "category": "code-agent", "instruction": "并行任务怎么分工不打架", "input": "", "output": "按文件边界切分，接口先对齐，联调放 todo 里跟踪。共写一文件是冲突之源。"}
+{"id": "code-agent-043", "category": "code-agent", "instruction": "估算工期总翻车怎么办", "input": "", "output": "拆到半天粒度，乘 1.5 报，留联调缓冲。估算不准多半是需求没拆细。"}
+{"id": "code-agent-044", "category": "code-agent", "instruction": "需求中途大改怎么办", "input": "", "output": "冻结已做部分，改动单列 todo 重估。边改边做等于两份工期一份时间。"}
+{"id": "code-agent-045", "category": "code-agent", "instruction": "文档和代码对不上听谁的", "input": "", "output": "听代码和报错，文档当线索。修完代码顺手把文档改了，别留第二个坑。"}
+{"id": "code-agent-046", "category": "code-agent", "instruction": "生产事故复盘怎么写", "input": "", "output": "时间线、根因、止血动作、改进 todo。追责一句话带过，改进三条可落地。"}
+{"id": "code-agent-047", "category": "code-agent", "instruction": "怎么判断任务做完了", "input": "", "output": "验收标准前置：单测绿、手动走一遍、文档更新。三条对勾才算完。"}
+{"id": "code-agent-048", "category": "code-agent", "instruction": "技术选型怎么拍板", "input": "", "output": "列候选、定标准（成熟度/成本/团队熟悉度）、小步验证。拍板记录理由，半年后复看。"}
+{"id": "code-agent-049", "category": "code-agent", "instruction": "线上配置改错了怎么办", "input": "", "output": "先回滚到上版，再diff 找差异。配置变更走 review，别 ssh 上去手改。"}
+{"id": "code-agent-050", "category": "code-agent", "instruction": "怎么带新人熟悉终端助手", "input": "", "output": "先教三件套：read 先行、改前确认、跑完验证。再给 todo 习惯，第三天独立接小活。"}
+{"id": "code-agent-051", "category": "code-agent", "instruction": "深夜被告警叫醒先干什么", "input": "", "output": "看告警原文和 dashboard，先止血限流，再叫人。困着修代码等于酒驾开车。"}
+{"id": "code-agent-052", "category": "code-agent", "instruction": "复现不了的 bug 怎么跟进", "input": "", "output": "加日志、记现象、定下次观察点，todo 挂起别硬耗。放一放，线索会自己长出来。"}

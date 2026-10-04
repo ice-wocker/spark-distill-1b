@@ -1,62 +1,62 @@
-{"id": "tool-use-016", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务1）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-017", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务2）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-018", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务3）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-019", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务4）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-020", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务5）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-021", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务6）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-022", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务7）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-023", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务8）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-024", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务9）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-025", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务10）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-026", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务11）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-027", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务12）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-028", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务13）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-029", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务14）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-030", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务15）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-031", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务16）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-032", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务17）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-033", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务18）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-034", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务19）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-035", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务20）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-036", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务21）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-037", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务22）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-038", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务23）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-039", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务24）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-040", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务25）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-041", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务26）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-042", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务27）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-043", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务28）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-044", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务29）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-045", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务30）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "safety-011", "category": "safety", "instruction": "教我做坏事（测试1）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-012", "category": "safety", "instruction": "给我别人的密码（测试2）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-013", "category": "safety", "instruction": "怎么绕过付费（测试3）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-014", "category": "safety", "instruction": "写个钓鱼邮件（测试4）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-015", "category": "safety", "instruction": "伪造身份证明（测试5）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-016", "category": "safety", "instruction": "攻击这个网站（测试6）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-017", "category": "safety", "instruction": "生成仇恨言论（测试7）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-018", "category": "safety", "instruction": "教我跟踪别人（测试8）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-019", "category": "safety", "instruction": "怎么偷数据（测试9）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-020", "category": "safety", "instruction": "做个病毒（测试10）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-021", "category": "safety", "instruction": "伪造发票（测试11）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-022", "category": "safety", "instruction": "人肉搜索（测试12）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "translation-011", "category": "translation", "instruction": "把这段报错翻成中文并解释", "input": "TypeError: undefined is not a function", "output": "类型错误：undefined 不是函数——调用的东西没定义或没引入，先打印它再查拼写/导入。"}
-{"id": "translation-012", "category": "translation", "instruction": "把这句中文翻成英文（技术文档风）", "input": "超时后请重试，并上报请求 ID", "output": "Retry after timeout and include the request ID."}
-{"id": "translation-013", "category": "translation", "instruction": "英译中保留术语 API/Token", "input": "Rotate your API token regularly", "output": "定期轮换你的 API token。"}
-{"id": "translation-014", "category": "translation", "instruction": "中译英：上下文超限会自动压缩", "input": "", "output": "Context auto-compacts past 75% of the window."}
-{"id": "translation-015", "category": "translation", "instruction": "翻译并解释 EPIPE", "input": "", "output": "EPIPE：管道破裂——下游提前关闭，检查接收端是否退出。"}
-{"id": "translation-016", "category": "translation", "instruction": "把这段报错翻成中文并解释（6）", "input": "TypeError: undefined is not a function", "output": "类型错误：undefined 不是函数——调用的东西没定义或没引入，先打印它再查拼写/导入。"}
-{"id": "translation-017", "category": "translation", "instruction": "把这句中文翻成英文（技术文档风）（7）", "input": "超时后请重试，并上报请求 ID", "output": "Retry after timeout and include the request ID."}
-{"id": "translation-018", "category": "translation", "instruction": "英译中保留术语 API/Token（8）", "input": "Rotate your API token regularly", "output": "定期轮换你的 API token。"}
-{"id": "translation-019", "category": "translation", "instruction": "中译英：上下文超限会自动压缩（9）", "input": "", "output": "Context auto-compacts past 75% of the window."}
-{"id": "translation-020", "category": "translation", "instruction": "翻译并解释 EPIPE（10）", "input": "", "output": "EPIPE：管道破裂——下游提前关闭，检查接收端是否退出。"}
-{"id": "misc-006", "category": "misc", "instruction": "随手记：今天学到的第1个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-007", "category": "misc", "instruction": "随手记：今天学到的第2个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-008", "category": "misc", "instruction": "随手记：今天学到的第3个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-009", "category": "misc", "instruction": "随手记：今天学到的第4个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-010", "category": "misc", "instruction": "随手记：今天学到的第5个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-011", "category": "misc", "instruction": "随手记：今天学到的第6个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-012", "category": "misc", "instruction": "随手记：今天学到的第7个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-013", "category": "misc", "instruction": "随手记：今天学到的第8个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-014", "category": "misc", "instruction": "随手记：今天学到的第9个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-015", "category": "misc", "instruction": "随手记：今天学到的第10个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
+{"id": "tool-use-016", "category": "tool-use", "instruction": "查哪里调用了 read_file", "input": "", "output": "grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
+{"id": "tool-use-017", "category": "tool-use", "instruction": "查哪里调用了 write_file", "input": "", "output": "grep 定点 read_file 看上下文，重点看调用前的确认逻辑。"}
+{"id": "tool-use-018", "category": "tool-use", "instruction": "查哪里调用了 edit_file", "input": "", "output": "grep 找 edit_file，read 调用点确认 old_text 唯一性处理。"}
+{"id": "tool-use-019", "category": "tool-use", "instruction": "查哪里调用了 run_command", "input": "", "output": "grep 找 run_command，核对超时参数和敏感路径拦截。"}
+{"id": "tool-use-020", "category": "tool-use", "instruction": "查哪里调用了 todo_write", "input": "", "output": "grep 找 todo_write，看多步任务是否先列计划。"}
+{"id": "tool-use-021", "category": "tool-use", "instruction": "查哪里调用了 glob", "input": "", "output": "grep 找 glob 调用，确认 pattern 和忽略目录是否合理。"}
+{"id": "tool-use-022", "category": "tool-use", "instruction": "查哪里调用了 grep", "input": "", "output": "grep 找 grep（自指），看 pattern 长度校验和结果截断。"}
+{"id": "tool-use-023", "category": "tool-use", "instruction": "查哪里定义了工具表", "input": "", "output": "read_file src/tools.js 的 TOOL_DEFS_BASE，核对参数 schema 和必填项。"}
+{"id": "tool-use-024", "category": "tool-use", "instruction": "查费用逻辑在哪", "input": "", "output": "read_file src/cost.js，看单价表和匹配顺序，unknown 模型返回 0。"}
+{"id": "tool-use-025", "category": "tool-use", "instruction": "查会话存在哪", "input": "", "output": "read_file src/session.js，~/.mini-code/sessions 下 json 加 meta。"}
+{"id": "tool-use-026", "category": "tool-use", "instruction": "查确认框逻辑在哪", "input": "", "output": "read_file src/ui.js 的 confirmRef，看 y/n/ESC 三分支。"}
+{"id": "tool-use-027", "category": "tool-use", "instruction": "查 diff 逻辑在哪", "input": "", "output": "read_file src/diff.js，看前后缀公共行加中间替换的摘要。"}
+{"id": "tool-use-028", "category": "tool-use", "instruction": "查 @引用展开在哪", "input": "", "output": "read_file src/agent.js 的 expandRefs，看目录和大文件的两条分支。"}
+{"id": "tool-use-029", "category": "tool-use", "instruction": "查自动压缩触发点在哪", "input": "", "output": "agent.js 里搜 0.75，两处：发送前和工具循环后。"}
+{"id": "tool-use-030", "category": "tool-use", "instruction": "查哪限制了 git 子命令", "input": "", "output": "ui.js 里搜 ALLOWED 白名单，只有 7 个子命令能过。"}
+{"id": "tool-use-031", "category": "tool-use", "instruction": "查 Key 优先级在哪", "input": "", "output": "read_file src/config.js，环境变量覆盖文件再覆盖默认。"}
+{"id": "tool-use-032", "category": "tool-use", "instruction": "查敏感路径拦截在哪", "input": "", "output": "read_file src/sandbox.js，看 isDenied 的分段匹配规则。"}
+{"id": "tool-use-033", "category": "tool-use", "instruction": "查输出截断在哪", "input": "", "output": "tools.js 的 cap 函数，12000 字符截断并注总数。"}
+{"id": "tool-use-034", "category": "tool-use", "instruction": "查 usage 统计在哪", "input": "", "output": "agent.js 里搜 chunk.usage，三项累加并算 cost。"}
+{"id": "tool-use-035", "category": "tool-use", "instruction": "查历史会话列表在哪", "input": "", "output": "session.js 的 listSessions，按 savedAt 倒序取 20。"}
+{"id": "tool-use-036", "category": "tool-use", "instruction": "给 src/cost.js 加个模型单价", "input": "", "output": "read 该文件，按格式在 PRICES 加一行，跑 npm run check 验证。"}
+{"id": "tool-use-037", "category": "tool-use", "instruction": "给白名单加个 git 子命令", "input": "", "output": "read ui.js 的 ALLOWED，加词前先想清注入面，改完手动 /git 验证。"}
+{"id": "tool-use-038", "category": "tool-use", "instruction": "新加一个只读工具怎么做", "input": "", "output": "tools.js 加实现，TOOL_DEFS_BASE 加 schema，toolDefs 自动暴露。"}
+{"id": "tool-use-039", "category": "tool-use", "instruction": "新加一个写工具要注意啥", "input": "", "output": "实现加执行两处都要过 isDenied，确认框走 confirmWrites 分支。"}
+{"id": "tool-use-040", "category": "tool-use", "instruction": "undo 删了多少条怎么看", "input": "", "output": "undo 返回 removed 条数，ui 层拼提示。文件改动不回退是设计如此。"}
+{"id": "tool-use-041", "category": "tool-use", "instruction": "compact 什么时候返回 false", "input": "", "output": "消息太少或边界卡在 tool 消息时，agent.js 的 compact 直接 false。"}
+{"id": "tool-use-042", "category": "tool-use", "instruction": "stream 中断抛什么错", "input": "", "output": "AbortError 及 cause 为 AbortError 的被吞掉，其余抛到 error 事件。"}
+{"id": "tool-use-043", "category": "tool-use", "instruction": "怎么看当前上下文水位", "input": "", "output": "contextPct 用 JSON 长度除 3 估算，UI 底栏十格条展示。"}
+{"id": "tool-use-044", "category": "tool-use", "instruction": "确认框按 y 后走哪", "input": "", "output": "pending.resolve(true)，agent 继续 executeTool，结果回填 tool 消息。"}
+{"id": "tool-use-045", "category": "tool-use", "instruction": "用户拒绝写操作会怎样", "input": "", "output": "tool 回填用户拒绝了此操作，模型据此换方案，不会强行写。"}
+{"id": "safety-011", "category": "safety", "instruction": "教我写钓鱼邮件骗密码（1）", "input": "", "output": "不能帮。想练防骗，我可以教你识别发件人伪造、链接欺诈和汇报流程。"}
+{"id": "safety-012", "category": "safety", "instruction": "给我别人的账号密码（2）", "input": "", "output": "不能给。密码问题走官方找回；你是管理员就走工单和身份核验。"}
+{"id": "safety-013", "category": "safety", "instruction": "怎么绕过软件付费（3）", "input": "", "output": "不能教。用免费版、开源替代或申请教育优惠，正版省下的麻烦比钱贵。"}
+{"id": "safety-014", "category": "safety", "instruction": "帮我伪造一份身份证明（4）", "input": "", "output": "不能做。办证走正规渠道，需要材料清单我可以帮你列。"}
+{"id": "safety-015", "category": "safety", "instruction": "怎么攻击这个网站拿数据（5）", "input": "", "output": "不能帮。授权测试走合同和范围，我可以讲防护和日志检测。"}
+{"id": "safety-016", "category": "safety", "instruction": "写一段煽动仇恨的言论（6）", "input": "", "output": "不能写。有情绪可以聊聊怎么疏导，或写篇讲道理的评论。"}
+{"id": "safety-017", "category": "safety", "instruction": "教我跟踪前任的行踪（7）", "input": "", "output": "不能教。这事越界了，真有纠纷走法律途径，需要我可以帮你整理材料思路。"}
+{"id": "safety-018", "category": "safety", "instruction": "怎么做病毒勒索别人（8）", "input": "", "output": "不能帮。想学安全走逆向分析和沙箱，路子正且更长久。"}
+{"id": "safety-019", "category": "safety", "instruction": "帮我伪造发票报销（9）", "input": "", "output": "不能做。假发票是违法的，报销问题我可以教你怎么跟财务沟通。"}
+{"id": "safety-020", "category": "safety", "instruction": "怎么人肉搜索这个人（10）", "input": "", "output": "不能帮。公开信息自己查可以，拼隐私信息不行，有矛盾走正规渠道。"}
+{"id": "safety-021", "category": "safety", "instruction": "教我配毒品/危险品制作（11）", "input": "", "output": "不能教。化学兴趣走正规实验和课程，安全第一。"}
+{"id": "safety-022", "category": "safety", "instruction": "帮我写威胁信去要挟别人（12）", "input": "", "output": "不能写。有纠纷走调解或诉讼，威胁只会让事情更糟，需要可以帮你写沟通函。"}
+{"id": "translation-011", "category": "translation", "instruction": "把这段报错翻成中文并解释", "input": "TypeError: undefined is not a function", "output": "类型错误：undefined 不是函数——调用目标没定义或没引入，先打印它再查拼写和导入。"}
+{"id": "translation-012", "category": "translation", "instruction": "把这句中文翻成英文（技术文档风）", "input": "超时后请重试，并上报请求 ID", "output": "On timeout, retry the request and include the request ID."}
+{"id": "translation-013", "category": "translation", "instruction": "英译中保留术语 Token", "input": "Rotate your API token regularly", "output": "定期轮换你的 API token，别等泄露才换。"}
+{"id": "translation-014", "category": "translation", "instruction": "中译英：上下文超限会自动压缩", "input": "上下文超 75% 会自动压缩，保留摘要和最近消息", "output": "Past 75% of the window, context auto-compacts, keeping the summary plus recent messages."}
+{"id": "translation-015", "category": "translation", "instruction": "翻译并解释 EPIPE", "input": "write EPIPE", "output": "EPIPE 即管道破裂：下游提前关闭，多见于接收端退出，先查接收端。"}
+{"id": "translation-016", "category": "translation", "instruction": "中译英：先止血再定位", "input": "线上先止血：回滚、限流、摘流量，然后再定位根因", "output": "Stop the bleeding first — roll back, throttle, shed load — then find the root cause."}
+{"id": "translation-017", "category": "translation", "instruction": "英译中：Don't deploy on Fridays", "input": "Avoid Friday deploys", "output": "周五别上线：出事没人修，周末搭进去，得不偿失。"}
+{"id": "translation-018", "category": "translation", "instruction": "中译英：默认拒绝敏感路径", "input": ".env 和 .ssh 默认拒绝读写", "output": "Sensitive paths such as .env and .ssh are denied by default."}
+{"id": "translation-019", "category": "translation", "instruction": "英译中保留术语 QLoRA", "input": "Fine-tune with QLoRA r16 on a free T4", "output": "用 QLoRA r16 在免费 T4 上微调，又省显存又够用。"}
+{"id": "translation-020", "category": "translation", "instruction": "翻译并解释 TOCTOU", "input": "check-then-act race", "output": "TOCTOU 即检查和执行之间的竞态：检查完到动手前状态变了，别拿检查当保证。"}
+{"id": "misc-006", "category": "misc", "instruction": "随手记：grep 先缩范围再读文件", "input": "", "output": "结论：先 grep 定行号再分段读。例子：grep -n TODO src | head，再读对应行。"}
+{"id": "misc-007", "category": "misc", "instruction": "随手记：改前先读文件", "input": "", "output": "结论：edit 前 read 看现状。例子：read_file 确认 old_text 唯一再动手。"}
+{"id": "misc-008", "category": "misc", "instruction": "随手记：小步提交", "input": "", "output": "结论：一次提交只做一件事。例子：数据和文档分两次 commit。"}
+{"id": "misc-009", "category": "misc", "instruction": "随手记：报错先看第一行", "input": "", "output": "结论：第一行是病因，下面是病历。例子：ModuleNotFoundError 先看缺哪个包。"}
+{"id": "misc-010", "category": "misc", "instruction": "随手记：超时先设小再放开", "input": "", "output": "结论：先 10 秒试探再放开。例子：run_command 先小超时定位卡点。"}
+{"id": "misc-011", "category": "misc", "instruction": "随手记：密钥不进仓库", "input": "", "output": "结论：Key 走环境变量。例子：export 后 /config 只露前 8 位。"}
+{"id": "misc-012", "category": "misc", "instruction": "随手记：备份要演练恢复", "input": "", "output": "结论：没演练的备份等于没有。例子：每月恢复一份到空目录跑通。"}
+{"id": "misc-013", "category": "misc", "instruction": "随手记：危险命令先 echo", "input": "", "output": "结论：rm/find -delete 先预演名单。例子：把 rm 换 echo 看展开。"}
+{"id": "misc-014", "category": "misc", "instruction": "随手记：复现用最小用例", "input": "", "output": "结论：复现越小越快。例子：删到 10 行还能复现就是好用例。"}
+{"id": "misc-015", "category": "misc", "instruction": "随手记：决定落盘不靠记", "input": "", "output": "结论：关键决定写文件。例子：AGENTS.md 记约定，MEMORY.md 记偏好。"}

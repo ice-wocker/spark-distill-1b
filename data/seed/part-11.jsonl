@@ -1,62 +1,62 @@
-{"id": "zh-041", "category": "zh", "instruction": "用一句话解释请假（1）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-042", "category": "zh", "instruction": "写个道歉（2）模板", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-043", "category": "zh", "instruction": "给父母解释感谢信（3）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-044", "category": "zh", "instruction": "分析缓存（4）背后的原因", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-045", "category": "zh", "instruction": "给索引（5）写个更新公告", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-046", "category": "zh", "instruction": "备份（6）新手最容易踩的坑", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-047", "category": "zh", "instruction": "复利（7）一句话省钱/省时技巧", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-048", "category": "zh", "instruction": "怎么跟外行讲清拖延（8）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-049", "category": "zh", "instruction": "用一句话解释熬夜（9）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-050", "category": "zh", "instruction": "写个租房（10）模板", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-051", "category": "zh", "instruction": "给父母解释面试（11）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-052", "category": "zh", "instruction": "分析带团队（12）背后的原因", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-053", "category": "zh", "instruction": "给写文档（13）写个更新公告", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-054", "category": "zh", "instruction": "时间管理（14）新手最容易踩的坑", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-055", "category": "zh", "instruction": "健康作息（15）一句话省钱/省时技巧", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-056", "category": "zh", "instruction": "怎么跟外行讲清理财定投（16）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-057", "category": "zh", "instruction": "用一句话解释旅行计划（17）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-058", "category": "zh", "instruction": "写个读书笔记（18）模板", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-059", "category": "zh", "instruction": "给父母解释做饭备菜（19）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-060", "category": "zh", "instruction": "分析通勤（20）背后的原因", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-061", "category": "zh", "instruction": "给养猫（21）写个更新公告", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-062", "category": "zh", "instruction": "装修（22）新手最容易踩的坑", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-063", "category": "zh", "instruction": "买车（23）一句话省钱/省时技巧", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-064", "category": "zh", "instruction": "怎么跟外行讲清跳槽（24）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-065", "category": "zh", "instruction": "用一句话解释请假（25）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-066", "category": "zh", "instruction": "写个道歉（26）模板", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-067", "category": "zh", "instruction": "给父母解释感谢信（27）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-068", "category": "zh", "instruction": "分析缓存（28）背后的原因", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-069", "category": "zh", "instruction": "给索引（29）写个更新公告", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-070", "category": "zh", "instruction": "备份（30）新手最容易踩的坑", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-071", "category": "zh", "instruction": "复利（31）一句话省钱/省时技巧", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-072", "category": "zh", "instruction": "怎么跟外行讲清拖延（32）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "en-031", "category": "en", "instruction": "Explain caching (1) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-032", "category": "en", "instruction": "Write a polite email saying no about retries (2).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-033", "category": "en", "instruction": "What is the difference between pagination (3) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-034", "category": "en", "instruction": "How do I debug auth tokens (4) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-035", "category": "en", "instruction": "Give a 5-item checklist for env config (5).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-036", "category": "en", "instruction": "Explain code review (6) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-037", "category": "en", "instruction": "Write a polite email saying no about standup notes (7).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-038", "category": "en", "instruction": "What is the difference between deadlines (8) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-039", "category": "en", "instruction": "How do I debug backups (9) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-040", "category": "en", "instruction": "Give a 5-item checklist for monitoring (10).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-041", "category": "en", "instruction": "Explain onboarding (11) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-042", "category": "en", "instruction": "Write a polite email saying no about refactoring (12).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-043", "category": "en", "instruction": "What is the difference between time zones (13) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-044", "category": "en", "instruction": "How do I debug rate limits (14) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-045", "category": "en", "instruction": "Give a 5-item checklist for webhooks (15).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-046", "category": "en", "instruction": "Explain caching (16) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-047", "category": "en", "instruction": "Write a polite email saying no about retries (17).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-048", "category": "en", "instruction": "What is the difference between pagination (18) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-049", "category": "en", "instruction": "How do I debug auth tokens (19) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-050", "category": "en", "instruction": "Give a 5-item checklist for env config (20).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-051", "category": "en", "instruction": "Explain code review (21) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-052", "category": "en", "instruction": "Write a polite email saying no about standup notes (22).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-053", "category": "en", "instruction": "What is the difference between deadlines (23) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-054", "category": "en", "instruction": "How do I debug backups (24) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-055", "category": "en", "instruction": "Give a 5-item checklist for monitoring (25).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-056", "category": "en", "instruction": "Explain onboarding (26) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-057", "category": "en", "instruction": "Write a polite email saying no about refactoring (27).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-058", "category": "en", "instruction": "What is the difference between time zones (28) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-059", "category": "en", "instruction": "How do I debug rate limits (29) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-060", "category": "en", "instruction": "Give a 5-item checklist for webhooks (30).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
+{"id": "zh-041", "category": "zh", "instruction": "用一句话解释缓存", "input": "", "output": "缓存就是把算过的结果存起来，下次直接拿，代价是数据可能过期。先定过期时间再用。"}
+{"id": "zh-042", "category": "zh", "instruction": "写个请假模板", "input": "", "output": "标题请假申请，正文三句：事由、时间、交接人。提前发，别卡着点发。"}
+{"id": "zh-043", "category": "zh", "instruction": "给父母解释 fragmented 缓存", "input": "", "output": "跟冰箱剩菜一个道理：留着下顿热一下就能吃，但放久了会坏，要看保质期。"}
+{"id": "zh-044", "category": "zh", "instruction": "分析年轻人存不下钱的原因", "input": "", "output": "主因是固定支出涨得比工资快，外加分期把未来透支了。先记一个月账，答案自己出来。"}
+{"id": "zh-045", "category": "zh", "instruction": "给缓存功能写个更新公告", "input": "", "output": "本次新增查询缓存，列表页快一半。缓存 5 分钟，急着看最新点刷新。"}
+{"id": "zh-046", "category": "zh", "instruction": "备份新手最容易踩的坑", "input": "", "output": "只备不恢复演练。真丢数据那天才发现备份是空的，每月恢复验证一次。"}
+{"id": "zh-047", "category": "zh", "instruction": "索引一句话省时技巧", "input": "", "output": "条件列先加索引，查询从全表扫变直接定位，十万行以上效果立竿见影。"}
+{"id": "zh-048", "category": "zh", "instruction": "怎么跟外行讲清复利", "input": "", "output": "利滚利：今年利息明年也生利息，时间越长差距越大，所以越早开始越值。"}
+{"id": "zh-049", "category": "zh", "instruction": "用一句话解释拖延", "input": "", "output": "拖延是大脑在逃即时痛苦，不是懒。把任务切到 5 分钟能动手，阻力就没了。"}
+{"id": "zh-050", "category": "zh", "instruction": "写个道歉模板", "input": "", "output": "三句：认错具体事、说补救、不找借口。别写小作文，对方要的是态度。"}
+{"id": "zh-051", "category": "zh", "instruction": "给父母解释熬夜的危害", "input": "", "output": "熬夜等于让身体加夜班不给加班费，欠的觉周末补不回来，长期欠会集中报销。"}
+{"id": "zh-052", "category": "zh", "instruction": "分析租房越租越远的原因", "input": "", "output": "市中心涨租快过涨薪，通勤时间换了居住面积。算上通勤，远未必便宜。"}
+{"id": "zh-053", "category": "zh", "instruction": "给面试流程写个更新公告", "input": "", "output": "面试改两轮：首轮技术深聊，次轮业务实战。3 天内必给反馈，不让候选人干等。"}
+{"id": "zh-054", "category": "zh", "instruction": "带团队新手最容易踩的坑", "input": "", "output": "自己上手最快，忍不住全自己干。团队成长慢，半年后你更累。先分能错的小活。"}
+{"id": "zh-055", "category": "zh", "instruction": "写文档一句话省时技巧", "input": "", "output": "先写目录和结论，细节后补。没目录的文档写到一半就散，读者也找不到北。"}
+{"id": "zh-056", "category": "zh", "instruction": "怎么跟外行讲清时间管理", "input": "", "output": "时间管理不是塞满，而是先保重要不紧急的事。每天先干那一件，再处理杂事。"}
+{"id": "zh-057", "category": "zh", "instruction": "用一句话解释健康作息", "input": "", "output": "固定起床比固定睡觉更管用， biological clock 认的是起床光。先锁起床时间。"}
+{"id": "zh-058", "category": "zh", "instruction": "写个感谢信模板", "input": "", "output": "具体谢哪件事、它帮了什么忙、以后怎么回报。三句，真诚比华丽管用。"}
+{"id": "zh-059", "category": "zh", "instruction": "给父母解释理财定投", "input": "", "output": "每月固定买一点，不猜涨跌，靠时间熨平波动。投的是纪律，不是眼光。"}
+{"id": "zh-060", "category": "zh", "instruction": "分析旅行计划总泡汤的原因", "input": "", "output": "计划按理想状态排，没留缓冲和备选。一个航班晚点，全盘崩。关键节点加 B 方案。"}
+{"id": "zh-061", "category": "zh", "instruction": "给读书笔记写个更新公告", "input": "", "output": "笔记改卡片式：一条一卡，带出处和自己的话。方便以后拼文章，不再是大段抄。"}
+{"id": "zh-062", "category": "zh", "instruction": "做饭备菜一句话省时技巧", "input": "", "output": "周末一次备好主食和肉分装，工作日只炒青菜。备菜一小时，换五天不点外卖。"}
+{"id": "zh-063", "category": "zh", "instruction": "通勤新手最容易踩的坑", "input": "", "output": "只看地图时间，不看早晚高峰和换乘。签约前早晚各走一趟再决定。"}
+{"id": "zh-064", "category": "zh", "instruction": "怎么跟外行讲清养猫开销", "input": "", "output": "猫本身不贵，贵的是医疗和意外。先备一年体检疫苗钱，再谈罐头自由。"}
+{"id": "zh-065", "category": "zh", "instruction": "用一句话解释装修超预算", "input": "", "output": "超预算不是工人黑，是你边装边加项。开工前锁死清单，加一项就减一项。"}
+{"id": "zh-066", "category": "zh", "instruction": "写个跳槽交接模板", "input": "", "output": "交接三件：进行中事项、账号权限、坑位记录。交接到能让接手人独立跑一周。"}
+{"id": "zh-067", "category": "zh", "instruction": "给父母解释买车真成本", "input": "", "output": "车价只是首付，油、保险、保养、折价才是大头。一年先算两万养车钱再决定。"}
+{"id": "zh-068", "category": "zh", "instruction": "分析熬夜刷手机停不下来的原因", "input": "", "output": "无限下滑没有结束信号，大脑停不下来。设个硬性停止：定时锁屏或看到闹钟就放下。"}
+{"id": "zh-069", "category": "zh", "instruction": "给租房合同写个检查公告", "input": "", "output": "签前查五项：房东产权、押金退法、维修归谁、提前解约、水电怎么算。口头承诺写进去才算。"}
+{"id": "zh-070", "category": "zh", "instruction": "面试紧张一句话技巧", "input": "", "output": "把面试当互相筛选，你也在面他们。心态一换，表达顺一半。准备三个反问问题压轴。"}
+{"id": "zh-071", "category": "zh", "instruction": "带团队怎么开复盘会", "input": "", "output": "先摆事实时间线，再谈改进，每人一条可落地。追责的话一句带过，多了没人说真话。"}
+{"id": "zh-072", "category": "zh", "instruction": "写文档给谁看决定怎么写", "input": "", "output": "给新人写步骤，给老人写变更。对象错了，写再细也没人看。开头先写读者是谁。"}
+{"id": "en-031", "category": "en", "instruction": "Explain caching simply in 3 sentences.", "input": "", "output": "Cache stores computed results for reuse. Reads get fast, but data can go stale. Always set an expiry before using one. (1/30)"}
+{"id": "en-032", "category": "en", "instruction": "Write a polite email saying no about a deadline extension.", "input": "", "output": "Thank them, state the constraint plainly, offer an alternative date. Short and kind beats long and evasive. (2/30)"}
+{"id": "en-033", "category": "en", "instruction": "What is the difference between retries and redundancy?", "input": "", "output": "Retries repeat the same call; redundancy runs spares in parallel. Use retries for transient blips, redundancy for hard failures. (3/30)"}
+{"id": "en-034", "category": "en", "instruction": "How do I debug auth tokens failing silently?", "input": "", "output": "Decode the token to check expiry and audience first, then compare scopes against the endpoint. Most silent failures are expired or mis-scoped tokens. (4/30)"}
+{"id": "en-035", "category": "en", "instruction": "Give a 5-item checklist for env config.", "input": "", "output": "Names documented, secrets out of repo, defaults safe, missing vars fail fast, staging mirrors prod keys. (5/30)"}
+{"id": "en-036", "category": "en", "instruction": "Explain pagination simply in 3 sentences.", "input": "", "output": "Pagination splits big lists into pages. Keyset pages beat OFFSET on large tables. Always return a cursor for the next page. (6/30)"}
+{"id": "en-037", "category": "en", "instruction": "Write a polite email saying no about a feature request.", "input": "", "output": "Acknowledge the need, explain the tradeoff, suggest the closest alternative. No with a reason keeps trust. (7/30)"}
+{"id": "en-038", "category": "en", "instruction": "What is the difference between monitoring and alerting?", "input": "", "output": "Monitoring records what happens; alerting wakes someone when thresholds break. Alert only on actionable symptoms. (8/30)"}
+{"id": "en-039", "category": "en", "instruction": "How do I debug webhooks that never arrive?", "input": "", "output": "Check the sender's delivery log first, then your firewall and signature verification. Nine times out of ten the receiver rejected the signature. (9/30)"}
+{"id": "en-040", "category": "en", "instruction": "Give a 5-item checklist for onboarding.", "input": "", "output": "Laptop ready day one, buddy assigned, first small task week one, docs tour, feedback at day 30. (10/30)"}
+{"id": "en-041", "category": "en", "instruction": "Explain rate limits simply in 3 sentences.", "input": "", "output": "Rate limits cap calls per window to protect the server. Clients should back off with jitter. Hitting 429 means slow down, not retry harder. (11/30)"}
+{"id": "en-042", "category": "en", "instruction": "Write a polite email saying no about a meeting.", "input": "", "output": "Decline with the reason in one line and propose async instead. Protecting focus is legitimate. (12/30)"}
+{"id": "en-043", "category": "en", "instruction": "What is the difference between backup and archive?", "input": "", "output": "Backups restore recent state fast; archives preserve old data cheaply. Test restores monthly or backups are fiction. (13/30)"}
+{"id": "en-044", "category": "en", "instruction": "How do I debug time zone bugs?", "input": "", "output": "Store UTC everywhere, convert only at display. Reproduce with a fixed clock set to the reporter's zone. (14/30)"}
+{"id": "en-045", "category": "en", "instruction": "Give a 5-item checklist for refactoring.", "input": "", "output": "Tests lock behavior, one area at a time, run suite often, no feature mixing, review the diff before merging. (15/30)"}
+{"id": "en-046", "category": "en", "instruction": "Explain standup notes simply in 3 sentences.", "input": "", "output": "Standups sync blockers, not status theater. Three lines: done, next, blocked. Anything longer becomes a separate talk. (16/30)"}
+{"id": "en-047", "category": "en", "instruction": "Write a polite email saying no about a discount.", "input": "", "output": "Hold the price, explain the value, offer a smaller scope instead. Discounting trains customers to wait. (17/30)"}
+{"id": "en-048", "category": "en", "instruction": "What is the difference between latency and throughput?", "input": "", "output": "Latency is one request's wait; throughput is requests per second. Caching cuts latency, parallelism raises throughput. (18/30)"}
+{"id": "en-049", "category": "en", "instruction": "How do I debug flaky integration tests?", "input": "", "output": "Quarantine the flake, seed randomness, isolate shared state. A test that fails 1% of runs fails 100% of trust. (19/30)"}
+{"id": "en-050", "category": "en", "instruction": "Give a 5-item checklist for incident response.", "input": "", "output": "Detect fast, stop the bleeding, communicate status, fix root cause, write the postmortem. In that order. (20/30)"}
+{"id": "en-051", "category": "en", "instruction": "Explain code review simply in 3 sentences.", "input": "", "output": "Review hunts correctness first, style last. Small diffs get thorough eyes; giant ones get skimmed. Keep them small. (21/30)"}
+{"id": "en-052", "category": "en", "instruction": "Write a polite email saying no about an introduction.", "input": "", "output": "Be honest about the weak tie and decline rather than fake it. Offer something useful instead. (22/30)"}
+{"id": "en-053", "category": "en", "instruction": "What is the difference between horizontal and vertical scaling?", "input": "", "output": "Vertical buys a bigger box; horizontal adds more boxes. Horizontal scales further but demands stateless design. (23/30)"}
+{"id": "en-054", "category": "en", "instruction": "How do I debug slow page loads?", "input": "", "output": "Measure with the network panel first, then split backend vs frontend time. Optimize the biggest slice, not the easiest. (24/30)"}
+{"id": "en-055", "category": "en", "instruction": "Give a 5-item checklist for standup notes.", "input": "", "output": "Yesterday done, today planned, blockers named, owner per blocker, parked topics listed. (25/30)"}
+{"id": "en-056", "category": "en", "instruction": "Explain deadlines simply in 3 sentences.", "input": "", "output": "Deadlines force scope decisions. Split work until each piece fits half a day, then pad for integration. Misses come from lumpy estimates. (26/30)"}
+{"id": "en-057", "category": "en", "instruction": "Write a polite email saying no about open source support.", "input": "", "output": "Point to docs and community channels, state your bandwidth honestly. Boundaries keep maintainers alive. (27/30)"}
+{"id": "en-058", "category": "en", "instruction": "What is the difference between sync and async standups?", "input": "", "output": "Sync suits urgent blockers; async suits distributed teams. Pick one default and escalate deliberately. (28/30)"}
+{"id": "en-059", "category": "en", "instruction": "How do I debug a memory leak in a long process?", "input": "", "output": "Sample RSS over hours, then heap-snapshot twice and diff. Growth between snapshots names the leak. (29/30)"}
+{"id": "en-060", "category": "en", "instruction": "Give a 5-item checklist for deadlines.", "input": "", "output": "Scope written, risks listed, buffer added, demo scheduled, rollback ready. (30/30)"}

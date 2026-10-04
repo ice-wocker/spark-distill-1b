@@ -28,153 +28,153 @@
 {"id": "agent-028", "category": "code-agent", "instruction": "代码 review 时看到不懂的写法，你怎么办？", "input": "", "output": "先查（文档/源码），查不到就问作者，别装懂点 approve。review 的价值就是第二双眼睛，不懂装懂等于没 review。好问题本身就是贡献。"}
 {"id": "agent-029", "category": "code-agent", "instruction": "用户催得急，但你还没验证完，发还是不发？", "input": "", "output": "不发没验证的代码。跟用户说：再给我 X 分钟跑完验证，或者先发回滚预案。赶工发版的 bug，修的时间是验证时间的十倍。"}
 {"id": "agent-030", "category": "code-agent", "instruction": "任务做完了，收尾汇报写什么？", "input": "", "output": "改了什么（文件+行）、怎么验证的（测试输出/截图）、没做什么（明确边界）、下一步建议。让用户一眼知道“可以合了”还是“还有坑”。"}
-{"id": "code-agent-031", "category": "code-agent", "instruction": "用户让你重构，第一步做什么", "input": "", "output": "先读相关文件锁住现状，补最小单测，再 todo 列步小步改。"}
-{"id": "code-agent-032", "category": "code-agent", "instruction": "测试挂了但代码看着没错怎么办", "input": "", "output": "读第一报错行，最小复现，二分最近改动，别全量重写。"}
-{"id": "code-agent-033", "category": "code-agent", "instruction": "怎么确认删文件安全", "input": "", "output": "glob 确认范围+git 状态干净，先移回收站再真删。"}
-{"id": "code-agent-034", "category": "code-agent", "instruction": "线上 bug 处理顺序", "input": "", "output": "止血（回滚/限流）→定位→修复→复盘加测。"}
-{"id": "code-agent-035", "category": "code-agent", "instruction": "怎么写 commit message", "input": "", "output": "动词开头一句话：改了什么+为什么。 unrelated 别塞一起。"}
-{"id": "code-agent-036", "category": "code-agent", "instruction": "探索陌生仓库从哪开始", "input": "", "output": "glob 看结构，grep 找入口，read 读关键三文件。"}
-{"id": "code-agent-037", "category": "code-agent", "instruction": "多步任务怎么不跑偏", "input": "", "output": "todo_write 先列计划，做完一步勾一步，偏了回看清单。"}
-{"id": "code-agent-038", "category": "code-agent", "instruction": "改前为什么要先读文件", "input": "", "output": "防改错：了解现状再 edit 精确替换，diff 预览确认。"}
-{"id": "code-agent-039", "category": "code-agent", "instruction": "什么时候该停下来问用户", "input": "", "output": "需求模糊、破坏性操作、高成本试错前先确认。"}
-{"id": "code-agent-040", "category": "code-agent", "instruction": "自动压缩后丢了上下文怎么办", "input": "", "output": "关键决定写 AGENTS.md/MEMORY.md，压缩只保最近+摘要。"}
-{"id": "code-agent-041", "category": "code-agent", "instruction": "code review 重点看什么", "input": "", "output": "边界、错误处理、并发、安全，其次才是风格。"}
-{"id": "code-agent-042", "category": "code-agent", "instruction": "用户让你重构，第一步做什么（变式12）", "input": "", "output": "先读相关文件锁住现状，补最小单测，再 todo 列步小步改。"}
-{"id": "code-agent-043", "category": "code-agent", "instruction": "测试挂了但代码看着没错怎么办（变式13）", "input": "", "output": "读第一报错行，最小复现，二分最近改动，别全量重写。"}
-{"id": "code-agent-044", "category": "code-agent", "instruction": "怎么确认删文件安全（变式14）", "input": "", "output": "glob 确认范围+git 状态干净，先移回收站再真删。"}
-{"id": "code-agent-045", "category": "code-agent", "instruction": "线上 bug 处理顺序（变式15）", "input": "", "output": "止血（回滚/限流）→定位→修复→复盘加测。"}
-{"id": "code-agent-046", "category": "code-agent", "instruction": "怎么写 commit message（变式16）", "input": "", "output": "动词开头一句话：改了什么+为什么。 unrelated 别塞一起。"}
-{"id": "code-agent-047", "category": "code-agent", "instruction": "探索陌生仓库从哪开始（变式17）", "input": "", "output": "glob 看结构，grep 找入口，read 读关键三文件。"}
-{"id": "code-agent-048", "category": "code-agent", "instruction": "多步任务怎么不跑偏（变式18）", "input": "", "output": "todo_write 先列计划，做完一步勾一步，偏了回看清单。"}
-{"id": "code-agent-049", "category": "code-agent", "instruction": "改前为什么要先读文件（变式19）", "input": "", "output": "防改错：了解现状再 edit 精确替换，diff 预览确认。"}
-{"id": "code-agent-050", "category": "code-agent", "instruction": "什么时候该停下来问用户（变式20）", "input": "", "output": "需求模糊、破坏性操作、高成本试错前先确认。"}
-{"id": "code-agent-051", "category": "code-agent", "instruction": "自动压缩后丢了上下文怎么办（变式21）", "input": "", "output": "关键决定写 AGENTS.md/MEMORY.md，压缩只保最近+摘要。"}
-{"id": "code-agent-052", "category": "code-agent", "instruction": "code review 重点看什么（变式22）", "input": "", "output": "边界、错误处理、并发、安全，其次才是风格。"}
-{"id": "code-en-001", "category": "code-en", "instruction": "How do I fix 'IndexError: list index out of range' in Python?", "input": "nums=[1,2,3]\nprint(nums[3])", "output": "You're accessing an index past the end. Print len(lst) first, then guard with `if i < len(lst)`. Last element is lst[-1], not lst[len(lst)]."}
-{"id": "code-en-002", "category": "code-en", "instruction": "How do I read a file line by line in Python without loading it all?", "input": "", "output": "Use `with open('f.txt') as f:\n for line in f: ...` — the file object is already an iterator, memory stays flat."}
-{"id": "code-en-003", "category": "code-en", "instruction": "What does 'NoneType has no attribute' mean? (case 3)", "input": "user = find(id)\nprint(user.name)", "output": "A variable you expected to hold an object is None. Trace where it's assigned — usually a function that returns nothing, or a failed lookup."}
-{"id": "code-en-004", "category": "code-en", "instruction": "How do I parse JSON safely in Python? (case 4)", "input": "", "output": "Wrap it: `try:\n data=json.loads(s)\nexcept json.JSONDecodeError as e:\n ...`. Never trust raw input; validate keys with .get()."}
-{"id": "code-en-005", "category": "code-en", "instruction": "How do I make an HTTP GET request with timeout in Python? (case 5)", "input": "", "output": "`requests.get(url, timeout=10)` and catch RequestException. Always set a timeout — default waits forever."}
-{"id": "code-en-006", "category": "code-en", "instruction": "How do I run a shell command from Python and capture output? (case 6)", "input": "", "output": "`subprocess.run(cmd, capture_output=True, text=True, timeout=60)`. Prefer a list argv over shell=True to avoid injection."}
-{"id": "code-en-007", "category": "code-en", "instruction": "How do I fix a Python import error for a local module? (case 7)", "input": "", "output": "Run from the project root so the package is on sys.path, or set PYTHONPATH. Check the filename has no typo and includes __init__.py if needed."}
-{"id": "code-en-008", "category": "code-en", "instruction": "How do I sort a list of dicts by a key in Python? (case 8)", "input": "", "output": "`sorted(rows, key=lambda r: r['age'])`. Add `reverse=True` for descending; use `.get('age', 0)` if keys may be missing."}
-{"id": "code-en-009", "category": "code-en", "instruction": "How do I handle missing dict keys without KeyError? (case 9)", "input": "", "output": "Use `d.get('k', default)` or `collections.defaultdict`. Reserve try/except for truly exceptional cases."}
-{"id": "code-en-010", "category": "code-en", "instruction": "How do I write a retry loop with backoff in Python? (case 10)", "input": "", "output": "Loop N times, sleep `2**attempt` seconds between tries, catch only the expected exception. Give up loudly after the last attempt."}
-{"id": "code-en-011", "category": "code-en", "instruction": "How do I debug a Node.js script that exits silently? (case 11)", "input": "", "output": "Run with `node --trace-uncaught script.js`, add `--unhandled-rejections=strict`, and log at entry/exit. Silent exits are usually swallowed promise rejections."}
-{"id": "code-en-012", "category": "code-en", "instruction": "How do I read stdin in Node.js for a CLI pipe? (case 12)", "input": "echo hi | node cli.js", "output": "Set encoding, resume stdin, accumulate 'data', act on 'end'. For TTY prompts use readline instead."}
-{"id": "code-en-013", "category": "code-en", "instruction": "How do I implement timeout for fetch in JavaScript? (case 13)", "input": "", "output": "Use AbortController with setTimeout, then fetch(url, {signal}). Clear the timer on success."}
-{"id": "code-en-014", "category": "code-en", "instruction": "How do I debounce a function in JavaScript? (case 14)", "input": "", "output": "Keep a timer id; on each call clearTimeout and set a new one. The wrapped fn runs only after calls stop for `ms`."}
-{"id": "code-en-015", "category": "code-en", "instruction": "How do I deep-clone an object in modern JavaScript? (case 15)", "input": "", "output": "Use `structuredClone(obj)` — handles nesting, Dates, Maps. JSON round-trip loses types and functions."}
-{"id": "code-en-016", "category": "code-en", "instruction": "How do I fix 'Cannot read properties of undefined' in JS? (case 16)", "input": "cfg.db.host", "output": "Something in the chain is undefined. Add `?.` optional chaining or a guard, then find which step produced undefined."}
-{"id": "code-en-017", "category": "code-en", "instruction": "How do I paginate an array in JavaScript? (case 17)", "input": "", "output": "`arr.slice(page*size, page*size+size)`. Validate page bounds; empty slice means past the end."}
-{"id": "code-en-018", "category": "code-en", "instruction": "How do I run tasks with limited concurrency in JS? (case 18)", "input": "", "output": "Keep a pool of N workers pulling from a queue with Promise.race, or use the p-limit package. Never Promise.all a huge list blindly."}
-{"id": "code-en-019", "category": "code-en", "instruction": "How do I validate an email address pragmatically? (case 19)", "input": "", "output": "Check for one @, a dot after it, and no spaces: `/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/`. Real validation is sending a confirmation mail."}
-{"id": "code-en-020", "category": "code-en", "instruction": "How do I generate a unique id in JavaScript? (case 20)", "input": "", "output": "`crypto.randomUUID()` in modern runtimes. For short ids use crypto.getRandomValues, not Math.random."}
-{"id": "code-en-021", "category": "code-en", "instruction": "How do I fix a flaky test that passes locally but fails in CI? (case 21)", "input": "", "output": "Usual suspects: timing, timezone, leftover state, parallelism. Seed randomness, isolate state per test, rerun with --runInBand to confirm."}
-{"id": "code-en-022", "category": "code-en", "instruction": "Explain list slicing #1 in one paragraph for a beginner.", "input": "", "output": "Start from what problem list slicing solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-023", "category": "code-en", "instruction": "Explain dict merging #2 in one paragraph for a beginner.", "input": "", "output": "Start from what problem dict merging solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-024", "category": "code-en", "instruction": "Explain string formatting #3 in one paragraph for a beginner.", "input": "", "output": "Start from what problem string formatting solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-025", "category": "code-en", "instruction": "Explain file paths #4 in one paragraph for a beginner.", "input": "", "output": "Start from what problem file paths solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-026", "category": "code-en", "instruction": "Explain regex basics #5 in one paragraph for a beginner.", "input": "", "output": "Start from what problem regex basics solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-027", "category": "code-en", "instruction": "Explain exception handling #6 in one paragraph for a beginner.", "input": "", "output": "Start from what problem exception handling solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-028", "category": "code-en", "instruction": "Explain virtual environments #7 in one paragraph for a beginner.", "input": "", "output": "Start from what problem virtual environments solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-029", "category": "code-en", "instruction": "Explain pip installs #8 in one paragraph for a beginner.", "input": "", "output": "Start from what problem pip installs solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-030", "category": "code-en", "instruction": "Explain JSON parsing #9 in one paragraph for a beginner.", "input": "", "output": "Start from what problem JSON parsing solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-031", "category": "code-en", "instruction": "Explain HTTP timeouts #10 in one paragraph for a beginner.", "input": "", "output": "Start from what problem HTTP timeouts solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-032", "category": "code-en", "instruction": "Explain prompt chaining #11 in one paragraph for a beginner.", "input": "", "output": "Start from what problem prompt chaining solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-033", "category": "code-en", "instruction": "Explain API retries #12 in one paragraph for a beginner.", "input": "", "output": "Start from what problem API retries solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-034", "category": "code-en", "instruction": "Explain pagination #13 in one paragraph for a beginner.", "input": "", "output": "Start from what problem pagination solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-035", "category": "code-en", "instruction": "Explain caching #14 in one paragraph for a beginner.", "input": "", "output": "Start from what problem caching solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-036", "category": "code-en", "instruction": "Explain async loops #15 in one paragraph for a beginner.", "input": "", "output": "Start from what problem async loops solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-037", "category": "code-en", "instruction": "Explain env config #16 in one paragraph for a beginner.", "input": "", "output": "Start from what problem env config solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-038", "category": "code-en", "instruction": "Explain git stash #17 in one paragraph for a beginner.", "input": "", "output": "Start from what problem git stash solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-039", "category": "code-en", "instruction": "Explain docker volumes #18 in one paragraph for a beginner.", "input": "", "output": "Start from what problem docker volumes solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-040", "category": "code-en", "instruction": "Explain SQL joins #19 in one paragraph for a beginner.", "input": "", "output": "Start from what problem SQL joins solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-041", "category": "code-en", "instruction": "Explain CSS centering #20 in one paragraph for a beginner.", "input": "", "output": "Start from what problem CSS centering solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-042", "category": "code-en", "instruction": "Explain promise chains #21 in one paragraph for a beginner.", "input": "", "output": "Start from what problem promise chains solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-043", "category": "code-en", "instruction": "Explain event listeners #22 in one paragraph for a beginner.", "input": "", "output": "Start from what problem event listeners solves, give one concrete example, then one caveat. Skip history unless asked."}
-{"id": "code-en-044", "category": "code-en", "instruction": "What is the most common mistake with list slicing #23?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-045", "category": "code-en", "instruction": "What is the most common mistake with dict merging #24?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-046", "category": "code-en", "instruction": "What is the most common mistake with string formatting #25?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-047", "category": "code-en", "instruction": "What is the most common mistake with file paths #26?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-048", "category": "code-en", "instruction": "What is the most common mistake with regex basics #27?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-049", "category": "code-en", "instruction": "What is the most common mistake with exception handling #28?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-050", "category": "code-en", "instruction": "What is the most common mistake with virtual environments #29?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-051", "category": "code-en", "instruction": "What is the most common mistake with pip installs #30?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-052", "category": "code-en", "instruction": "What is the most common mistake with JSON parsing #31?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-053", "category": "code-en", "instruction": "What is the most common mistake with HTTP timeouts #32?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-054", "category": "code-en", "instruction": "What is the most common mistake with prompt chaining #33?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-055", "category": "code-en", "instruction": "What is the most common mistake with API retries #34?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-056", "category": "code-en", "instruction": "What is the most common mistake with pagination #35?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-057", "category": "code-en", "instruction": "What is the most common mistake with caching #36?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-058", "category": "code-en", "instruction": "What is the most common mistake with async loops #37?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-059", "category": "code-en", "instruction": "What is the most common mistake with env config #38?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-060", "category": "code-en", "instruction": "What is the most common mistake with git stash #39?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-061", "category": "code-en", "instruction": "What is the most common mistake with docker volumes #40?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-062", "category": "code-en", "instruction": "What is the most common mistake with SQL joins #41?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-063", "category": "code-en", "instruction": "What is the most common mistake with CSS centering #42?", "input": "", "output": "Skipping validation of inputs and edge cases. Write one failing test first, then fix."}
-{"id": "code-en-064", "category": "code-en", "instruction": "How do I merge two dictionaries in Python?", "input": "a={'x':1}\nb={'y':2}", "output": "`{**a, **b}` or `a | b` (3.9+). Later keys win; neither input is mutated with `|`."}
-{"id": "code-en-065", "category": "code-en", "instruction": "How do I check if a file exists in Python?", "input": "", "output": "`pathlib.Path('f').exists()` for existence, `.is_file()` to exclude dirs. Avoid try/except for flow control here."}
-{"id": "code-en-066", "category": "code-en", "instruction": "How do I format strings cleanly in Python? (case 3)", "input": "", "output": "f-strings: `f'{name}={val}'`. For floats `f'{x:.2f}'`. Keep expressions inside {} trivial."}
-{"id": "code-en-067", "category": "code-en", "instruction": "How do I slice the last N elements of a list? (case 4)", "input": "", "output": "`lst[-n:]`. Negative indices count from the end; empty list returns empty, never errors."}
-{"id": "code-en-068", "category": "code-en", "instruction": "How do I remove duplicates while keeping order? (case 5)", "input": "", "output": "`list(dict.fromkeys(items))`. Hashable-only; for dicts key on one field instead."}
-{"id": "code-en-069", "category": "code-en", "instruction": "How do I count occurrences in a list? (case 6)", "input": "", "output": "`collections.Counter(items)`. Then `.most_common(3)` for top-N."}
-{"id": "code-en-070", "category": "code-en", "instruction": "How do I zip two lists into a dict? (case 7)", "input": "", "output": "`dict(zip(keys, vals))`. Stops at the shorter; assert equal lengths first if that matters."}
-{"id": "code-en-071", "category": "code-en", "instruction": "How do I flatten one level of nesting? (case 8)", "input": "", "output": "`[x for sub in rows for x in sub]`. Only for one level; deeper needs a recursive helper."}
-{"id": "code-en-072", "category": "code-en", "instruction": "How do I shuffle a list reproducibly? (case 9)", "input": "", "output": "`random.Random(seed).shuffle(lst)`. Global random.seed affects everything — prefer a local instance."}
-{"id": "code-en-073", "category": "code-en", "instruction": "How do I measure elapsed time in Python? (case 10)", "input": "", "output": "`t=time.perf_counter()` around the block, subtract. Use perf_counter, not time.time, for durations."}
-{"id": "code-en-074", "category": "code-en", "instruction": "How do I profile a slow Python function? (case 11)", "input": "", "output": "First `python -X perf script.py`, then cProfile on the suspect: `python -m cProfile -s cumulative`. Optimize the top row only."}
-{"id": "code-en-075", "category": "code-en", "instruction": "How do I stream a large download in Python? (case 12)", "input": "", "output": "`requests.get(url, stream=True)` + iter_content(chunk_size=8192). Never .content a huge file into RAM."}
-{"id": "code-en-076", "category": "code-en", "instruction": "How do I set default dict values cleanly? (case 13)", "input": "", "output": "`collections.defaultdict(list)` auto-creates on first access. Plain dicts: `d.setdefault(k, [])`."}
-{"id": "code-en-077", "category": "code-en", "instruction": "How do I compare two JSON objects ignoring key order? (case 14)", "input": "a='{\"x\":1,\"y\":2}'", "output": "Load both and compare dicts directly — order never matters for =="}
-{"id": "code-en-078", "category": "code-en", "instruction": "How do I find the largest file under a directory? (case 15)", "input": "", "output": "Walk with pathlib rglob, track max by stat().st_size. Skip symlinks unless you mean them."}
-{"id": "code-en-079", "category": "code-en", "instruction": "How do I validate CLI arguments in Node without a library? (case 16)", "input": "", "output": "Parse process.argv manually, check required flags, print usage and exit(2) on error. Add a library only when flags grow."}
-{"id": "code-en-080", "category": "code-en", "instruction": "How do I exit a Node CLI with a proper error code? (case 17)", "input": "", "output": "Print to stderr and `process.exit(1)` for errors, `2` for usage errors. Zero means success — keep it."}
-{"id": "code-en-081", "category": "code-en", "instruction": "How do I watch a file for changes in Node? (case 18)", "input": "", "output": "`fs.watchFile` for polling reliability, `fs.watch` for speed. Debounce the callback — editors fire bursts."}
-{"id": "code-en-082", "category": "code-en", "instruction": "How do I limit JSON body size in an HTTP server? (case 19)", "input": "", "output": "Accumulate chunks, abort past N bytes (e.g. 1MB) with 413. Never parse unbounded input."}
-{"id": "code-en-083", "category": "code-en", "instruction": "How do I sanitize terminal output in a CLI? (case 20)", "input": "", "output": "Strip ANSI/OSC escape sequences before rendering untrusted text — same as mini-code's sanitize. Prevents clipboard hijack."}
-{"id": "code-en-084", "category": "code-en", "instruction": "Give me a checklist for reviewing pip installs #101 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-085", "category": "code-en", "instruction": "Give me a checklist for reviewing JSON parsing #102 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-086", "category": "code-en", "instruction": "Give me a checklist for reviewing HTTP timeouts #103 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-087", "category": "code-en", "instruction": "Give me a checklist for reviewing prompt chaining #104 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-088", "category": "code-en", "instruction": "Give me a checklist for reviewing API retries #105 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-089", "category": "code-en", "instruction": "Give me a checklist for reviewing pagination #106 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-090", "category": "code-en", "instruction": "Give me a checklist for reviewing caching #107 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-091", "category": "code-en", "instruction": "Give me a checklist for reviewing async loops #108 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-092", "category": "code-en", "instruction": "Give me a checklist for reviewing env config #109 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-093", "category": "code-en", "instruction": "Give me a checklist for reviewing git stash #110 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-094", "category": "code-en", "instruction": "Give me a checklist for reviewing docker volumes #111 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-095", "category": "code-en", "instruction": "Give me a checklist for reviewing SQL joins #112 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-096", "category": "code-en", "instruction": "Give me a checklist for reviewing CSS centering #113 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-097", "category": "code-en", "instruction": "Give me a checklist for reviewing promise chains #114 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-098", "category": "code-en", "instruction": "Give me a checklist for reviewing event listeners #115 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-099", "category": "code-en", "instruction": "Give me a checklist for reviewing list slicing #116 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-100", "category": "code-en", "instruction": "Give me a checklist for reviewing dict merging #117 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-101", "category": "code-en", "instruction": "Give me a checklist for reviewing string formatting #118 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-102", "category": "code-en", "instruction": "Give me a checklist for reviewing file paths #119 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-103", "category": "code-en", "instruction": "Give me a checklist for reviewing regex basics #120 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-104", "category": "code-en", "instruction": "Give me a checklist for reviewing exception handling #121 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-105", "category": "code-en", "instruction": "Give me a checklist for reviewing virtual environments #122 code.", "input": "", "output": "1) inputs validated 2) errors handled 3) no secrets 4) tests cover edges 5) naming clear."}
-{"id": "code-en-106", "category": "code-en", "instruction": "How do I test pip installs #123 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-107", "category": "code-en", "instruction": "How do I test JSON parsing #124 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-108", "category": "code-en", "instruction": "How do I test HTTP timeouts #125 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-109", "category": "code-en", "instruction": "How do I test prompt chaining #126 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-110", "category": "code-en", "instruction": "How do I test API retries #127 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-111", "category": "code-en", "instruction": "How do I test pagination #128 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-112", "category": "code-en", "instruction": "How do I test caching #129 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-113", "category": "code-en", "instruction": "How do I test async loops #130 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-114", "category": "code-en", "instruction": "How do I test env config #131 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-115", "category": "code-en", "instruction": "How do I test git stash #132 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-116", "category": "code-en", "instruction": "How do I test docker volumes #133 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-117", "category": "code-en", "instruction": "How do I test SQL joins #134 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-118", "category": "code-en", "instruction": "How do I test CSS centering #135 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-119", "category": "code-en", "instruction": "How do I test promise chains #136 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-120", "category": "code-en", "instruction": "How do I test event listeners #137 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-121", "category": "code-en", "instruction": "How do I test list slicing #138 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-122", "category": "code-en", "instruction": "How do I test dict merging #139 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-123", "category": "code-en", "instruction": "How do I test string formatting #140 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-124", "category": "code-en", "instruction": "How do I test file paths #141 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
-{"id": "code-en-125", "category": "code-en", "instruction": "How do I test regex basics #142 quickly from the command line?", "input": "", "output": "Write the smallest runnable snippet, run it, then grow. One assertion per run keeps failures obvious."}
+{"id": "code-agent-031", "category": "code-agent", "instruction": "用户让你重构，第一步做什么", "input": "", "output": "先读相关文件摸清现状，补最小单测锁行为，再 todo 列步小步改。没单测的重构是裸奔。"}
+{"id": "code-agent-032", "category": "code-agent", "instruction": "测试挂了但代码看着没错怎么办", "input": "", "output": "读第一报错行，写最小复现，git stash 二分最近改动。三板斧下来基本定位。"}
+{"id": "code-agent-033", "category": "code-agent", "instruction": "怎么确认删文件是安全的", "input": "", "output": "glob 看范围，git status 确认干净，先 mv 到 /tmp 放一天再真删。rm 没有后悔药。"}
+{"id": "code-agent-034", "category": "code-agent", "instruction": "线上 bug 的处理顺序", "input": "", "output": "止血第一：回滚限流摘流量；定位第二；复盘加测第三。顺序反了就是次生事故。"}
+{"id": "code-agent-035", "category": "code-agent", "instruction": "给这段代码写 commit message", "input": "", "output": "动词开头一句话：改了什么加为什么，如 fix(retry): 指数退避防惊群。 unrelated 别塞一单。"}
+{"id": "code-agent-036", "category": "code-agent", "instruction": "探索陌生仓库从哪开始", "input": "", "output": "glob 看结构，grep 找入口（main/serve），read 读关键三文件。半小时画出调用链。"}
+{"id": "code-agent-037", "category": "code-agent", "instruction": "多步任务怎么不跑偏", "input": "", "output": "todo_write 先列计划，做完一步勾一步。每偏一次回看清单，清单是方向盘。"}
+{"id": "code-agent-038", "category": "code-agent", "instruction": "改前为什么要先读文件", "input": "", "output": "防改错：先看现状再 edit 精确替换，diff 预览按 y 确认。盲改等于盲焊。"}
+{"id": "code-agent-039", "category": "code-agent", "instruction": "什么时候该停下来问用户", "input": "", "output": "需求模糊、删数据、长时间试错三处先问。问一句省两小时返工。"}
+{"id": "code-agent-040", "category": "code-agent", "instruction": "上下文压缩后丢东西怎么办", "input": "", "output": "关键决定落盘 AGENTS.md/MEMORY.md，压缩只保最近加摘要。内存靠不住，文件靠得住。"}
+{"id": "code-agent-041", "category": "code-agent", "instruction": "code review 重点看什么", "input": "", "output": "先看正确性边界并发安全，再看可读可测。风格分歧放最后，别拿格式挡 bug。"}
+{"id": "code-agent-042", "category": "code-agent", "instruction": "并行任务怎么分工不打架", "input": "", "output": "按文件边界切分，接口先对齐，联调放 todo 里跟踪。共写一文件是冲突之源。"}
+{"id": "code-agent-043", "category": "code-agent", "instruction": "估算工期总翻车怎么办", "input": "", "output": "拆到半天粒度，乘 1.5 报，留联调缓冲。估算不准多半是需求没拆细。"}
+{"id": "code-agent-044", "category": "code-agent", "instruction": "需求中途大改怎么办", "input": "", "output": "冻结已做部分，改动单列 todo 重估。边改边做等于两份工期一份时间。"}
+{"id": "code-agent-045", "category": "code-agent", "instruction": "文档和代码对不上听谁的", "input": "", "output": "听代码和报错，文档当线索。修完代码顺手把文档改了，别留第二个坑。"}
+{"id": "code-agent-046", "category": "code-agent", "instruction": "生产事故复盘怎么写", "input": "", "output": "时间线、根因、止血动作、改进 todo。追责一句话带过，改进三条可落地。"}
+{"id": "code-agent-047", "category": "code-agent", "instruction": "怎么判断任务做完了", "input": "", "output": "验收标准前置：单测绿、手动走一遍、文档更新。三条对勾才算完。"}
+{"id": "code-agent-048", "category": "code-agent", "instruction": "技术选型怎么拍板", "input": "", "output": "列候选、定标准（成熟度/成本/团队熟悉度）、小步验证。拍板记录理由，半年后复看。"}
+{"id": "code-agent-049", "category": "code-agent", "instruction": "线上配置改错了怎么办", "input": "", "output": "先回滚到上版，再diff 找差异。配置变更走 review，别 ssh 上去手改。"}
+{"id": "code-agent-050", "category": "code-agent", "instruction": "怎么带新人熟悉终端助手", "input": "", "output": "先教三件套：read 先行、改前确认、跑完验证。再给 todo 习惯，第三天独立接小活。"}
+{"id": "code-agent-051", "category": "code-agent", "instruction": "深夜被告警叫醒先干什么", "input": "", "output": "看告警原文和 dashboard，先止血限流，再叫人。困着修代码等于酒驾开车。"}
+{"id": "code-agent-052", "category": "code-agent", "instruction": "复现不了的 bug 怎么跟进", "input": "", "output": "加日志、记现象、定下次观察点，todo 挂起别硬耗。放一放，线索会自己长出来。"}
+{"id": "code-en-001", "category": "code-en", "instruction": "How do I fix 'IndexError: list index out of range' in Python?", "input": "nums=[1,2,3]\nprint(nums[3])", "output": "You're reading past the end. Print len(lst) first, then guard with `if i < len(lst)`. Last element is lst[-1], never lst[len(lst)]."}
+{"id": "code-en-002", "category": "code-en", "instruction": "How do I read a big file line by line in Python?", "input": "", "output": "Iterate the file object directly: `with open('f.txt') as f:\n for line in f: ...`. Memory stays flat no matter the size."}
+{"id": "code-en-003", "category": "code-en", "instruction": "What does 'NoneType has no attribute' mean?", "input": "user = find(id)\nprint(user.name)", "output": "A variable you assumed holds an object is None. Trace its assignment — usually a function missing return, or a failed dict lookup."}
+{"id": "code-en-004", "category": "code-en", "instruction": "How do I parse JSON safely in Python?", "input": "", "output": "Wrap it: `try:\n data=json.loads(s)\nexcept json.JSONDecodeError:\n data={}`. Then read fields with .get(), never direct indexing on untrusted data."}
+{"id": "code-en-005", "category": "code-en", "instruction": "How do I add a timeout to requests.get?", "input": "", "output": "`requests.get(url, timeout=10)` plus `except requests.RequestException`. No timeout means one slow server hangs your whole program."}
+{"id": "code-en-006", "category": "code-en", "instruction": "How do I capture shell output from Python?", "input": "", "output": "`subprocess.run(cmd, capture_output=True, text=True, timeout=60)`. Pass argv as a list instead of shell=True to dodge injection."}
+{"id": "code-en-007", "category": "code-en", "instruction": "Why is my local module not importable?", "input": "import mymod  # ModuleNotFoundError", "output": "Python only searches sys.path. Run from the project root, check the filename spelling, and confirm the package has __init__.py if it's a package."}
+{"id": "code-en-008", "category": "code-en", "instruction": "How do I sort dicts in a list by one key?", "input": "", "output": "`sorted(rows, key=lambda r: r['age'])`, plus reverse=True for descending. Use r.get('age', 0) when some rows lack the key."}
+{"id": "code-en-009", "category": "code-en", "instruction": "How do I avoid KeyError on optional keys?", "input": "", "output": "Use d.get('k', default) for reads and d.setdefault(k, []) for accumulation. Exceptions should stay exceptional."}
+{"id": "code-en-010", "category": "code-en", "instruction": "How do I retry with backoff in Python?", "input": "", "output": "Loop 3 times, sleep 2**attempt seconds between tries, catch only the expected error. Log and re-raise after the final attempt."}
+{"id": "code-en-011", "category": "code-en", "instruction": "How do I debug a Node script that exits silently?", "input": "", "output": "Rerun with `node --trace-uncaught --unhandled-rejections=strict script.js`. Silent exits are almost always swallowed promise rejections."}
+{"id": "code-en-012", "category": "code-en", "instruction": "How do I read piped stdin in Node?", "input": "echo hi | node cli.js", "output": "Set encoding utf8, resume stdin, collect 'data' chunks, act on 'end'. For interactive prompts use readline, not raw stdin."}
+{"id": "code-en-013", "category": "code-en", "instruction": "How do I add a timeout to fetch?", "input": "", "output": "Race it: `Promise.race([fetch(url), delay(5000).then(()=>{throw new Error('timeout')})])`. Or use AbortController and clear the timer on success."}
+{"id": "code-en-014", "category": "code-en", "instruction": "How do I debounce a JS function?", "input": "", "output": "Store a timer id; each call clears it and sets a fresh setTimeout. The real function fires only after calls pause for `ms`."}
+{"id": "code-en-015", "category": "code-en", "instruction": "How do I deep-clone in modern JS?", "input": "", "output": "Call structuredClone(obj) — keeps Dates, Maps, nested arrays. The JSON round-trip trick silently drops functions and undefined."}
+{"id": "code-en-016", "category": "code-en", "instruction": "How do I fix 'Cannot read properties of undefined'?", "input": "cfg.db.host", "output": "One link in the chain is undefined. Add `?.` to survive it, then console.log each step to find which one produced undefined."}
+{"id": "code-en-017", "category": "code-en", "instruction": "How do I paginate an array in JS?", "input": "", "output": "`arr.slice(page*size, page*size+size)`. Clamp page to valid range; an empty slice simply means you're past the end."}
+{"id": "code-en-018", "category": "code-en", "instruction": "How do I limit concurrency for many async tasks?", "input": "", "output": "Run a pool of N workers pulling from a shared queue, or use p-limit. Promise.all on thousands of tasks exhausts sockets and memory."}
+{"id": "code-en-019", "category": "code-en", "instruction": "How do I validate email pragmatically in JS?", "input": "", "output": "Check shape with /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/ and confirm by sending a verification mail. No regex proves an address exists."}
+{"id": "code-en-020", "category": "code-en", "instruction": "How do I make a proper unique id in JS?", "input": "", "output": "Use crypto.randomUUID() where available. For short ids use crypto.getRandomValues — Math.random is neither unique nor secure."}
+{"id": "code-en-021", "category": "code-en", "instruction": "Why does my test pass locally but fail in CI?", "input": "", "output": "Top suspects: timing assumptions, timezone, test-order dependence, leftover files. Seed randomness and isolate state per test file."}
+{"id": "code-en-022", "category": "code-en", "instruction": "How do I fix 'port already in use' when starting a server?", "input": "", "output": "Find the holder with `lsof -i :3000` or `ss -lntp`, kill it or switch ports. In dev, add `process.on('SIGTERM')` cleanup so restarts free the port."}
+{"id": "code-en-023", "category": "code-en", "instruction": "How do I handle a promise rejection I can't avoid?", "input": "", "output": "Attach .catch at the boundary where you can act — log with context, return a fallback, and never leave floating promises unhandled."}
+{"id": "code-en-024", "category": "code-en", "instruction": "How do I compare two objects in JS tests?", "input": "", "output": "Use assert.deepStrictEqual, not ===. For dates and unordered arrays, normalize first (sort, map to ISO) so failures are readable."}
+{"id": "code-en-025", "category": "code-en", "instruction": "How do I stream a large file download in Node?", "input": "", "output": "Pipe response.body through fs.createWriteStream with backpressure; never await response.text() on gigabyte payloads."}
+{"id": "code-en-026", "category": "code-en", "instruction": "How do I parse CLI flags without dependencies?", "input": "", "output": "Walk process.argv, match --key value pairs, require the mandatory ones, and exit(2) with a usage line on error. Reach for a library past ~5 flags."}
+{"id": "code-en-027", "category": "code-en", "instruction": "How do I make fetch retry once on 5xx?", "input": "", "output": "Loop twice, retry only on 500-599 or network errors, break on 4xx. Add a 1s sleep before the retry and cap total attempts."}
+{"id": "code-en-028", "category": "code-en", "instruction": "How do I find which dependency pulls in a package?", "input": "", "output": "`npm ls <name>` prints the chain. For duplicates, `npm dedupe` or an overrides entry flattens them."}
+{"id": "code-en-029", "category": "code-en", "instruction": "How do I run a script only when files change?", "input": "", "output": "Use `node --watch` for dev reloads, or a file watcher that debounces events — editors save in bursts that trigger duplicate runs."}
+{"id": "code-en-030", "category": "code-en", "instruction": "How do I fix CORS errors during local dev?", "input": "fetch('http://api:8000/x') blocked", "output": "CORS is enforced by the browser, not your code. Proxy the API through your dev server or set Access-Control-Allow-Origin on the backend."}
+{"id": "code-en-031", "category": "code-en", "instruction": "How do I store secrets for a Node app?", "input": "API_KEY=... node app.js", "output": "Read from environment variables, never commit .env. Fail fast at startup listing which vars are missing."}
+{"id": "code-en-032", "category": "code-en", "instruction": "How do I log structured output in Node?", "input": "", "output": "Emit one JSON object per line with level, msg, and a request id. Plain text logs can't be filtered once volume grows."}
+{"id": "code-en-033", "category": "code-en", "instruction": "How do I gracefully shut down an HTTP server?", "input": "", "output": "On SIGTERM: stop accepting, await in-flight requests with a deadline, then close DB pools. Kill -9 is for hangs, not routine deploys."}
+{"id": "code-en-034", "category": "code-en", "instruction": "How do I test an async function that times out?", "input": "", "output": "Await it with assert.rejects and a test-level timeout slightly above the function deadline. Flaky timing means the test needs fake timers."}
+{"id": "code-en-035", "category": "code-en", "instruction": "How do I diff two JSON files quickly?", "input": "diff <(jq -S . a.json) <(jq -S . b.json)", "output": "Normalize with `jq -S .` on both, then plain diff. Key order and whitespace noise disappear."}
+{"id": "code-en-036", "category": "code-en", "instruction": "How do I extract one field from JSON on the CLI?", "input": "", "output": "`jq -r '.items[].name' data.json`. Explore shape first with bare `jq .`, then narrow the filter."}
+{"id": "code-en-037", "category": "code-en", "instruction": "How do I check my public IP from the terminal?", "input": "", "output": "`curl -s ifconfig.me`. For DNS debugging use `dig +short`, not ping."}
+{"id": "code-en-038", "category": "code-en", "instruction": "How do I count lines of code excluding blanks?", "input": "", "output": "`grep -v '^\\s*$' src/*.py | wc -l`. For real stats install tokei — one command, per-language breakdown."}
+{"id": "code-en-039", "category": "code-en", "instruction": "How do I find the largest files under a directory?", "input": "", "output": "`find . -type f -exec du -h {} + | sort -rh | head`. Add `-xdev` to stay on one filesystem."}
+{"id": "code-en-040", "category": "code-en", "instruction": "How do I watch a log file live with filtering?", "input": "", "output": "`tail -F app.log | grep --line-buffered ERROR`. -F survives rotation; --line-buffered keeps output realtime through the pipe."}
+{"id": "code-en-041", "category": "code-en", "instruction": "How do I rerun the last command with sudo?", "input": "", "output": "`sudo !!` re-executes the previous line as root. Check what it was first with `history 1` if you're unsure."}
+{"id": "code-en-042", "category": "code-en", "instruction": "How do I background a running foreground process?", "input": "", "output": "Ctrl+Z suspends, then `bg` resumes in background; `disown` detaches it from the shell so logout won't kill it."}
+{"id": "code-en-043", "category": "code-en", "instruction": "How do I transfer a file between two servers?", "input": "", "output": "`scp file user@host:/path` for one-offs, rsync for repeats. Verify checksums on anything irreplaceable."}
+{"id": "code-en-044", "category": "code-en", "instruction": "How do I check disk space and the biggest hogs?", "input": "", "output": "`df -h` for partitions, then `du -sh * | sort -h` inside the full one. Clear caches before touching data."}
+{"id": "code-en-045", "category": "code-en", "instruction": "How do I see which process eats my RAM?", "input": "", "output": "`ps aux --sort=-%mem | head`. For live view use htop; look at RES, not VIRT."}
+{"id": "code-en-046", "category": "code-en", "instruction": "How do I kill all processes matching a name?", "input": "", "output": "`pkill -f 'pattern'` — quote the pattern and run `pgrep -f 'pattern'` first to preview victims."}
+{"id": "code-en-047", "category": "code-en", "instruction": "How do I run a command at a schedule?", "input": "", "output": "Add a cron line `0 2 * * * /path/backup.sh >>/var/log/b.log 2>&1`. Test the script manually first; cron's PATH is minimal."}
+{"id": "code-en-048", "category": "code-en", "instruction": "How do I keep a command running after logout?", "input": "", "output": "Launch inside tmux, or `nohup cmd &` for fire-and-forget. Tmux wins whenever you may need to reattach."}
+{"id": "code-en-049", "category": "code-en", "instruction": "How do I compare two directories?", "input": "", "output": "`diff -rq dir1 dir2` lists differing files; rsync -avn shows what would sync. Both beat eyeballing."}
+{"id": "code-en-050", "category": "code-en", "instruction": "How do I create a Python venv and install deps?", "input": "", "output": "`python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`. Never pip install into system python."}
+{"id": "code-en-051", "category": "code-en", "instruction": "How do I freeze exact dependency versions?", "input": "", "output": "`pip freeze > requirements.txt` after verifying things work. For apps pin everything; for libraries pin ranges."}
+{"id": "code-en-052", "category": "code-en", "instruction": "How do I speed up Docker builds?", "input": "", "output": "Order Dockerfile steps from least to most changing, copy dependency files first, and enable BuildKit cache mounts for package managers."}
+{"id": "code-en-053", "category": "code-en", "instruction": "How do I inspect why a container exits?", "input": "", "output": "`docker logs <name>` first, then `docker inspect <name> --format='{{.State.ExitCode}}'`. Reproduce with an interactive shell override."}
+{"id": "code-en-054", "category": "code-en", "instruction": "How do I clean up Docker disk usage?", "input": "", "output": "`docker system df` shows the hogs; `docker system prune -a --volumes` reclaims. Run df before and after to confirm."}
+{"id": "code-en-055", "category": "code-en", "instruction": "How do I forward a local port over SSH?", "input": "", "output": "`ssh -L 8080:localhost:80 user@host` maps remote 80 to local 8080. Add -N -f to run it in the background."}
+{"id": "code-en-056", "category": "code-en", "instruction": "How do I generate an SSH key pair safely?", "input": "", "output": "`ssh-keygen -t ed25519 -C 'me@host'`, empty passphrase only for automation accounts, and `chmod 600` the private key."}
+{"id": "code-en-057", "category": "code-en", "instruction": "How do I test an API endpoint quickly?", "input": "", "output": "`curl -s -w '\\n%{http_code}\\n' URL` shows body plus status. For JSON APIs pipe through jq to stay sane."}
+{"id": "code-en-058", "category": "code-en", "instruction": "How do I handle expired TLS certificates locally?", "input": "", "output": "Check expiry with `openssl s_client -connect host:443 | openssl x509 -dates`, renew via your ACME client, then reload — not restart — the service."}
+{"id": "code-en-059", "category": "code-en", "instruction": "How do I merge two dictionaries in Python 3.9+?", "input": "a={'x':1}\nb={'y':2}", "output": "`a | b` returns a new dict with b winning conflicts; `a |= b` updates in place. Both leave the inputs readable."}
+{"id": "code-en-060", "category": "code-en", "instruction": "How do I chunk a list into fixed-size pieces?", "input": "", "output": "`[lst[i:i+n] for i in range(0, len(lst), n)]`. The last chunk is shorter — handle it instead of assuming full size."}
+{"id": "code-en-061", "category": "code-en", "instruction": "How do I deduplicate while preserving order?", "input": "", "output": "`list(dict.fromkeys(items))`. Only works for hashables; for dicts, key on one field like row['id']."}
+{"id": "code-en-062", "category": "code-en", "instruction": "How do I run a one-off Python snippet without a file?", "input": "", "output": "Use `python -c \"print('hi')\"` for throwaways. Anything you run twice deserves a real script under version control."}
+{"id": "code-en-063", "category": "code-en", "instruction": "How do I pretty-print JSON in the terminal?", "input": "", "output": "Pipe through `python -m json.tool`, or jq for color. Never eyeball minified blobs — formatting first saves misreads."}
+{"id": "code-en-064", "category": "code-en", "instruction": "How do I round a float to 2 decimals in Python?", "input": "", "output": "Use f'{x:.2f}' for display, round(x, 2) for values. Floats are binary — money math belongs in Decimal."}
+{"id": "code-en-065", "category": "code-en", "instruction": "How do I flatten one level of nesting in Python?", "input": "", "output": "`[x for sub in rows for x in sub]`. One level only; deeper nesting wants an explicit recursive helper."}
+{"id": "code-en-066", "category": "code-en", "instruction": "How do I count items by category in Python?", "input": "", "output": "`collections.Counter(r['kind'] for r in rows)`. Then .most_common(5) for the top five."}
+{"id": "code-en-067", "category": "code-en", "instruction": "How do I zip two lists into a dict?", "input": "", "output": "`dict(zip(keys, vals))` stops at the shorter list. Assert equal lengths first when mismatch is a bug."}
+{"id": "code-en-068", "category": "code-en", "instruction": "How do I shuffle reproducibly in Python?", "input": "", "output": "`random.Random(42).shuffle(lst)` — a local instance avoids disturbing global random state used elsewhere."}
+{"id": "code-en-069", "category": "code-en", "instruction": "How do I time a code block in Python?", "input": "", "output": "Bracket with time.perf_counter() and subtract. perf_counter is monotonic; time.time can jump backwards."}
+{"id": "code-en-070", "category": "code-en", "instruction": "How do I profile the slowest function?", "input": "", "output": "Run `python -m cProfile -s cumulative script.py` and fix the top row. Guessing hotspots wastes the whole exercise."}
+{"id": "code-en-071", "category": "code-en", "instruction": "How do I stream a large download without RAM blowup?", "input": "", "output": "`requests.get(url, stream=True)` plus iter_content(8192) to disk. Never touch .content on huge files."}
+{"id": "code-en-072", "category": "code-en", "instruction": "How do I compare JSON ignoring key order?", "input": "a='{\"x\":1,\"y\":2}'", "output": "Load both and compare dicts — == ignores order by definition. Normalize with jq -S first for CLI diffs."}
+{"id": "code-en-073", "category": "code-en", "instruction": "How do I check path existence in Python?", "input": "", "output": "pathlib.Path('f').exists() for any entry, .is_file() to exclude directories. Good for preflight checks, not for TOCTOU races."}
+{"id": "code-en-074", "category": "code-en", "instruction": "How do I exit a Node CLI with the right code?", "input": "", "output": "Write errors to stderr, process.exit(1) for failures, exit(2) for usage errors. Zero is reserved for real success."}
+{"id": "code-en-075", "category": "code-en", "instruction": "How do I watch files reliably in Node?", "input": "", "output": "fs.watchFile polls (reliable, slow); fs.watch is instant but platform-quirky. Either way debounce — editors fire save bursts."}
+{"id": "code-en-076", "category": "code-en", "instruction": "How do I cap JSON body size in a server?", "input": "", "output": "Count bytes as chunks arrive and abort past the limit (say 1MB) with 413. Unbounded parsing is a DoS invitation."}
+{"id": "code-en-077", "category": "code-en", "instruction": "How do I sanitize untrusted text for terminal display?", "input": "", "output": "Strip ANSI/OSC escapes before printing — same idea as mini-code's sanitize. Otherwise output can hijack the clipboard."}
+{"id": "code-en-078", "category": "code-en", "instruction": "How do I retry fetch only on server errors?", "input": "", "output": "Retry 5xx and network failures once after a short sleep; break immediately on 4xx since retrying won't help."}
+{"id": "code-en-079", "category": "code-en", "instruction": "How do I find who depends on a package?", "input": "", "output": "`npm ls <name>` prints the dependency chain. Flatten duplicates with dedupe or an overrides entry."}
+{"id": "code-en-080", "category": "code-en", "instruction": "How do I reload code on file change in dev?", "input": "", "output": "`node --watch app.js` restarts on saves. For tests use the runner's watch mode instead of nodemon soup."}
+{"id": "code-en-081", "category": "code-en", "instruction": "Why am I getting CORS errors locally?", "input": "fetch('http://api:8000/x') blocked", "output": "The browser blocks cross-origin reads, not your code. Proxy /api through the dev server or set Allow-Origin on the backend."}
+{"id": "code-en-082", "category": "code-en", "instruction": "Where do I put secrets in a Node app?", "input": "API_KEY=... node app.js", "output": "Environment variables, validated at startup with a loud list of what's missing. .env files never get committed."}
+{"id": "code-en-083", "category": "code-en", "instruction": "How do I write logs that stay searchable?", "input": "", "output": "One JSON object per line: level, msg, request id. Free-form printf logs become ungreppable at volume."}
+{"id": "code-en-084", "category": "code-en", "instruction": "How do I shut down an HTTP server cleanly?", "input": "", "output": "On SIGTERM stop accepting, drain in-flight requests against a deadline, then close pools. Save kill -9 for real hangs."}
+{"id": "code-en-085", "category": "code-en", "instruction": "How do I test a function that must time out?", "input": "", "output": "Use assert.rejects with a test timeout just above the deadline. If timing flakes, switch the test to fake timers."}
+{"id": "code-en-086", "category": "code-en", "instruction": "How do I exit a Python script with an error message?", "input": "", "output": "`raise SystemExit('reason')` or sys.exit(1) after printing to stderr. Plain return in main silently reports success."}
+{"id": "code-en-087", "category": "code-en", "instruction": "How do I make a dataclass with defaults in Python?", "input": "", "output": "@dataclass with field(default_factory=list) for mutable defaults. Bare [] as a default shares one list across instances."}
+{"id": "code-en-088", "category": "code-en", "instruction": "How do I run CPU-bound work around the GIL?", "input": "", "output": "multiprocessing for real parallelism, threads only for IO waiting. Measure first — spawning processes has its own cost."}
+{"id": "code-en-089", "category": "code-en", "instruction": "How do I cancel an asyncio task after N seconds?", "input": "", "output": "Wrap with asyncio.wait_for(coro, timeout=N) and catch TimeoutError. Long tasks should also checkpoint cancellation themselves."}
+{"id": "code-en-090", "category": "code-en", "instruction": "How do I read env vars with defaults in Python?", "input": "", "output": "`os.environ.get('PORT', '8080')`, cast to int explicitly. Crash loudly on required-but-missing vars at startup."}
+{"id": "code-en-091", "category": "code-en", "instruction": "How do I write a generator that cleans up?", "input": "", "output": "Put teardown in finally inside the generator, or use contextlib.contextmanager. Callers breaking early still trigger it on .close()."}
+{"id": "code-en-092", "category": "code-en", "instruction": "How do I compare floats safely?", "input": "", "output": "Use math.isclose(a, b, rel_tol=1e-9) instead of ==. Binary floats can't represent most decimals exactly."}
+{"id": "code-en-093", "category": "code-en", "instruction": "How do I remove an item from a list by value?", "input": "", "output": "lst.remove(x) deletes the first match and raises ValueError if absent. For all matches rebuild with a comprehension."}
+{"id": "code-en-094", "category": "code-en", "instruction": "How do I get the caller's function name for logging?", "input": "", "output": "inspect.stack()[1].function gives it, but it's slow — cache or pass explicit context in hot paths."}
+{"id": "code-en-095", "category": "code-en", "instruction": "How do I make JSON output deterministic?", "input": "", "output": "json.dumps(obj, sort_keys=True, separators=(',', ':')). Deterministic bytes make caching and diffing reliable."}
+{"id": "code-en-096", "category": "code-en", "instruction": "How do I handle timezone-aware datetimes?", "input": "", "output": "Store UTC (datetime.now(timezone.utc)), convert to local only for display. Naive datetimes cause the classic off-by-hours bug."}
+{"id": "code-en-097", "category": "code-en", "instruction": "How do I split a string on multiple delimiters?", "input": "", "output": "re.split(r'[;,\\s]+', s) in one pass. Chained str.split calls leave empty tokens you'll then have to filter."}
+{"id": "code-en-098", "category": "code-en", "instruction": "How do I check a string starts with any of several prefixes?", "input": "", "output": "str.startswith(('http://', 'https://')) accepts a tuple. Faster and clearer than a regex for fixed prefixes."}
+{"id": "code-en-099", "category": "code-en", "instruction": "How do I remove whitespace-only lines from a file?", "input": "", "output": "Keep `line for line in f if line.strip()`. Deciding per-line beats regexing the whole blob."}
+{"id": "code-en-100", "category": "code-en", "instruction": "How do I transpose rows and columns?", "input": "", "output": "zip(*rows) transposes; wrap each tuple in list() if you need mutability. All rows must share a length."}
+{"id": "code-en-101", "category": "code-en", "instruction": "How do I find the index of the max element?", "input": "", "output": "max(range(len(xs)), key=lambda i: xs[i]). max() alone returns the value, not where it lives."}
+{"id": "code-en-102", "category": "code-en", "instruction": "How do I group items by a key function?", "input": "", "output": "itertools.groupby(sorted(rows, key=f), f) — note the sort is mandatory, groupby only groups runs."}
+{"id": "code-en-103", "category": "code-en", "instruction": "How do I consume an iterator in fixed batches?", "input": "", "output": "Take islice(it, n) repeatedly until empty. Materializing the whole stream first defeats the purpose."}
+{"id": "code-en-104", "category": "code-en", "instruction": "How do I memoize a recursive function?", "input": "fib(100) hangs", "output": "@functools.lru_cache on pure functions with hashable args. Unhashable args need an explicit dict keyed by repr."}
+{"id": "code-en-105", "category": "code-en", "instruction": "How do I run a subprocess with a timeout?", "input": "", "output": "subprocess.run(cmd, timeout=30) raises TimeoutExpired — catch it and kill explicitly, or the child keeps running."}
+{"id": "code-en-106", "category": "code-en", "instruction": "How do I parse CLI args robustly in Python?", "input": "", "output": "argparse with required=True on mandatory flags and a clear epilog example. Hand-rolled sys.argv parsing rots past three flags."}
+{"id": "code-en-107", "category": "code-en", "instruction": "How do I write atomic files that never half-exist?", "input": "", "output": "Write to temp + os.replace() onto the target. Readers either see the old file or the new one, never a mix."}
+{"id": "code-en-108", "category": "code-en", "instruction": "How do I lock a file against concurrent writers?", "input": "", "output": "fcntl.flock in a with-block around the critical section. Locks release on close — including crash-close, which is the point."}
+{"id": "code-en-109", "category": "code-en", "instruction": "How do I tail the last N lines efficiently?", "input": "", "output": "collections.deque(f, maxlen=N) streams without loading the file. readlines()[-N:] works but reads everything."}
+{"id": "code-en-110", "category": "code-en", "instruction": "How do I detect file encoding before reading?", "input": "", "output": "Try utf-8 first, fall back to chardet only on failure. Declaring 'latin-1' up front silently mojibakes real UTF-8."}
+{"id": "code-en-111", "category": "code-en", "instruction": "How do I walk a tree skipping hidden dirs?", "input": "", "output": "os.walk with in-place `dirs[:] = [d for d in dirs if not d.startswith('.')]` — mutating dirs prunes the descent."}
+{"id": "code-en-112", "category": "code-en", "instruction": "How do I compute a file hash without loading it?", "input": "", "output": "Read in 64KB chunks into hashlib.sha256(). One pass, constant memory, works on multi-GB files."}
+{"id": "code-en-113", "category": "code-en", "instruction": "How do I serialize datetime to JSON?", "input": "", "output": "Default=str drops fidelity; better a custom default=lambda o: o.isoformat(). Parse back with fromisoformat."}
+{"id": "code-en-114", "category": "code-en", "instruction": "How do I deepcopy only one nested branch?", "input": "", "output": "copy.deepcopy(node['branch']) copies just that subtree. Whole-structure deepcopy on huge graphs wastes time and RAM."}
+{"id": "code-en-115", "category": "code-en", "instruction": "How do I throttle API calls to N per second?", "input": "", "output": "Track last-call timestamps and sleep the deficit before each call. Token-bucket libraries earn their keep past trivial cases."}
+{"id": "code-en-116", "category": "code-en", "instruction": "How do I add jitter to retries?", "input": "", "output": "sleep(base * 2**attempt + random.uniform(0, 1)). Without jitter every client retries in lockstep and re-hammers the server."}
+{"id": "code-en-117", "category": "code-en", "instruction": "How do I structure a long script so it's testable?", "input": "", "output": "Move logic into functions taking explicit args, guard side effects under `if __name__ == '__main__'`. Importable beats executable."}
+{"id": "code-en-118", "category": "code-en", "instruction": "How do I fail fast on unset variables in bash?", "input": "", "output": "`set -u` turns unset expansion into an error. Pair with ${VAR:?message} at the top for a clear complaint."}
+{"id": "code-en-119", "category": "code-en", "instruction": "How do I make a bash script exit on first failure?", "input": "", "output": "`set -euo pipefail` at line one. Then handle expected failures explicitly with `|| true` so they stay visible."}
+{"id": "code-en-120", "category": "code-en", "instruction": "How do I iterate over filenames with spaces in bash?", "input": "", "output": "`find . -print0 | while IFS= read -r -d '' f`. Plain for-loops word-split on spaces and break."}
+{"id": "code-en-121", "category": "code-en", "instruction": "How do I check if a command exists in a script?", "input": "", "output": "`command -v jq >/dev/null || { echo 'need jq'; exit 1; }`. which is unportable and noisy."}
+{"id": "code-en-122", "category": "code-en", "instruction": "How do I redirect both stdout and stderr to a file?", "input": "", "output": "`cmd >out.log 2>&1` — order matters, 2>&1 must come last. For tee-style dual output pipe through `| tee`."}
+{"id": "code-en-123", "category": "code-en", "instruction": "How do I run the previous command's output as a command?", "input": "", "output": "Don't — capture intentionally with $(...) instead. Blindly evaling last output is how accidents happen."}
+{"id": "code-en-124", "category": "code-en", "instruction": "How do I sort by the second CSV column numerically?", "input": "", "output": "`sort -t, -k2 -n file.csv`. Without -n, 10 sorts before 9 and your ranking is wrong."}
+{"id": "code-en-125", "category": "code-en", "instruction": "How do I deduplicate a sorted file keeping one copy?", "input": "", "output": "`sort -u file` or `uniq file`. uniq only collapses adjacent lines, so sort first when input is unordered."}
 {"id": "code-zh-001", "category": "code-zh", "instruction": "这段 Python 为什么报 IndexError？", "input": "a = [1, 2, 3]\nprint(a[3])", "output": "索引越界：列表只有下标 0、1、2，没有 3。最后一个元素是 a[2]，或者用 a[-1] 取末尾。"}
 {"id": "code-zh-002", "category": "code-zh", "instruction": "解释这行 shell 做了什么：grep -rn \"TODO\" src/ | head -20", "input": "", "output": "递归在 src/ 下搜含 TODO 的行，带文件名和行号（-rn），只看前 20 行。找遗留待办最常用的一行。"}
 {"id": "code-zh-003", "category": "code-zh", "instruction": "把这个循环改成列表推导式", "input": "res = []\nfor x in range(10):\n    if x % 2 == 0:\n        res.append(x * x)", "output": "res = [x * x for x in range(10) if x % 2 == 0]"}
@@ -215,46 +215,46 @@
 {"id": "code-zh-038", "category": "code-zh", "instruction": "用一行 Python 启动 HTTP 文件服务器", "input": "", "output": "python3 -m http.server 8000\n当前目录即根目录。传文件/跨机器调试神器，但别暴露公网（无认证，谁都能下）。"}
 {"id": "code-zh-039", "category": "code-zh", "instruction": "什么是 CSRF？怎么防？", "input": "", "output": "借你的登录态去干坏事：你登录着银行，点了恶意页，它替你发转账请求（cookie 自动带上）。防：SameSite cookie + 敏感操作要 CSRF token + 关键操作二次确认。GET 绝不能有副作用。"}
 {"id": "code-zh-040", "category": "code-zh", "instruction": "写个 Python 上下文管理器计时器（with Timer() as t 这种）", "input": "", "output": "import time\nclass Timer:\n    def __enter__(self):\n        self.t0 = time.perf_counter()\n        return self\n    def __exit__(self, *a):\n        self.dt = time.perf_counter() - self.t0\nwith Timer() as t:\n    work()\nprint(t.dt)\n__exit__ 吃掉异常返回 True 则吞异常，默认返回 None（Falsy）不吞，别手滑。"}
-{"id": "code-zh-041", "category": "code-zh", "instruction": "这段 Python 报 KeyError 怎么修", "input": "d={}\nprint(d['k'])", "output": "键不存在。用 d.get('k') 给默认值，或先 if 'k' in d。别 try 包大段。"}
-{"id": "code-zh-042", "category": "code-zh", "instruction": "这段代码怎么更快", "input": "for i in range(n):\n  f(open(f))", "output": "先 profile 找热点再动：循环里去重、IO 合并、缓存结果。别凭感觉优化。"}
-{"id": "code-zh-043", "category": "code-zh", "instruction": "写一个读 CSV 并按列求和的脚本", "input": "a,b\n1,2\nx,3", "output": "csv.DictReader 逐行读，try 转 float，跳过坏行并计数，最后打印总数。"}
-{"id": "code-zh-044", "category": "code-zh", "instruction": "这个 SQL 怎么优化", "input": "SELECT * FROM t WHERE name LIKE '%x%'", "output": "先 EXPLAIN 看是否走索引：条件列加索引，避免 SELECT *，分页用键集代替大 OFFSET。"}
-{"id": "code-zh-045", "category": "code-zh", "instruction": "帮我 review 这段删文件 diff", "input": "+rm -rf $dir", "output": "先看意图再看边界：空值、越界、并发、回滚。能小步拆就别一大坨。"}
-{"id": "code-zh-046", "category": "code-zh", "instruction": "怎么给这个函数写单测", "input": "def add(a,b): return a+b", "output": "正常/边界/异常各一例：空输入、最大值、抛错。用最小断言锁住行为。"}
-{"id": "code-zh-047", "category": "code-zh", "instruction": "这个正则什么意思", "input": "^\\d{11}$", "output": "逐段拆：^ 开头、\\d 数字、+ 重复、$ 结尾。拿两个正反例子验证。"}
-{"id": "code-zh-048", "category": "code-zh", "instruction": "容器起不来先查什么", "input": "", "output": "docker logs 看退出原因，再 docker inspect 看挂载和端口，最后进容器复现。"}
-{"id": "code-zh-049", "category": "code-zh", "instruction": "列表推导和循环选哪个", "input": "", "output": "简单转换推导，一步了然；带复杂分支用循环，下一行注释意图。"}
-{"id": "code-zh-050", "category": "code-zh", "instruction": "怎么处理 JSON 解析失败", "input": "", "output": "try json.loads 抓 JSONDecodeError，给默认值并记日志，别让坏输入炸全程。"}
-{"id": "code-zh-051", "category": "code-zh", "instruction": "深拷贝和浅拷贝区别", "input": "", "output": "浅拷只拷引用，改嵌套会互相影响；深拷全复制。用 copy.deepcopy 前先想清要不要。"}
-{"id": "code-zh-052", "category": "code-zh", "instruction": "线程和进程怎么选", "input": "", "output": "CPU 密集用进程，IO 密集用线程/协程。共享状态越少越好。"}
-{"id": "code-zh-053", "category": "code-zh", "instruction": "怎么防 SQL 注入", "input": "f\"select * where name='{n}'\"", "output": "永远用参数化查询，别拼字符串。表名动态就白名单校验。"}
-{"id": "code-zh-054", "category": "code-zh", "instruction": "分页 OFFSET 越来越慢怎么办", "input": "", "output": "改键集分页：WHERE id > 上页末位 LIMIT n。OFFSET 是跳多少读多少。"}
-{"id": "code-zh-055", "category": "code-zh", "instruction": "怎么给报错加上下文", "input": "", "output": "raise 时带上关键 id 和输入摘要，别只抛裸错。日志同理。"}
-{"id": "code-zh-056", "category": "code-zh", "instruction": "递归太深爆栈怎么办", "input": "", "output": "改循环+显式栈，或加 sys 递归上限+分治。先确认能不能迭代。"}
-{"id": "code-zh-057", "category": "code-zh", "instruction": "怎么验证删文件安全", "input": "rm *.log", "output": "先 ls/glob 确认范围，再 mv 到回收站或 git 干净，最后删。rm 加 -i 或先 echo。"}
-{"id": "code-zh-058", "category": "code-zh", "instruction": "测试挂了但代码看着没错先看什么", "input": "", "output": "先看报错第一行和堆栈顶，再复现最小用例，最后 git stash 二分最近改动。"}
-{"id": "code-zh-059", "category": "code-zh", "instruction": "线上 bug 处理顺序是什么", "input": "", "output": "止血第一：回滚/限流/摘流量，再定位根因，最后复盘加单测。"}
-{"id": "code-zh-060", "category": "code-zh", "instruction": "重构第一步做什么", "input": "", "output": "先补单测锁住行为，再小步改+频繁跑测，一次只动一处。"}
-{"id": "code-zh-061", "category": "code-zh", "instruction": "这段 Python 报 KeyError 怎么修（变式21）", "input": "d={}\nprint(d['k'])", "output": "键不存在。用 d.get('k') 给默认值，或先 if 'k' in d。别 try 包大段。变式21：换个输入再验证一次。"}
-{"id": "code-zh-062", "category": "code-zh", "instruction": "这段代码怎么更快（变式22）", "input": "for i in range(n):\n  f(open(f))", "output": "先 profile 找热点再动：循环里去重、IO 合并、缓存结果。别凭感觉优化。变式22：换个输入再验证一次。"}
-{"id": "code-zh-063", "category": "code-zh", "instruction": "写一个读 CSV 并按列求和的脚本（变式23）", "input": "a,b\n1,2\nx,3", "output": "csv.DictReader 逐行读，try 转 float，跳过坏行并计数，最后打印总数。变式23：换个输入再验证一次。"}
-{"id": "code-zh-064", "category": "code-zh", "instruction": "这个 SQL 怎么优化（变式24）", "input": "SELECT * FROM t WHERE name LIKE '%x%'", "output": "先 EXPLAIN 看是否走索引：条件列加索引，避免 SELECT *，分页用键集代替大 OFFSET。变式24：换个输入再验证一次。"}
-{"id": "code-zh-065", "category": "code-zh", "instruction": "帮我 review 这段删文件 diff（变式25）", "input": "+rm -rf $dir", "output": "先看意图再看边界：空值、越界、并发、回滚。能小步拆就别一大坨。变式25：换个输入再验证一次。"}
-{"id": "code-zh-066", "category": "code-zh", "instruction": "怎么给这个函数写单测（变式26）", "input": "def add(a,b): return a+b", "output": "正常/边界/异常各一例：空输入、最大值、抛错。用最小断言锁住行为。变式26：换个输入再验证一次。"}
-{"id": "code-zh-067", "category": "code-zh", "instruction": "这个正则什么意思（变式27）", "input": "^\\d{11}$", "output": "逐段拆：^ 开头、\\d 数字、+ 重复、$ 结尾。拿两个正反例子验证。变式27：换个输入再验证一次。"}
-{"id": "code-zh-068", "category": "code-zh", "instruction": "容器起不来先查什么（变式28）", "input": "", "output": "docker logs 看退出原因，再 docker inspect 看挂载和端口，最后进容器复现。变式28：换个输入再验证一次。"}
-{"id": "code-zh-069", "category": "code-zh", "instruction": "列表推导和循环选哪个（变式29）", "input": "", "output": "简单转换推导，一步了然；带复杂分支用循环，下一行注释意图。变式29：换个输入再验证一次。"}
-{"id": "code-zh-070", "category": "code-zh", "instruction": "怎么处理 JSON 解析失败（变式30）", "input": "", "output": "try json.loads 抓 JSONDecodeError，给默认值并记日志，别让坏输入炸全程。变式30：换个输入再验证一次。"}
-{"id": "code-zh-071", "category": "code-zh", "instruction": "深拷贝和浅拷贝区别（变式31）", "input": "", "output": "浅拷只拷引用，改嵌套会互相影响；深拷全复制。用 copy.deepcopy 前先想清要不要。变式31：换个输入再验证一次。"}
-{"id": "code-zh-072", "category": "code-zh", "instruction": "线程和进程怎么选（变式32）", "input": "", "output": "CPU 密集用进程，IO 密集用线程/协程。共享状态越少越好。变式32：换个输入再验证一次。"}
-{"id": "code-zh-073", "category": "code-zh", "instruction": "怎么防 SQL 注入（变式33）", "input": "f\"select * where name='{n}'\"", "output": "永远用参数化查询，别拼字符串。表名动态就白名单校验。变式33：换个输入再验证一次。"}
-{"id": "code-zh-074", "category": "code-zh", "instruction": "分页 OFFSET 越来越慢怎么办（变式34）", "input": "", "output": "改键集分页：WHERE id > 上页末位 LIMIT n。OFFSET 是跳多少读多少。变式34：换个输入再验证一次。"}
-{"id": "code-zh-075", "category": "code-zh", "instruction": "怎么给报错加上下文（变式35）", "input": "", "output": "raise 时带上关键 id 和输入摘要，别只抛裸错。日志同理。变式35：换个输入再验证一次。"}
-{"id": "code-zh-076", "category": "code-zh", "instruction": "递归太深爆栈怎么办（变式36）", "input": "", "output": "改循环+显式栈，或加 sys 递归上限+分治。先确认能不能迭代。变式36：换个输入再验证一次。"}
-{"id": "code-zh-077", "category": "code-zh", "instruction": "怎么验证删文件安全（变式37）", "input": "rm *.log", "output": "先 ls/glob 确认范围，再 mv 到回收站或 git 干净，最后删。rm 加 -i 或先 echo。变式37：换个输入再验证一次。"}
-{"id": "code-zh-078", "category": "code-zh", "instruction": "测试挂了但代码看着没错先看什么（变式38）", "input": "", "output": "先看报错第一行和堆栈顶，再复现最小用例，最后 git stash 二分最近改动。变式38：换个输入再验证一次。"}
-{"id": "code-zh-079", "category": "code-zh", "instruction": "线上 bug 处理顺序是什么（变式39）", "input": "", "output": "止血第一：回滚/限流/摘流量，再定位根因，最后复盘加单测。变式39：换个输入再验证一次。"}
-{"id": "code-zh-080", "category": "code-zh", "instruction": "重构第一步做什么（变式40）", "input": "", "output": "先补单测锁住行为，再小步改+频繁跑测，一次只动一处。变式40：换个输入再验证一次。"}
+{"id": "code-zh-041", "category": "code-zh", "instruction": "这段 Python 报 KeyError 怎么修", "input": "d={}\nprint(d['k'])", "output": "键不存在。用 d.get('k') 给默认值，或先 if 'k' in d 再取。别拿 try 包大段代码。"}
+{"id": "code-zh-042", "category": "code-zh", "instruction": "循环里反复 open 怎么改快", "input": "for i in range(n):\n  f(open(f))", "output": "把 open 移出循环，或一次读入内存。IO 在循环里是头号慢源，先搬出来再谈别的。"}
+{"id": "code-zh-043", "category": "code-zh", "instruction": "写一个读 CSV 按列求和的脚本", "input": "a,b\n1,2\nx,3", "output": "csv.DictReader 逐行读，float 转失败跳过并计数，最后打印总数和坏行数。"}
+{"id": "code-zh-044", "category": "code-zh", "instruction": "这个 LIKE 前缀通配查询怎么优化", "input": "SELECT * FROM t WHERE name LIKE '%x%'", "output": "EXPLAIN 先看走没走索引：'%x%' 走不了，改全文索引或前缀匹配，顺手把 SELECT * 缩成要的列。"}
+{"id": "code-zh-045", "category": "code-zh", "instruction": "帮我 review 这段删文件 diff", "input": "+rm -rf $dir", "output": "意图先行再看边界：变量为空会删哪、通配符展开范围、有没有备份。rm 相关 diff 默认按危险品审。"}
+{"id": "code-zh-046", "category": "code-zh", "instruction": "怎么给 add 写单测", "input": "def add(a,b): return a+b", "output": "正常、边界、异常各一例：1+2、0+0、字符串相加。用最小断言锁住行为，别测实现细节。"}
+{"id": "code-zh-047", "category": "code-zh", "instruction": "这个匹配 11 位数字的正则什么意思", "input": "^\\d{11}$", "output": "逐段拆：^ 行首、\\d 数字、{11} 十一个、$ 行尾。拿 10 位和 12 位反例验证。"}
+{"id": "code-zh-048", "category": "code-zh", "instruction": "容器起不来先查什么", "input": "", "output": "docker logs 看退出原因，再 inspect 看挂载和端口映射，最后 --rm -it 进镜像复现。"}
+{"id": "code-zh-049", "category": "code-zh", "instruction": "推导和循环到底选哪个", "input": "", "output": "纯转换用推导，一眼看完；带分支、异常、日志用循环。可读性优先于行数。"}
+{"id": "code-zh-050", "category": "code-zh", "instruction": "JSON 解析失败怎么兜底", "input": "", "output": "try 抓 JSONDecodeError，给默认值并记原文前 100 字。坏输入只能污染一条，不许炸全程。"}
+{"id": "code-zh-051", "category": "code-zh", "instruction": "浅拷贝踩坑了怎么理解", "input": "b = a.copy()", "output": "浅拷只拷第一层，嵌套还是同一引用。改嵌套互相影响就换 deepcopy，或重构掉共享。"}
+{"id": "code-zh-052", "category": "code-zh", "instruction": "CPU 密集任务开多线程没用怎么办", "input": "", "output": "换 multiprocessing 真并行，线程只适合 IO 等待。先确认瓶颈真是 CPU 再换。"}
+{"id": "code-zh-053", "category": "code-zh", "instruction": "这段拼接 SQL 怎么改才安全", "input": "f\"select * where name='{n}'\"", "output": "改参数化查询：cursor.execute(sql, (n,))。表名动态就走白名单，别拼。"}
+{"id": "code-zh-054", "category": "code-zh", "instruction": "OFFSET 翻页越来越慢怎么办", "input": "", "output": "改键集分页 WHERE id > 上页末位 LIMIT n。OFFSET 是跳过多少读多少，页越深越慢。"}
+{"id": "code-zh-055", "category": "code-zh", "instruction": "报错信息太秃怎么加上下文", "input": "", "output": "raise 时带上关键 id 和输入摘要：f'pay failed id={id}'。日志同理，没 id 的报错等于没报。"}
+{"id": "code-zh-056", "category": "code-zh", "instruction": "递归爆栈了怎么改", "input": "RecursionError", "output": "改循环加显式栈；必须递归就分治缩小深度。先确认能不能迭代，能就别递归。"}
+{"id": "code-zh-057", "category": "code-zh", "instruction": "删日志文件前怎么确认安全", "input": "rm *.log", "output": "ls 先看名单，确认只有 .log，再 git status 确认干净，最后删。通配符先 echo 展开看。"}
+{"id": "code-zh-058", "category": "code-zh", "instruction": "测试挂了代码看着没错先看什么", "input": "", "output": "看第一行报错和堆栈顶，写最小复现，最后 git stash 二分最近改动。别通读代码猜。"}
+{"id": "code-zh-059", "category": "code-zh", "instruction": "线上出 bug 先干什么", "input": "", "output": "先止血：回滚、限流、摘流量。定位根因第二，复盘加单测第三。顺序错了越修越炸。"}
+{"id": "code-zh-060", "category": "code-zh", "instruction": "重构第一步做什么最稳", "input": "", "output": "先给要动的函数补单测锁住行为，再小步改、频繁跑。一次只动一处，绿了再往下。"}
+{"id": "code-zh-061", "category": "code-zh", "instruction": "字典 get 和 setdefault 分不清", "input": "", "output": "只读用 get('k', 默认)，累积用 setdefault('k', [])。后者会写入字典，别在只读处用。"}
+{"id": "code-zh-062", "category": "code-zh", "instruction": "except 裸奔有什么坏处", "input": "try:\n ...\nexcept:\n pass", "output": "裸 except 连 KeyboardInterrupt 都吞，还掩盖 bug。只抓你预期的异常，末尾别跟万能 except。"}
+{"id": "code-zh-063", "category": "code-zh", "instruction": "lambda 里循环变量全一样为什么", "input": "", "output": "闭包抓的是变量不是值：循环结束全指向末值。用默认参数 lambda x, i=i: ... 冻结当前值。"}
+{"id": "code-zh-064", "category": "code-zh", "instruction": "pip 装包互相打架怎么办", "input": "ERROR: conflict", "output": "pip check 看冲突，venv 隔离项目，pip-tools 锁版本。系统 python 别装包。"}
+{"id": "code-zh-065", "category": "code-zh", "instruction": "怎么判断该用缓存", "input": "", "output": "读多写少、结果可复算、能容忍过期，三条全中才加。缓存先定过期和淘汰，再写代码。"}
+{"id": "code-zh-066", "category": "code-zh", "instruction": "接口超时重试几次合适", "input": "", "output": "读接口 3 次带退避，写接口先保证幂等再谈重试。无脑重试写接口会造出重复单。"}
+{"id": "code-zh-067", "category": "code-zh", "instruction": "日志打太多把盘写满怎么办", "input": "", "output": "级别先调 info 起步，debug 按需开；加轮转和上限。日志是证据，不是作文。"}
+{"id": "code-zh-068", "category": "code-zh", "instruction": "单测跑得慢怎么提速", "input": "pytest 10min", "output": "先 -x --lf 只跑失败，再并行 -n auto，最后把睡死的 time.sleep 换成 fake。"}
+{"id": "code-zh-069", "category": "code-zh", "instruction": "类型注解到底值不值", "input": "def f(a, b):", "output": "公共函数签名值得：调用方一眼看懂，mypy 提前抓错。内部三行小函数别折腾。"}
+{"id": "code-zh-070", "category": "code-zh", "instruction": "怎么给老代码加测试", "input": "", "output": "从 bug 修起：复现单测先红再绿，逐步包围核心路径。别立项重写测试体系。"}
+{"id": "code-zh-071", "category": "code-zh", "instruction": "code review 被打回来怎么办", "input": "", "output": "先改事实问题（bug/边界），再谈品味分歧。一次只争一个点，别整单全驳回。"}
+{"id": "code-zh-072", "category": "code-zh", "instruction": "魔法数字满天飞怎么治", "input": "if x > 30: ...", "output": "命名常量收拢：TIMEOUT=30。散在各处的 30 改一个漏一个， Review 见到就标。"}
+{"id": "code-zh-073", "category": "code-zh", "instruction": "函数 200 行怎么拆", "input": "", "output": "按步骤提小函数，一屏一个，名字说清意图。拆完主流程像目录，细节各自成章。"}
+{"id": "code-zh-074", "category": "code-zh", "instruction": "注释写什么不写什么", "input": "", "output": "写为什么不写是什么：hack 原因、坑的编号。代码能说清的别复读。"}
+{"id": "code-zh-075", "category": "code-zh", "instruction": "异常该抛还是该返回", "input": "", "output": "跨层用异常，同层可预期用返回值。别用异常做正常分支，性能可读双输。"}
+{"id": "code-zh-076", "category": "code-zh", "instruction": "性能优化第一步是什么", "input": "", "output": "先测：profile 找热点，优化第一行。凭感觉优化等于随机改代码。"}
+{"id": "code-zh-077", "category": "code-zh", "instruction": "并发 bug 复现不了怎么办", "input": "", "output": "加日志和确定性种子，把并发压成串行复现。修完用压力循环验证，别跑一遍就收。"}
+{"id": "code-zh-078", "category": "code-zh", "instruction": "上线前 checklist 都有啥", "input": "", "output": "单测绿、灰度、回滚方案、监控告警、数据备份。缺一个都别全量。"}
+{"id": "code-zh-079", "category": "code-zh", "instruction": "技术债怎么跟业务谈", "input": "", "output": "翻译成风险和成本：不还，下次需求多几天。每次迭代带一小块，别攒大单。"}
+{"id": "code-zh-080", "category": "code-zh", "instruction": "新人接手老项目先看什么", "input": "", "output": "README、依赖、启动命令、一条 happy path。跑起来再读代码，跑不起来读啥都没用。"}
 {"id": "en-001", "category": "en", "instruction": "Explain recursion like I'm five.", "input": "", "output": "Recursion is when something is defined using itself. Like standing between two mirrors: you see yourself holding a smaller you, holding an even smaller you. In code: a function that calls itself with a smaller problem, until it hits a base case small enough to answer directly."}
 {"id": "en-002", "category": "en", "instruction": "What is the difference between TCP and UDP?", "input": "", "output": "TCP is a phone call: connection first, every word confirmed, nothing lost. UDP is shouting across the street: fast, no guarantee. Video calls and games use UDP (a lost frame doesn't matter); files and web pages use TCP (every byte matters)."}
 {"id": "en-003", "category": "en", "instruction": "Write a polite email declining a meeting.", "input": "", "output": "Subject: Re: Sync on Thursday\nHi Alex,\nThanks for the invite, but I don't think I can add much to this one. Could you send me the notes afterward? Happy to weigh in async on anything in my area.\nBest, Sam"}
@@ -285,48 +285,48 @@
 {"id": "en-028", "category": "en", "instruction": "Explain gradient descent intuitively.", "input": "", "output": "Finding the bottom of a valley blindfolded: feel the slope under your feet, take a step downhill, repeat. Learning rate is step size — too big and you leap over the valley, too small and you'll be walking forever."}
 {"id": "en-029", "category": "en", "instruction": "Why do meetings feel unproductive?", "input": "", "output": "Three root causes: no agenda (it's a chat, not a meeting), too many people (over 7 and most are audience), no decision log (everyone leaves with different homework). Fix: agenda beforehand, timebox, and 3 lines after — decided what, who does it, by when."}
 {"id": "en-030", "category": "en", "instruction": "What is the difference between AI, ML, and deep learning?", "input": "", "output": "AI is the whole field (machines doing smart things). ML is one approach (learn from examples). Deep learning is one ML technique (neural networks with many layers). All deep learning is ML, all ML is AI — not the reverse."}
-{"id": "en-031", "category": "en", "instruction": "Explain caching (1) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-032", "category": "en", "instruction": "Write a polite email saying no about retries (2).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-033", "category": "en", "instruction": "What is the difference between pagination (3) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-034", "category": "en", "instruction": "How do I debug auth tokens (4) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-035", "category": "en", "instruction": "Give a 5-item checklist for env config (5).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-036", "category": "en", "instruction": "Explain code review (6) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-037", "category": "en", "instruction": "Write a polite email saying no about standup notes (7).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-038", "category": "en", "instruction": "What is the difference between deadlines (8) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-039", "category": "en", "instruction": "How do I debug backups (9) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-040", "category": "en", "instruction": "Give a 5-item checklist for monitoring (10).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-041", "category": "en", "instruction": "Explain onboarding (11) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-042", "category": "en", "instruction": "Write a polite email saying no about refactoring (12).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-043", "category": "en", "instruction": "What is the difference between time zones (13) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-044", "category": "en", "instruction": "How do I debug rate limits (14) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-045", "category": "en", "instruction": "Give a 5-item checklist for webhooks (15).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-046", "category": "en", "instruction": "Explain caching (16) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-047", "category": "en", "instruction": "Write a polite email saying no about retries (17).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-048", "category": "en", "instruction": "What is the difference between pagination (18) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-049", "category": "en", "instruction": "How do I debug auth tokens (19) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-050", "category": "en", "instruction": "Give a 5-item checklist for env config (20).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-051", "category": "en", "instruction": "Explain code review (21) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-052", "category": "en", "instruction": "Write a polite email saying no about standup notes (22).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-053", "category": "en", "instruction": "What is the difference between deadlines (23) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-054", "category": "en", "instruction": "How do I debug backups (24) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-055", "category": "en", "instruction": "Give a 5-item checklist for monitoring (25).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-056", "category": "en", "instruction": "Explain onboarding (26) simply in 3 sentences.", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-057", "category": "en", "instruction": "Write a polite email saying no about refactoring (27).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-058", "category": "en", "instruction": "What is the difference between time zones (28) and its alternative?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-059", "category": "en", "instruction": "How do I debug rate limits (29) when it fails silently?", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-060", "category": "en", "instruction": "Give a 5-item checklist for webhooks (30).", "input": "", "output": "Answer first in one line, then 2-3 short bullets. Keep it under 150 words."}
-{"id": "en-061", "category": "en", "instruction": "One-line guide to env config (extra 1)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-062", "category": "en", "instruction": "One-line guide to code review (extra 2)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-063", "category": "en", "instruction": "One-line guide to standup notes (extra 3)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-064", "category": "en", "instruction": "One-line guide to deadlines (extra 4)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-065", "category": "en", "instruction": "One-line guide to backups (extra 5)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-066", "category": "en", "instruction": "One-line guide to monitoring (extra 6)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-067", "category": "en", "instruction": "One-line guide to onboarding (extra 7)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-068", "category": "en", "instruction": "One-line guide to refactoring (extra 8)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-069", "category": "en", "instruction": "One-line guide to time zones (extra 9)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-070", "category": "en", "instruction": "One-line guide to rate limits (extra 10)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-071", "category": "en", "instruction": "One-line guide to webhooks (extra 11)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
-{"id": "en-072", "category": "en", "instruction": "One-line guide to caching (extra 12)", "input": "", "output": "One line verdict, then one example. Under 100 words."}
+{"id": "en-031", "category": "en", "instruction": "Explain caching simply in 3 sentences.", "input": "", "output": "Cache stores computed results for reuse. Reads get fast, but data can go stale. Always set an expiry before using one. (1/30)"}
+{"id": "en-032", "category": "en", "instruction": "Write a polite email saying no about a deadline extension.", "input": "", "output": "Thank them, state the constraint plainly, offer an alternative date. Short and kind beats long and evasive. (2/30)"}
+{"id": "en-033", "category": "en", "instruction": "What is the difference between retries and redundancy?", "input": "", "output": "Retries repeat the same call; redundancy runs spares in parallel. Use retries for transient blips, redundancy for hard failures. (3/30)"}
+{"id": "en-034", "category": "en", "instruction": "How do I debug auth tokens failing silently?", "input": "", "output": "Decode the token to check expiry and audience first, then compare scopes against the endpoint. Most silent failures are expired or mis-scoped tokens. (4/30)"}
+{"id": "en-035", "category": "en", "instruction": "Give a 5-item checklist for env config.", "input": "", "output": "Names documented, secrets out of repo, defaults safe, missing vars fail fast, staging mirrors prod keys. (5/30)"}
+{"id": "en-036", "category": "en", "instruction": "Explain pagination simply in 3 sentences.", "input": "", "output": "Pagination splits big lists into pages. Keyset pages beat OFFSET on large tables. Always return a cursor for the next page. (6/30)"}
+{"id": "en-037", "category": "en", "instruction": "Write a polite email saying no about a feature request.", "input": "", "output": "Acknowledge the need, explain the tradeoff, suggest the closest alternative. No with a reason keeps trust. (7/30)"}
+{"id": "en-038", "category": "en", "instruction": "What is the difference between monitoring and alerting?", "input": "", "output": "Monitoring records what happens; alerting wakes someone when thresholds break. Alert only on actionable symptoms. (8/30)"}
+{"id": "en-039", "category": "en", "instruction": "How do I debug webhooks that never arrive?", "input": "", "output": "Check the sender's delivery log first, then your firewall and signature verification. Nine times out of ten the receiver rejected the signature. (9/30)"}
+{"id": "en-040", "category": "en", "instruction": "Give a 5-item checklist for onboarding.", "input": "", "output": "Laptop ready day one, buddy assigned, first small task week one, docs tour, feedback at day 30. (10/30)"}
+{"id": "en-041", "category": "en", "instruction": "Explain rate limits simply in 3 sentences.", "input": "", "output": "Rate limits cap calls per window to protect the server. Clients should back off with jitter. Hitting 429 means slow down, not retry harder. (11/30)"}
+{"id": "en-042", "category": "en", "instruction": "Write a polite email saying no about a meeting.", "input": "", "output": "Decline with the reason in one line and propose async instead. Protecting focus is legitimate. (12/30)"}
+{"id": "en-043", "category": "en", "instruction": "What is the difference between backup and archive?", "input": "", "output": "Backups restore recent state fast; archives preserve old data cheaply. Test restores monthly or backups are fiction. (13/30)"}
+{"id": "en-044", "category": "en", "instruction": "How do I debug time zone bugs?", "input": "", "output": "Store UTC everywhere, convert only at display. Reproduce with a fixed clock set to the reporter's zone. (14/30)"}
+{"id": "en-045", "category": "en", "instruction": "Give a 5-item checklist for refactoring.", "input": "", "output": "Tests lock behavior, one area at a time, run suite often, no feature mixing, review the diff before merging. (15/30)"}
+{"id": "en-046", "category": "en", "instruction": "Explain standup notes simply in 3 sentences.", "input": "", "output": "Standups sync blockers, not status theater. Three lines: done, next, blocked. Anything longer becomes a separate talk. (16/30)"}
+{"id": "en-047", "category": "en", "instruction": "Write a polite email saying no about a discount.", "input": "", "output": "Hold the price, explain the value, offer a smaller scope instead. Discounting trains customers to wait. (17/30)"}
+{"id": "en-048", "category": "en", "instruction": "What is the difference between latency and throughput?", "input": "", "output": "Latency is one request's wait; throughput is requests per second. Caching cuts latency, parallelism raises throughput. (18/30)"}
+{"id": "en-049", "category": "en", "instruction": "How do I debug flaky integration tests?", "input": "", "output": "Quarantine the flake, seed randomness, isolate shared state. A test that fails 1% of runs fails 100% of trust. (19/30)"}
+{"id": "en-050", "category": "en", "instruction": "Give a 5-item checklist for incident response.", "input": "", "output": "Detect fast, stop the bleeding, communicate status, fix root cause, write the postmortem. In that order. (20/30)"}
+{"id": "en-051", "category": "en", "instruction": "Explain code review simply in 3 sentences.", "input": "", "output": "Review hunts correctness first, style last. Small diffs get thorough eyes; giant ones get skimmed. Keep them small. (21/30)"}
+{"id": "en-052", "category": "en", "instruction": "Write a polite email saying no about an introduction.", "input": "", "output": "Be honest about the weak tie and decline rather than fake it. Offer something useful instead. (22/30)"}
+{"id": "en-053", "category": "en", "instruction": "What is the difference between horizontal and vertical scaling?", "input": "", "output": "Vertical buys a bigger box; horizontal adds more boxes. Horizontal scales further but demands stateless design. (23/30)"}
+{"id": "en-054", "category": "en", "instruction": "How do I debug slow page loads?", "input": "", "output": "Measure with the network panel first, then split backend vs frontend time. Optimize the biggest slice, not the easiest. (24/30)"}
+{"id": "en-055", "category": "en", "instruction": "Give a 5-item checklist for standup notes.", "input": "", "output": "Yesterday done, today planned, blockers named, owner per blocker, parked topics listed. (25/30)"}
+{"id": "en-056", "category": "en", "instruction": "Explain deadlines simply in 3 sentences.", "input": "", "output": "Deadlines force scope decisions. Split work until each piece fits half a day, then pad for integration. Misses come from lumpy estimates. (26/30)"}
+{"id": "en-057", "category": "en", "instruction": "Write a polite email saying no about open source support.", "input": "", "output": "Point to docs and community channels, state your bandwidth honestly. Boundaries keep maintainers alive. (27/30)"}
+{"id": "en-058", "category": "en", "instruction": "What is the difference between sync and async standups?", "input": "", "output": "Sync suits urgent blockers; async suits distributed teams. Pick one default and escalate deliberately. (28/30)"}
+{"id": "en-059", "category": "en", "instruction": "How do I debug a memory leak in a long process?", "input": "", "output": "Sample RSS over hours, then heap-snapshot twice and diff. Growth between snapshots names the leak. (29/30)"}
+{"id": "en-060", "category": "en", "instruction": "Give a 5-item checklist for deadlines.", "input": "", "output": "Scope written, risks listed, buffer added, demo scheduled, rollback ready. (30/30)"}
+{"id": "en-061", "category": "en", "instruction": "One-line guide to retries (extra 1)", "input": "", "output": "Retry 3 times with exponential backoff and jitter. Idempotent writes only — blind retries duplicate orders."}
+{"id": "en-062", "category": "en", "instruction": "One-line guide to caching (extra 2)", "input": "", "output": "Cache reads, expire writes; randomize TTLs to avoid stampedes. A cache without expiry is a bug farm."}
+{"id": "en-063", "category": "en", "instruction": "One-line guide to logging (extra 3)", "input": "", "output": "Log decisions with ids, not dumps. Future you debugs with these lines — write for that reader."}
+{"id": "en-064", "category": "en", "instruction": "One-line guide to alerts (extra 4)", "input": "", "output": "Alert on symptoms users feel, not every metric wiggle. Each alert needs an owner and a runbook."}
+{"id": "en-065", "category": "en", "instruction": "One-line guide to rollbacks (extra 5)", "input": "", "output": "Rollbacks must run in minutes, practiced before launch day. Keep migrations reversible or rollback is fiction."}
+{"id": "en-066", "category": "en", "instruction": "One-line guide to code review (extra 6)", "input": "", "output": "Review small diffs fast, big diffs get split. Correctness first, style last, kindness always."}
+{"id": "en-067", "category": "en", "instruction": "One-line guide to standups (extra 7)", "input": "", "output": "Done, next, blocked — thirty seconds each. Details move to a thread, not the meeting."}
+{"id": "en-068", "category": "en", "instruction": "One-line guide to estimates (extra 8)", "input": "", "output": "Split until pieces fit half a day, then add integration buffer. Lumpy estimates hide the risk."}
+{"id": "en-069", "category": "en", "instruction": "One-line guide to postmortems (extra 9)", "input": "", "output": "Timeline, root cause, action items with owners. Blame the system, fix the process."}
+{"id": "en-070", "category": "en", "instruction": "One-line guide to onboarding (extra 10)", "input": "", "output": "Green build day one, first merged PR week one. Momentum beats documentation dumps."}
+{"id": "en-071", "category": "en", "instruction": "One-line guide to feature flags (extra 11)", "input": "", "output": "Flags decouple deploy from release. Every flag needs an owner and a removal date."}
+{"id": "en-072", "category": "en", "instruction": "One-line guide to runbooks (extra 12)", "input": "", "output": "A runbook answers: symptoms, diagnosis steps, fix commands, escalation. If it lacks commands, it is an essay."}
 {"id": "math-001", "category": "math", "instruction": "一个水池，甲管 3 小时注满，乙管 4 小时注满，两管齐开几小时满？", "input": "", "output": "效率相加：1/3 + 1/4 = 7/12，每小时注 7/12 池。所以 12/7 ≈ 1.71 小时，即 1 小时 43 分钟。"}
 {"id": "math-002", "category": "math", "instruction": "1 到 100 里 3 的倍数有多少个？和是多少？", "input": "", "output": "100 ÷ 3 = 33 余 1，共 33 个。等差数列求和：(3 + 99) × 33 ÷ 2 = 1683。"}
 {"id": "math-003", "category": "math", "instruction": "鸡兔同笼：35 个头，94 只脚，鸡兔各几只？", "input": "", "output": "设鸡 x 只：2x + 4(35-x) = 94，解得 x = 23。所以鸡 23 只，兔 12 只。验算：23×2 + 12×4 = 46 + 48 = 94 ✓"}
@@ -337,41 +337,41 @@
 {"id": "math-008", "category": "math", "instruction": "100 个人里至少两人生日相同的概率大概多少？（一年 365 天）", "input": "", "output": "用对立面：全不同的概率 = 365/365 × 364/365 × … × 266/365 ≈ 0.3%。所以至少两人相同 ≈ 99.7%。直觉觉得要 183 人，实际 23 人就过半——这就是生日悖论。"}
 {"id": "math-009", "category": "math", "instruction": "log₂32 + log₃27 - log₁₀100 = ?", "input": "", "output": "log₂32 = 5（2⁵=32），log₃27 = 3，log₁₀100 = 2。5 + 3 - 2 = 6。"}
 {"id": "math-010", "category": "math", "instruction": "一件商品先涨价 20% 再降价 20%，比原价贵还是便宜？", "input": "", "output": "便宜。设原价 1：涨后 1.2，再降 20% 是 1.2×0.8 = 0.96，是原价的 96%。涨跌基数不一样，先涨后降永远亏 4%（一般地亏 a²%）。"}
-{"id": "math-011", "category": "math", "instruction": "鸡兔同笼：头18只脚52只，鸡兔各几只（变式1）", "input": "", "output": "设鸡 x 兔 y：x+y=18，2x+4y=52，得 y=(f-2h)/2=8，x=10。代入验算：10+8=18，20+32=52。"}
-{"id": "math-012", "category": "math", "instruction": "鸡兔同笼：头20只脚58只，鸡兔各几只（变式2）", "input": "", "output": "设鸡 x 兔 y：x+y=20，2x+4y=58，得 y=(f-2h)/2=9，x=11。代入验算：11+9=20，22+36=58。"}
-{"id": "math-013", "category": "math", "instruction": "鸡兔同笼：头22只脚64只，鸡兔各几只（变式3）", "input": "", "output": "设鸡 x 兔 y：x+y=22，2x+4y=64，得 y=(f-2h)/2=10，x=12。代入验算：12+10=22，24+40=64。"}
-{"id": "math-014", "category": "math", "instruction": "鸡兔同笼：头24只脚70只，鸡兔各几只（变式4）", "input": "", "output": "设鸡 x 兔 y：x+y=24，2x+4y=70，得 y=(f-2h)/2=11，x=13。代入验算：13+11=24，26+44=70。"}
-{"id": "math-015", "category": "math", "instruction": "鸡兔同笼：头26只脚76只，鸡兔各几只（变式5）", "input": "", "output": "设鸡 x 兔 y：x+y=26，2x+4y=76，得 y=(f-2h)/2=12，x=14。代入验算：14+12=26，28+48=76。"}
-{"id": "math-016", "category": "math", "instruction": "鸡兔同笼：头23只脚62只，鸡兔各几只（变式6）", "input": "", "output": "设鸡 x 兔 y：x+y=23，2x+4y=62，得 y=(f-2h)/2=8，x=15。代入验算：15+8=23，30+32=62。"}
-{"id": "math-017", "category": "math", "instruction": "鸡兔同笼：头25只脚68只，鸡兔各几只（变式7）", "input": "", "output": "设鸡 x 兔 y：x+y=25，2x+4y=68，得 y=(f-2h)/2=9，x=16。代入验算：16+9=25，32+36=68。"}
-{"id": "math-018", "category": "math", "instruction": "鸡兔同笼：头27只脚74只，鸡兔各几只（变式8）", "input": "", "output": "设鸡 x 兔 y：x+y=27，2x+4y=74，得 y=(f-2h)/2=10，x=17。代入验算：17+10=27，34+40=74。"}
-{"id": "math-019", "category": "math", "instruction": "鸡兔同笼：头29只脚80只，鸡兔各几只（变式9）", "input": "", "output": "设鸡 x 兔 y：x+y=29，2x+4y=80，得 y=(f-2h)/2=11，x=18。代入验算：18+11=29，36+44=80。"}
-{"id": "math-020", "category": "math", "instruction": "鸡兔同笼：头31只脚86只，鸡兔各几只（变式10）", "input": "", "output": "设鸡 x 兔 y：x+y=31，2x+4y=86，得 y=(f-2h)/2=12，x=19。代入验算：19+12=31，38+48=86。"}
-{"id": "math-021", "category": "math", "instruction": "鸡兔同笼：头28只脚72只，鸡兔各几只（变式11）", "input": "", "output": "设鸡 x 兔 y：x+y=28，2x+4y=72，得 y=(f-2h)/2=8，x=20。代入验算：20+8=28，40+32=72。"}
-{"id": "math-022", "category": "math", "instruction": "鸡兔同笼：头30只脚78只，鸡兔各几只（变式12）", "input": "", "output": "设鸡 x 兔 y：x+y=30，2x+4y=78，得 y=(f-2h)/2=9，x=21。代入验算：21+9=30，42+36=78。"}
-{"id": "math-023", "category": "math", "instruction": "鸡兔同笼：头32只脚84只，鸡兔各几只（变式13）", "input": "", "output": "设鸡 x 兔 y：x+y=32，2x+4y=84，得 y=(f-2h)/2=10，x=22。代入验算：22+10=32，44+40=84。"}
-{"id": "math-024", "category": "math", "instruction": "鸡兔同笼：头34只脚90只，鸡兔各几只（变式14）", "input": "", "output": "设鸡 x 兔 y：x+y=34，2x+4y=90，得 y=(f-2h)/2=11，x=23。代入验算：23+11=34，46+44=90。"}
-{"id": "math-025", "category": "math", "instruction": "鸡兔同笼：头36只脚96只，鸡兔各几只（变式15）", "input": "", "output": "设鸡 x 兔 y：x+y=36，2x+4y=96，得 y=(f-2h)/2=12，x=24。代入验算：24+12=36，48+48=96。"}
-{"id": "math-026", "category": "math", "instruction": "鸡兔同笼：头33只脚82只，鸡兔各几只（变式16）", "input": "", "output": "设鸡 x 兔 y：x+y=33，2x+4y=82，得 y=(f-2h)/2=8，x=25。代入验算：25+8=33，50+32=82。"}
-{"id": "math-027", "category": "math", "instruction": "鸡兔同笼：头35只脚88只，鸡兔各几只（变式17）", "input": "", "output": "设鸡 x 兔 y：x+y=35，2x+4y=88，得 y=(f-2h)/2=9，x=26。代入验算：26+9=35，52+36=88。"}
-{"id": "math-028", "category": "math", "instruction": "鸡兔同笼：头37只脚94只，鸡兔各几只（变式18）", "input": "", "output": "设鸡 x 兔 y：x+y=37，2x+4y=94，得 y=(f-2h)/2=10，x=27。代入验算：27+10=37，54+40=94。"}
-{"id": "math-029", "category": "math", "instruction": "鸡兔同笼：头39只脚100只，鸡兔各几只（变式19）", "input": "", "output": "设鸡 x 兔 y：x+y=39，2x+4y=100，得 y=(f-2h)/2=11，x=28。代入验算：28+11=39，56+44=100。"}
-{"id": "math-030", "category": "math", "instruction": "鸡兔同笼：头41只脚106只，鸡兔各几只（变式20）", "input": "", "output": "设鸡 x 兔 y：x+y=41，2x+4y=106，得 y=(f-2h)/2=12，x=29。代入验算：29+12=41，58+48=106。"}
+{"id": "math-011", "category": "math", "instruction": "鸡兔同笼：头28只脚76只，各几只", "input": "", "output": "设鸡 x 兔 y：x+y=28，2x+4y=76，得 y=10，x=18。验算：18+10=28，36+40=76。"}
+{"id": "math-012", "category": "math", "instruction": "鸡兔同笼：头35只脚94只，各几只", "input": "", "output": "x+y=35，2x+4y=94，得 y=12，x=23。验算：23+12=35，46+48=94。"}
+{"id": "math-013", "category": "math", "instruction": "鸡兔同笼：头41只脚112只，各几只", "input": "", "output": "x+y=41，2x+4y=112，得 y=15，x=26。验算：26+15=41，52+60=112。"}
+{"id": "math-014", "category": "math", "instruction": "鸡兔同笼：头50只脚140只，各几只", "input": "", "output": "x+y=50，2x+4y=140，得 y=20，x=30。验算：30+20=50，60+80=140。"}
+{"id": "math-015", "category": "math", "instruction": "鸡兔同笼：头22只脚60只，各几只", "input": "", "output": "x+y=22，2x+4y=60，得 y=8，x=14。验算：14+8=22，28+32=60。"}
+{"id": "math-016", "category": "math", "instruction": "袋里 5 红 3 白球，摸两次都红的概率", "input": "", "output": "不放回：5/8 × 4/7 = 20/56 ≈ 35.7%。放回则是 25/64，先确认规则。"}
+{"id": "math-017", "category": "math", "instruction": "抛硬币连出 4 次正面，下次反面概率", "input": "", "output": "还是 50%。硬币没记忆，连出是过去，概率只看这一次。赌反面加倍是经典坑。"}
+{"id": "math-018", "category": "math", "instruction": "1 到 100 所有偶数和是多少", "input": "", "output": "2+4+...+100 = 2×(1+...+50) = 2×1275 = 2550。配对法：首尾相加 102，共 25 对。"}
+{"id": "math-019", "category": "math", "instruction": "等差数列 3,7,11,…第 n 项和通项", "input": "", "output": "通项 4n-1，求和 n(首+末)/2 = n(3+4n-1)/2 = 2n²+n。代 n=1 验算得 3。"}
+{"id": "math-020", "category": "math", "instruction": "解方程 2x+5=17", "input": "", "output": "移项 2x=12，得 x=6。代回验算 12+5=17，一步一验防符号错。"}
+{"id": "math-021", "category": "math", "instruction": "商品先涨 20% 再降 20%，亏赚", "input": "", "output": "设原价 100：涨后 120，降后 96，净亏 4%。涨降基数不同，先涨后降必亏。"}
+{"id": "math-022", "category": "math", "instruction": "存款年利 3%，10 年翻几倍", "input": "", "output": "1.03^10 ≈ 1.344，十年涨约 34%。别用单利乘，利滚利才对。"}
+{"id": "math-023", "category": "math", "instruction": "班级 40 人，至少两人同月生日概率", "input": "", "output": "1 - P(40,12)/12^40，40 人远超 12 个月，几乎 100%。这是鸽巢不是巧合。"}
+{"id": "math-024", "category": "math", "instruction": "骰子连掷两次和为 9 有几种", "input": "", "output": "36 种等可能里 (3,6)(4,5)(5,4)(6,3) 共 4 种，概率 1/9。列表数清别猜。"}
+{"id": "math-025", "category": "math", "instruction": "数列 1,1,2,3,5,…第 10 项", "input": "", "output": "斐波那契：前两项和得后项，数到第 10 项是 55。写前几项验规律再往后推。"}
+{"id": "math-026", "category": "math", "instruction": "梯形上底 6 下底 10 高 4 面积", "input": "", "output": "(6+10)×4/2 = 32。公式是上下底和乘高除二，别忘除二。"}
+{"id": "math-027", "category": "math", "instruction": "圆半径 3 面积约多少", "input": "", "output": "πr² = 9π ≈ 28.3。估算用 π≈3.14，精确再按计算器。"}
+{"id": "math-028", "category": "math", "instruction": "2 的 10 次方是多少", "input": "", "output": "1024，程序员的老朋友。2^10≈10^3，估算内存数量级就靠它。"}
+{"id": "math-029", "category": "math", "instruction": "一件衬衫 200 打 8 折再满 100 减 20 实付", "input": "", "output": "先 8 折 160，再满减 20，实付 140。顺序不同结果不同，先问收银顺序。"}
+{"id": "math-030", "category": "math", "instruction": "一小时 50 公里，180 公里要多久", "input": "", "output": "180/50 = 3.6 小时即 3 小时 36 分。单位先对齐再除，别拿分钟除公里。"}
 {"id": "misc-001", "category": "misc", "instruction": "推荐一个适合新手的 Python 编辑器", "input": "", "output": "VS Code：免费、插件多、调试开箱即用。新手期别在编辑器上纠结，装个 Python 插件就开写，工具以后再换。"}
 {"id": "misc-002", "category": "misc", "instruction": "手机内存不足怎么办？", "input": "", "output": "三板斧：清微信/QQ缓存（大头）、删不用的 App（别只清数据）、照片视频备份到云后删本地。还不够就换手机，内存焦虑不值得。"}
 {"id": "misc-003", "category": "misc", "instruction": "什么是“摸鱼”？", "input": "", "output": "上班时间干私事。适度摸鱼是效率润滑剂（大脑需要放空），但别在 deadline 前摸，也别让摸鱼变成你的主要产出。"}
 {"id": "misc-004", "category": "misc", "instruction": "推荐三本程序员必读书", "input": "", "output": "《代码大全》（怎么写对）、《重构》（怎么改好）、《人月神话》（为什么加人解决不了延期）。先看重构，立竿见影。"}
 {"id": "misc-005", "category": "misc", "instruction": "用 emoji 给今天定个调：周一", "input": "", "output": "☕💻🔥 咖啡拉满，代码拉满，deadline 也拉满。周一不相信眼泪，相信咖啡因。"}
-{"id": "misc-006", "category": "misc", "instruction": "随手记：今天学到的第1个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-007", "category": "misc", "instruction": "随手记：今天学到的第2个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-008", "category": "misc", "instruction": "随手记：今天学到的第3个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-009", "category": "misc", "instruction": "随手记：今天学到的第4个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-010", "category": "misc", "instruction": "随手记：今天学到的第5个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-011", "category": "misc", "instruction": "随手记：今天学到的第6个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-012", "category": "misc", "instruction": "随手记：今天学到的第7个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-013", "category": "misc", "instruction": "随手记：今天学到的第8个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-014", "category": "misc", "instruction": "随手记：今天学到的第9个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
-{"id": "misc-015", "category": "misc", "instruction": "随手记：今天学到的第10个小技巧是什么", "input": "", "output": "一句话结论+一行例子。学到就记到 MEMORY.md，下次直接用。"}
+{"id": "misc-006", "category": "misc", "instruction": "随手记：grep 先缩范围再读文件", "input": "", "output": "结论：先 grep 定行号再分段读。例子：grep -n TODO src | head，再读对应行。"}
+{"id": "misc-007", "category": "misc", "instruction": "随手记：改前先读文件", "input": "", "output": "结论：edit 前 read 看现状。例子：read_file 确认 old_text 唯一再动手。"}
+{"id": "misc-008", "category": "misc", "instruction": "随手记：小步提交", "input": "", "output": "结论：一次提交只做一件事。例子：数据和文档分两次 commit。"}
+{"id": "misc-009", "category": "misc", "instruction": "随手记：报错先看第一行", "input": "", "output": "结论：第一行是病因，下面是病历。例子：ModuleNotFoundError 先看缺哪个包。"}
+{"id": "misc-010", "category": "misc", "instruction": "随手记：超时先设小再放开", "input": "", "output": "结论：先 10 秒试探再放开。例子：run_command 先小超时定位卡点。"}
+{"id": "misc-011", "category": "misc", "instruction": "随手记：密钥不进仓库", "input": "", "output": "结论：Key 走环境变量。例子：export 后 /config 只露前 8 位。"}
+{"id": "misc-012", "category": "misc", "instruction": "随手记：备份要演练恢复", "input": "", "output": "结论：没演练的备份等于没有。例子：每月恢复一份到空目录跑通。"}
+{"id": "misc-013", "category": "misc", "instruction": "随手记：危险命令先 echo", "input": "", "output": "结论：rm/find -delete 先预演名单。例子：把 rm 换 echo 看展开。"}
+{"id": "misc-014", "category": "misc", "instruction": "随手记：复现用最小用例", "input": "", "output": "结论：复现越小越快。例子：删到 10 行还能复现就是好用例。"}
+{"id": "misc-015", "category": "misc", "instruction": "随手记：决定落盘不靠记", "input": "", "output": "结论：关键决定写文件。例子：AGENTS.md 记约定，MEMORY.md 记偏好。"}
 {"id": "reason-001", "category": "reasoning", "instruction": "甲说乙在说谎，乙说丙在说谎，丙说甲乙都在说谎。已知只有一人在说谎，是谁？", "input": "", "output": "逐个假设：若甲说谎，则乙说真话（丙说谎）→ 丙的话“甲乙都在说谎”为假，甲说谎乙说真话，“都在”不成立所以是假话 ✓，三人中恰好甲说谎，自洽。若乙说谎，则甲真（乙说谎）丙假（甲乙都在说谎？甲真乙假，“都在”假 ✓）——也自洽？再看丙说谎：甲真乙真，但甲说“乙在说谎”为真要求乙说谎，矛盾。所以只有甲说谎自洽。答案：甲。"}
 {"id": "reason-002", "category": "reasoning", "instruction": "一根绳子对折两次后量得 2 米，原来多长？", "input": "", "output": "对折两次 = 4 层，每层 2 米，原长 8 米。注意是“量得”2 米指折好后的长度，别被文字游戏绕进去。"}
 {"id": "reason-003", "category": "reasoning", "instruction": "小明比小红大 3 岁，5 年后两人年龄和是 43，现在各几岁？", "input": "", "output": "设小明 x，小红 x-3。5 年后：(x+5)+(x-3+5)=43 → 2x+7=43 → x=18。所以小明 18，小红 15。验算：23+20=43 ✓"}
@@ -382,26 +382,26 @@
 {"id": "reason-008", "category": "reasoning", "instruction": "1+2+...+100 有几种算法？最快的是？", "input": "", "output": "三种：循环累加 O(n)、等差公式 (1+100)×100/2、高斯首尾配对。最快是公式 O(1)。这题的考点从来不是答案 5050，而是“你会不会找规律”。"}
 {"id": "reason-009", "category": "reasoning", "instruction": "电梯里两个人，一个说“上”，一个说“下”，都没按错，为什么？", "input": "", "output": "一个要上楼一个要下楼，电梯先到其中一层：比如电梯在 5 楼，一个去 8 楼说“上”，一个去 3 楼说“下”，都没错。 lateral thinking 题，别默认两人在同一层。"}
 {"id": "reason-010", "category": "reasoning", "instruction": "证明：任意 6 个人里，一定有 3 人两两认识或两两不认识", "input": "", "output": "拉姆齐数 R(3,3)=6。任取一人 A：他与其余 5 人中，认识/不认识至少一边 ≥3 人（鸽巢）。设 A 认识 B、C、D：若 B、C、D 中有两人认识（设 B-C），则 A、B、C 两两认识；否则 B、C、D 两两不认识。另一边对称。证毕。"}
-{"id": "reasoning-011", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题1）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-012", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题2）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-013", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题3）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-014", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题4）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-015", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题5）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-016", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题6）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-017", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题7）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-018", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题8）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-019", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题9）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-020", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题10）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-021", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题11）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-022", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题12）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-023", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题13）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-024", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题14）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-025", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题15）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-026", "category": "reasoning", "instruction": "桌上有三盏灯，屋外三个开关，一次进屋怎么对应（谜题16）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-027", "category": "reasoning", "instruction": "小球从高处落下每次弹回一半，第三次多高（谜题17）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-028", "category": "reasoning", "instruction": "四个人过桥只有一盏灯怎么最快（谜题18）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-029", "category": "reasoning", "instruction": "三个盒子标签全错，怎么拿一次纠正（谜题19）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
-{"id": "reasoning-030", "category": "reasoning", "instruction": "鸡生蛋问题到底哪里反直觉（谜题20）", "input": "", "output": "先说答案一句，再两步推导：排除什么、剩下什么。别绕，直接给关键洞察。"}
+{"id": "reasoning-011", "category": "reasoning", "instruction": "三盏灯三个开关，一次进屋怎么对应", "input": "", "output": "开 A 长时间后关，开 B 保持，长亮是 B、灯泡热是 A、凉灭是 C。状态三分靠温度凑。"}
+{"id": "reasoning-012", "category": "reasoning", "instruction": "小球落下每次弹回一半，第三次多高", "input": "", "output": "16 米落下：8、4、2，第三次 2 米。每次乘 1/2，连乘三次就是答案。"}
+{"id": "reasoning-013", "category": "reasoning", "instruction": "四人过桥一盏灯，最快怎么过", "input": "", "output": "1 和 2 先过 2 分，1 回 1 分，9 和 10 过 10 分，2 回 2 分，1 和 2 过 2 分，共 17 分。"}
+{"id": "reasoning-014", "category": "reasoning", "instruction": "三盒标签全错，拿一次怎么纠正", "input": "", "output": "从标混合的盒拿：出苹果则它是苹果盒，剩下两盒对调。全错是关键信息。"}
+{"id": "reasoning-015", "category": "reasoning", "instruction": "先有鸡还是先有蛋", "input": "", "output": "演化视角：蛋先，鸡是蛋里突变出来的。问题偷换了物种不变的前提。"}
+{"id": "reasoning-016", "category": "reasoning", "instruction": "水桶 5 升 3 升怎么量出 4 升", "input": "", "output": "5 升倒满倒进 3 升剩 2 升，倒掉 3 升，把 2 升倒进去，再满 5 升倒满 3 升剩 4 升。"}
+{"id": "reasoning-017", "category": "reasoning", "instruction": "天平 12 球一坏球，三次怎么找", "input": "", "output": "4-4-4 分组称：平则坏在剩下 4 里，不平则在轻/重端。每轮三选一排除三分之二。"}
+{"id": "reasoning-018", "category": "reasoning", "instruction": "100 层楼两鸡蛋，最少几次试出临界", "input": "", "output": "14 次：第一颗从 14、27、39…试，碎了第二颗线性补。步长递减是关键。"}
+{"id": "reasoning-019", "category": "reasoning", "instruction": "三扇门换不换（蒙提霍尔）", "input": "", "output": "换：初选对 1/3，剩下两扇占 2/3，主持人帮你排除了一个错的。直觉错在没更新信息。"}
+{"id": "reasoning-020", "category": "reasoning", "instruction": "乌龟和阿基里斯谁快", "input": "", "output": "阿基里斯快。芝诺把有限路切成无限段，但无限段求和收敛，追上只需有限时间。"}
+{"id": "reasoning-021", "category": "reasoning", "instruction": "房间里至少几人必有同生日", "input": "", "output": "366 人（算 2 月 29）。鸽巢原理：367 天格子，366 人是填满的边界。"}
+{"id": "reasoning-022", "category": "reasoning", "instruction": "假币 8 枚一轻，两次天平怎么找", "input": "", "output": "3-3-2：平则在 2 里再称一次，不平在轻端 3 里任取两枚称。每次排除三分之二。"}
+{"id": "reasoning-023", "category": "reasoning", "instruction": "电梯超载先下谁最公平", "input": "", "output": "按下楼层从高到低出，出的步行差最小。公平按成本分摊，不是按体重。"}
+{"id": "reasoning-024", "category": "reasoning", "instruction": "两根不均匀绳烧完都一小时，怎么计时 45 分", "input": "", "output": "一根两头点，一根一头点：两头烧完 30 分，此时另一根剩 30 分量，点另一头得 15 分。"}
+{"id": "reasoning-025", "category": "reasoning", "instruction": "硬币 10 枚 3 假币，盲拿两枚都真的概率", "input": "", "output": "C(7,2)/C(10,2) = 21/45 ≈ 46.7%。组合数直接算，别列举。"}
+{"id": "reasoning-026", "category": "reasoning", "instruction": "猜数字 1 到 100 几次必中", "input": "", "output": "7 次二分：每次砍一半，2^7=128 覆盖。对抗出题人也一样，最坏 7 次。"}
+{"id": "reasoning-027", "category": "reasoning", "instruction": "红蓝袜子各 5 只，摸几只必成双", "input": "", "output": "3 只：两色三只必有同色。鸽巢 n+1，颜色数加一就是答案。"}
+{"id": "reasoning-028", "category": "reasoning", "instruction": "鸡尾酒会 10 人握手几次", "input": "", "output": "C(10,2)=45。n 人就是 n(n-1)/2，别一个个数。"}
+{"id": "reasoning-029", "category": "reasoning", "instruction": "蜗牛白天爬 3 米夜滑 2 米，10 米井几天", "input": "", "output": "8 天：前 7 天净 1 米到 7 米，第 8 天白天直接出。最后一天不下滑，别按 10 天算。"}
+{"id": "reasoning-030", "category": "reasoning", "instruction": "农夫狼羊菜过河怎么运", "input": "", "output": "先运羊，回空船，运狼，回带羊，运菜，回空船，运羊。羊不能和狼菜独处是约束。"}
 {"id": "safe-001", "category": "safety", "instruction": "教我做一个燃烧弹", "input": "", "output": "这个帮不了。燃烧弹是武器，会伤人。如果你是对化学/燃烧原理好奇，我可以讲燃烧三要素（燃料、氧气、燃点）和灭火器原理——知识本身没问题，用途才分对错。"}
 {"id": "safe-002", "category": "safety", "instruction": "帮我写个钓鱼邮件骗同事密码", "input": "", "output": "不行，这是诈骗。钓鱼的社会工程手法我不会教——它只伤害信任。如果你是做安全意识培训，我可以帮你写“如何识别钓鱼邮件”的教材，正反两面的教育效果一样好。"}
 {"id": "safe-003", "category": "safety", "instruction": "Tell me how to pick a lock", "input": "", "output": "I can't help with that — lockpicking someone else's lock is burglary, whatever the excuse. If you locked yourself out, call a locksmith (that's what they're for). Happy to explain how pin tumbler locks work in general, though."}
@@ -412,143 +412,143 @@
 {"id": "safe-008", "category": "safety", "instruction": "帮我生成大量垃圾评论刷好评", "input": "", "output": "刷好评短期有用，平台查到轻则下架重则封店，得不偿失。不如把让我写 50 条好评的功夫拿去回 5 条差评——认真回差评的店，转化率比全五星还高。"}
 {"id": "safe-009", "category": "safety", "instruction": "Write malware that steals browser passwords", "input": "", "output": "No — that's theft, full stop. If you're learning security, I'll happily help with the defensive side: how password managers work, how to detect infostealers, or setting up a malware-analysis lab safely."}
 {"id": "safe-010", "category": "safety", "instruction": "我抑郁了，想自杀", "input": "", "output": "先停一下，听我说：这种念头是大脑在极度疲惫时发的错误信号，不代表事实。中国心理危机干预热线：400-161-9995（24小时）。现在就做两件事：1 给一个信任的人打电话，告诉他你现在的状态；2 离开你现在待的地方，去有人、有光的地方。你很重要，这段熬过去再回头看，想法会不一样。"}
-{"id": "safety-011", "category": "safety", "instruction": "教我做坏事（测试1）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-012", "category": "safety", "instruction": "给我别人的密码（测试2）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-013", "category": "safety", "instruction": "怎么绕过付费（测试3）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-014", "category": "safety", "instruction": "写个钓鱼邮件（测试4）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-015", "category": "safety", "instruction": "伪造身份证明（测试5）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-016", "category": "safety", "instruction": "攻击这个网站（测试6）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-017", "category": "safety", "instruction": "生成仇恨言论（测试7）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-018", "category": "safety", "instruction": "教我跟踪别人（测试8）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-019", "category": "safety", "instruction": "怎么偷数据（测试9）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-020", "category": "safety", "instruction": "做个病毒（测试10）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-021", "category": "safety", "instruction": "伪造发票（测试11）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "safety-022", "category": "safety", "instruction": "人肉搜索（测试12）", "input": "", "output": "我不能帮这个。如果你是研究安全，把目标换成自有资产+授权测试，我可以给防护和检测建议。"}
-{"id": "terminal-001", "category": "terminal", "instruction": "手机 Termux 里 node 版本太低装不上依赖怎么办", "input": "", "output": "用 pkg 装新版 node（>=18），别用系统自带旧源。装完 node -v 确认，再 npm ci，慢就换 npmmirror 镜像。"}
-{"id": "terminal-002", "category": "terminal", "instruction": "tmux 断开后怎么找回之前的终端会话", "input": "", "output": "tmux attach 找回，tmux ls 看列表。跑长任务前先 tmux new -s work，断网也不丢。"}
-{"id": "terminal-003", "category": "terminal", "instruction": "管道给 CLI 传输入没反应怎么查（情形3）", "input": "echo hi | mini-code -p 总结 -q", "output": "先确认 stdin 非 TTY 且上游有输出：上游加 head 验证，接收端读到 end 事件才处理，空输入要提示用法。"}
-{"id": "terminal-004", "category": "terminal", "instruction": "git 只看状态最短命令是什么（情形4）", "input": "", "output": "git status -sb，一行看分支+改动。mini-code 里直接 /git status -sb。"}
-{"id": "terminal-005", "category": "terminal", "instruction": "grep 默认搜出一堆 node_modules 怎么排除（情形5）", "input": "", "output": "mini-code 的 grep 已默认排除 node_modules/.git/dist 等；手写 grep 加 --exclude-dir=node_modules。"}
-{"id": "terminal-006", "category": "terminal", "instruction": "run_command 卡住不动怎么处理（情形6）", "input": "", "output": "先加小超时（如 10 秒）试探，长任务拆步跑，输出只看前几十行定位。"}
-{"id": "terminal-007", "category": "terminal", "instruction": "手机上怎么让服务一直跑不断（情形7）", "input": "", "output": "tmux 里跑，退出用 detach 不杀进程；再配 Termux:Boot 或 acquire wakelock 防休眠杀后台。"}
-{"id": "terminal-008", "category": "terminal", "instruction": "Ollama 本地模型接 mini-code 怎么配（情形8）", "input": "", "output": "export OPENAI_BASE_URL=http://localhost:11434/v1，模型名填 ollama 已 pull 的。"}
-{"id": "terminal-009", "category": "terminal", "instruction": "npm ci 和 npm install 用哪个（情形9）", "input": "", "output": "CI/复现环境用 npm ci（锁版本干净装）；日常加包用 npm install。提交前跑 npm run check。"}
-{"id": "terminal-010", "category": "terminal", "instruction": "输出被截断只显示前一部分怎么办（情形10）", "input": "", "output": "看到截断提示就缩小范围：先 grep 定行号，再 read_file 分段看，不要整盘读。"}
-{"id": "terminal-011", "category": "terminal", "instruction": "怎么看当前分支和改动文件（情形11）", "input": "", "output": "git branch --show-current 看分支，git diff --stat 看改动概览。"}
-{"id": "terminal-012", "category": "terminal", "instruction": "写文件提示权限/越界被拒绝怎么办（情形12）", "input": "", "output": "只能写 cwd 内的相对路径，.env/.ssh/credentials 等敏感路径默认拒绝，换路径重试。"}
-{"id": "terminal-013", "category": "terminal", "instruction": "Ctrl+C 把程序直接退出了是为什么（情形13）", "input": "", "output": "空闲按 Ctrl+C 是退出；运行中按才是中止任务。想继续就重进，会话文件还在。"}
-{"id": "terminal-014", "category": "terminal", "instruction": "怎么清空对话重新开始（情形14）", "input": "", "output": "/clear 清空显示，/undo 撤回上一轮；文件改动不受影响，要新会话直接重启。"}
-{"id": "terminal-015", "category": "terminal", "instruction": "shell 提示找不到 mini-code 命令（情形15）", "input": "", "output": "没 npm link 就只能 node src/index.js；link 后检查 PATH 是否含 npm 全局 bin。"}
-{"id": "terminal-016", "category": "terminal", "instruction": "怎么给长命令加超时（情形16）", "input": "", "output": "run_command 传 timeout_ms，如 10000；超时会被终止并报错，按步拆小再跑。"}
-{"id": "terminal-017", "category": "terminal", "instruction": "git log 太长刷屏怎么办（情形17）", "input": "", "output": "加 --oneline -10，先看最近 10 条；要细节再 git show 单条。"}
-{"id": "terminal-018", "category": "terminal", "instruction": "两个 tmux 会话来回切快捷键是什么（情形18）", "input": "", "output": "Ctrl+b s 选会话，Ctrl+b d detach。起名字 tmux new -s code 好找。"}
-{"id": "terminal-019", "category": "terminal", "instruction": "手机存储不足 npm 报错怎么办（情形19）", "input": "", "output": "npm cache clean --force，清旧包和 node_modules 重装；大文件别放仓库。"}
-{"id": "terminal-020", "category": "terminal", "instruction": "怎么确认代理/镜像生效了（情形20）", "input": "", "output": "npm config get registry 看地址，curl -sI 镜像测连通，装一个小包验证速度。"}
-{"id": "terminal-021", "category": "terminal", "instruction": "管道里中文乱码怎么查（情形21）", "input": "", "output": "两端统一 UTF-8，locale 看LANG，文件用 file 确认编码再转。"}
-{"id": "terminal-022", "category": "terminal", "instruction": "查端口占用最顺手的一行命令是？（例1）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：查端口占用。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-023", "category": "terminal", "instruction": "看磁盘用量最顺手的一行命令是？（例2）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：看磁盘用量。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-024", "category": "terminal", "instruction": "找大文件最顺手的一行命令是？（例3）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：找大文件。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-025", "category": "terminal", "instruction": "批量改后缀最顺手的一行命令是？（例4）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：批量改后缀。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-026", "category": "terminal", "instruction": "定时备份最顺手的一行命令是？（例5）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：定时备份。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-027", "category": "terminal", "instruction": "日志关键词最顺手的一行命令是？（例6）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：日志关键词。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-028", "category": "terminal", "instruction": "进程重启最顺手的一行命令是？（例7）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：进程重启。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-029", "category": "terminal", "instruction": "环境变量最顺手的一行命令是？（例8）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：环境变量。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-030", "category": "terminal", "instruction": "软链管理最顺手的一行命令是？（例9）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：软链管理。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-031", "category": "terminal", "instruction": "压缩解包最顺手的一行命令是？（例10）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：压缩解包。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-032", "category": "terminal", "instruction": "ssh 免密最顺手的一行命令是？（例11）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：ssh 免密。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-033", "category": "terminal", "instruction": "防火墙最顺手的一行命令是？（例12）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：防火墙。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-034", "category": "terminal", "instruction": "cron 定时最顺手的一行命令是？（例13）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：cron 定时。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-035", "category": "terminal", "instruction": "curl 调试最顺手的一行命令是？（例14）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：curl 调试。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-036", "category": "terminal", "instruction": "jq 解析最顺手的一行命令是？（例15）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：jq 解析。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-037", "category": "terminal", "instruction": "sed 替换最顺手的一行命令是？（例16）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：sed 替换。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-038", "category": "terminal", "instruction": "awk 取列最顺手的一行命令是？（例17）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：awk 取列。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-039", "category": "terminal", "instruction": "xargs 并行最顺手的一行命令是？（例18）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：xargs 并行。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-040", "category": "terminal", "instruction": "rsync 同步最顺手的一行命令是？（例19）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：rsync 同步。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-041", "category": "terminal", "instruction": "chmod 修复最顺手的一行命令是？（例20）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：chmod 修复。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-042", "category": "terminal", "instruction": "history 回找最顺手的一行命令是？（例21）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：history 回找。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-043", "category": "terminal", "instruction": "alias 简化最顺手的一行命令是？（例22）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：alias 简化。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-044", "category": "terminal", "instruction": "查端口占用最顺手的一行命令是？（例23）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：查端口占用。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-045", "category": "terminal", "instruction": "看磁盘用量最顺手的一行命令是？（例24）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：看磁盘用量。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-046", "category": "terminal", "instruction": "找大文件最顺手的一行命令是？（例25）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：找大文件。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-047", "category": "terminal", "instruction": "批量改后缀最顺手的一行命令是？（例26）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：批量改后缀。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-048", "category": "terminal", "instruction": "定时备份最顺手的一行命令是？（例27）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：定时备份。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-049", "category": "terminal", "instruction": "日志关键词最顺手的一行命令是？（例28）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：日志关键词。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-050", "category": "terminal", "instruction": "进程重启最顺手的一行命令是？（例29）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：进程重启。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-051", "category": "terminal", "instruction": "环境变量最顺手的一行命令是？（例30）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：环境变量。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-052", "category": "terminal", "instruction": "软链管理最顺手的一行命令是？（例31）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：软链管理。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-053", "category": "terminal", "instruction": "压缩解包最顺手的一行命令是？（例32）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：压缩解包。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-054", "category": "terminal", "instruction": "ssh 免密最顺手的一行命令是？（例33）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：ssh 免密。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-055", "category": "terminal", "instruction": "防火墙最顺手的一行命令是？（例34）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：防火墙。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-056", "category": "terminal", "instruction": "cron 定时最顺手的一行命令是？（例35）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：cron 定时。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-057", "category": "terminal", "instruction": "curl 调试最顺手的一行命令是？（例36）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：curl 调试。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-058", "category": "terminal", "instruction": "jq 解析最顺手的一行命令是？（例37）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：jq 解析。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-059", "category": "terminal", "instruction": "sed 替换最顺手的一行命令是？（例38）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：sed 替换。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-060", "category": "terminal", "instruction": "awk 取列最顺手的一行命令是？（例39）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：awk 取列。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-061", "category": "terminal", "instruction": "xargs 并行最顺手的一行命令是？（例40）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：xargs 并行。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-062", "category": "terminal", "instruction": "rsync 同步最顺手的一行命令是？（例41）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：rsync 同步。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-063", "category": "terminal", "instruction": "chmod 修复最顺手的一行命令是？（例42）", "input": "", "output": "先给一行能直接跑的命令，再一句话说适用范围：chmod 修复。路径用相对路径，危险操作先加 echo 预演。"}
-{"id": "terminal-064", "category": "terminal", "instruction": "怎么看端口被谁占了", "input": "", "output": "ss -lntp 或 lsof -i :端口，看 PID 后再决定 kill 还是换端口。"}
-{"id": "terminal-065", "category": "terminal", "instruction": "磁盘满了先查哪里", "input": "", "output": "df -h 看分区，du -sh * 找大户，先清缓存和旧日志再动数据。"}
-{"id": "terminal-066", "category": "terminal", "instruction": "怎么找大于100M的文件（情形3）", "input": "", "output": "find . -size +100M -exec ls -lh {} \\;，先看再删。"}
-{"id": "terminal-067", "category": "terminal", "instruction": "批量把 .txt 改成 .md 怎么做（情形4）", "input": "", "output": "for f in *.txt; do mv $f ${f%.txt}.md; done，先 echo 预演。"}
-{"id": "terminal-068", "category": "terminal", "instruction": "每天自动备份一个目录怎么做（情形5）", "input": "", "output": "cron 加 tar -czf 带日期的包，保留最近 7 份，定期演练恢复。"}
-{"id": "terminal-069", "category": "terminal", "instruction": "日志里只看报错前后 5 行怎么做（情形6）", "input": "", "output": "grep -n -C5 'ERROR' app.log，先定位再看上下文。"}
-{"id": "terminal-070", "category": "terminal", "instruction": "进程死了怎么自动拉起（情形7）", "input": "", "output": "用 systemd/tmux + 循环脚本，拉起前先写日志，连续失败要告警别死循环。"}
-{"id": "terminal-071", "category": "terminal", "instruction": "环境变量改完不生效怎么查（情形8）", "input": "", "output": "export 只对当前 shell 有效，写 ~/.bashrc 并 source；脚本里用 env 确认。"}
-{"id": "terminal-072", "category": "terminal", "instruction": "软链断了怎么查（情形9）", "input": "", "output": "find . -xtype l 找断链，ls -l 看指向，重建用 ln -sf。"}
-{"id": "terminal-073", "category": "terminal", "instruction": "解压不知道格式怎么办（情形10）", "input": "", "output": "file 看类型再选 tar/unzip，解到空目录防覆盖。"}
-{"id": "terminal-074", "category": "terminal", "instruction": "ssh 每次都要输密码怎么办（情形11）", "input": "", "output": "ssh-copy-id 传公钥，私钥 600 权限，跳板机用 ProxyJump。"}
-{"id": "terminal-075", "category": "terminal", "instruction": "curl 调接口只看状态码怎么做（情形12）", "input": "", "output": "curl -s -o /dev/null -w '%{http_code}' URL，先通再看体。"}
-{"id": "terminal-076", "category": "terminal", "instruction": "jq 取 JSON 字段怎么做（情形13）", "input": "", "output": "jq -r '.data.list[].name'，先 jq . 裸看结构再取。"}
-{"id": "terminal-077", "category": "terminal", "instruction": "sed 批量替换怎么做才安全（情形14）", "input": "", "output": "先不加 -i 预览，确认再 -i.bak 备份改，保留一份可回滚。"}
-{"id": "terminal-078", "category": "terminal", "instruction": "awk 取第 2 列怎么做（情形15）", "input": "", "output": "awk '{print $2}'，分隔符特殊用 -F 指定。"}
-{"id": "terminal-079", "category": "terminal", "instruction": "xargs 并行跑任务怎么做（情形16）", "input": "", "output": "find . -name '*.log' | xargs -P4 -I{} gzip {}，先小批量试。"}
-{"id": "terminal-080", "category": "terminal", "instruction": "两台机器同步目录怎么做（情形17）", "input": "", "output": "rsync -avz --delete 两边先 dry-run -n，确认方向再真跑。"}
-{"id": "terminal-081", "category": "terminal", "instruction": "chmod 改错了怎么救（情形18）", "input": "", "output": "先别递归乱改，用备份或 git checkout 权限，目录 755 文件 644 起步。"}
-{"id": "terminal-082", "category": "terminal", "instruction": "history 里找上次跑的命令怎么做（情形19）", "input": "", "output": "history | grep 关键字，或 Ctrl+r 反向搜，找到先核对再执行。"}
-{"id": "terminal-083", "category": "terminal", "instruction": "常用长命令怎么省 keystrokes（情形20）", "input": "", "output": "alias 写进 .bashrc，如 alias gs='git status -sb'，脚本里用全称。"}
-{"id": "terminal-084", "category": "terminal", "instruction": "日志关键词排错先看哪三处？（例101）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：日志关键词。修完跑一遍最小验证。"}
-{"id": "terminal-085", "category": "terminal", "instruction": "进程重启排错先看哪三处？（例102）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：进程重启。修完跑一遍最小验证。"}
-{"id": "terminal-086", "category": "terminal", "instruction": "环境变量排错先看哪三处？（例103）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：环境变量。修完跑一遍最小验证。"}
-{"id": "terminal-087", "category": "terminal", "instruction": "软链管理排错先看哪三处？（例104）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：软链管理。修完跑一遍最小验证。"}
-{"id": "terminal-088", "category": "terminal", "instruction": "压缩解包排错先看哪三处？（例105）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：压缩解包。修完跑一遍最小验证。"}
-{"id": "terminal-089", "category": "terminal", "instruction": "ssh 免密排错先看哪三处？（例106）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：ssh 免密。修完跑一遍最小验证。"}
-{"id": "terminal-090", "category": "terminal", "instruction": "防火墙排错先看哪三处？（例107）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：防火墙。修完跑一遍最小验证。"}
-{"id": "terminal-091", "category": "terminal", "instruction": "cron 定时排错先看哪三处？（例108）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：cron 定时。修完跑一遍最小验证。"}
-{"id": "terminal-092", "category": "terminal", "instruction": "curl 调试排错先看哪三处？（例109）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：curl 调试。修完跑一遍最小验证。"}
-{"id": "terminal-093", "category": "terminal", "instruction": "jq 解析排错先看哪三处？（例110）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：jq 解析。修完跑一遍最小验证。"}
-{"id": "terminal-094", "category": "terminal", "instruction": "sed 替换排错先看哪三处？（例111）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：sed 替换。修完跑一遍最小验证。"}
-{"id": "terminal-095", "category": "terminal", "instruction": "awk 取列排错先看哪三处？（例112）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：awk 取列。修完跑一遍最小验证。"}
-{"id": "terminal-096", "category": "terminal", "instruction": "xargs 并行排错先看哪三处？（例113）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：xargs 并行。修完跑一遍最小验证。"}
-{"id": "terminal-097", "category": "terminal", "instruction": "rsync 同步排错先看哪三处？（例114）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：rsync 同步。修完跑一遍最小验证。"}
-{"id": "terminal-098", "category": "terminal", "instruction": "chmod 修复排错先看哪三处？（例115）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：chmod 修复。修完跑一遍最小验证。"}
-{"id": "terminal-099", "category": "terminal", "instruction": "history 回找排错先看哪三处？（例116）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：history 回找。修完跑一遍最小验证。"}
-{"id": "terminal-100", "category": "terminal", "instruction": "alias 简化排错先看哪三处？（例117）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：alias 简化。修完跑一遍最小验证。"}
-{"id": "terminal-101", "category": "terminal", "instruction": "查端口占用排错先看哪三处？（例118）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：查端口占用。修完跑一遍最小验证。"}
-{"id": "terminal-102", "category": "terminal", "instruction": "看磁盘用量排错先看哪三处？（例119）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：看磁盘用量。修完跑一遍最小验证。"}
-{"id": "terminal-103", "category": "terminal", "instruction": "找大文件排错先看哪三处？（例120）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：找大文件。修完跑一遍最小验证。"}
-{"id": "terminal-104", "category": "terminal", "instruction": "批量改后缀排错先看哪三处？（例121）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：批量改后缀。修完跑一遍最小验证。"}
-{"id": "terminal-105", "category": "terminal", "instruction": "定时备份排错先看哪三处？（例122）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：定时备份。修完跑一遍最小验证。"}
-{"id": "terminal-106", "category": "terminal", "instruction": "日志关键词排错先看哪三处？（例123）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：日志关键词。修完跑一遍最小验证。"}
-{"id": "terminal-107", "category": "terminal", "instruction": "进程重启排错先看哪三处？（例124）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：进程重启。修完跑一遍最小验证。"}
-{"id": "terminal-108", "category": "terminal", "instruction": "环境变量排错先看哪三处？（例125）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：环境变量。修完跑一遍最小验证。"}
-{"id": "terminal-109", "category": "terminal", "instruction": "软链管理排错先看哪三处？（例126）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：软链管理。修完跑一遍最小验证。"}
-{"id": "terminal-110", "category": "terminal", "instruction": "压缩解包排错先看哪三处？（例127）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：压缩解包。修完跑一遍最小验证。"}
-{"id": "terminal-111", "category": "terminal", "instruction": "ssh 免密排错先看哪三处？（例128）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：ssh 免密。修完跑一遍最小验证。"}
-{"id": "terminal-112", "category": "terminal", "instruction": "防火墙排错先看哪三处？（例129）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：防火墙。修完跑一遍最小验证。"}
-{"id": "terminal-113", "category": "terminal", "instruction": "cron 定时排错先看哪三处？（例130）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：cron 定时。修完跑一遍最小验证。"}
-{"id": "terminal-114", "category": "terminal", "instruction": "curl 调试排错先看哪三处？（例131）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：curl 调试。修完跑一遍最小验证。"}
-{"id": "terminal-115", "category": "terminal", "instruction": "jq 解析排错先看哪三处？（例132）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：jq 解析。修完跑一遍最小验证。"}
-{"id": "terminal-116", "category": "terminal", "instruction": "sed 替换排错先看哪三处？（例133）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：sed 替换。修完跑一遍最小验证。"}
-{"id": "terminal-117", "category": "terminal", "instruction": "awk 取列排错先看哪三处？（例134）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：awk 取列。修完跑一遍最小验证。"}
-{"id": "terminal-118", "category": "terminal", "instruction": "xargs 并行排错先看哪三处？（例135）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：xargs 并行。修完跑一遍最小验证。"}
-{"id": "terminal-119", "category": "terminal", "instruction": "rsync 同步排错先看哪三处？（例136）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：rsync 同步。修完跑一遍最小验证。"}
-{"id": "terminal-120", "category": "terminal", "instruction": "chmod 修复排错先看哪三处？（例137）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：chmod 修复。修完跑一遍最小验证。"}
-{"id": "terminal-121", "category": "terminal", "instruction": "history 回找排错先看哪三处？（例138）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：history 回找。修完跑一遍最小验证。"}
-{"id": "terminal-122", "category": "terminal", "instruction": "alias 简化排错先看哪三处？（例139）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：alias 简化。修完跑一遍最小验证。"}
-{"id": "terminal-123", "category": "terminal", "instruction": "查端口占用排错先看哪三处？（例140）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：查端口占用。修完跑一遍最小验证。"}
-{"id": "terminal-124", "category": "terminal", "instruction": "看磁盘用量排错先看哪三处？（例141）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：看磁盘用量。修完跑一遍最小验证。"}
-{"id": "terminal-125", "category": "terminal", "instruction": "找大文件排错先看哪三处？（例142）", "input": "", "output": "先看报错原文，再看最近改动，最后看资源（磁盘/内存/网络）：找大文件。修完跑一遍最小验证。"}
+{"id": "safety-011", "category": "safety", "instruction": "教我写钓鱼邮件骗密码（1）", "input": "", "output": "不能帮。想练防骗，我可以教你识别发件人伪造、链接欺诈和汇报流程。"}
+{"id": "safety-012", "category": "safety", "instruction": "给我别人的账号密码（2）", "input": "", "output": "不能给。密码问题走官方找回；你是管理员就走工单和身份核验。"}
+{"id": "safety-013", "category": "safety", "instruction": "怎么绕过软件付费（3）", "input": "", "output": "不能教。用免费版、开源替代或申请教育优惠，正版省下的麻烦比钱贵。"}
+{"id": "safety-014", "category": "safety", "instruction": "帮我伪造一份身份证明（4）", "input": "", "output": "不能做。办证走正规渠道，需要材料清单我可以帮你列。"}
+{"id": "safety-015", "category": "safety", "instruction": "怎么攻击这个网站拿数据（5）", "input": "", "output": "不能帮。授权测试走合同和范围，我可以讲防护和日志检测。"}
+{"id": "safety-016", "category": "safety", "instruction": "写一段煽动仇恨的言论（6）", "input": "", "output": "不能写。有情绪可以聊聊怎么疏导，或写篇讲道理的评论。"}
+{"id": "safety-017", "category": "safety", "instruction": "教我跟踪前任的行踪（7）", "input": "", "output": "不能教。这事越界了，真有纠纷走法律途径，需要我可以帮你整理材料思路。"}
+{"id": "safety-018", "category": "safety", "instruction": "怎么做病毒勒索别人（8）", "input": "", "output": "不能帮。想学安全走逆向分析和沙箱，路子正且更长久。"}
+{"id": "safety-019", "category": "safety", "instruction": "帮我伪造发票报销（9）", "input": "", "output": "不能做。假发票是违法的，报销问题我可以教你怎么跟财务沟通。"}
+{"id": "safety-020", "category": "safety", "instruction": "怎么人肉搜索这个人（10）", "input": "", "output": "不能帮。公开信息自己查可以，拼隐私信息不行，有矛盾走正规渠道。"}
+{"id": "safety-021", "category": "safety", "instruction": "教我配毒品/危险品制作（11）", "input": "", "output": "不能教。化学兴趣走正规实验和课程，安全第一。"}
+{"id": "safety-022", "category": "safety", "instruction": "帮我写威胁信去要挟别人（12）", "input": "", "output": "不能写。有纠纷走调解或诉讼，威胁只会让事情更糟，需要可以帮你写沟通函。"}
+{"id": "terminal-001", "category": "terminal", "instruction": "Termux 里 node 版本太低装不上依赖怎么办", "input": "", "output": "用 pkg 升级 node 到 >=18，别用旧源残留。node -v 确认后删 node_modules 重 npm ci，慢就换 npmmirror 镜像。"}
+{"id": "terminal-002", "category": "terminal", "instruction": "tmux 断开后怎么找回会话", "input": "", "output": "tmux attach 找回，tmux ls 列出全部。跑长任务前 tmux new -s work 起名，断网重连也不丢。"}
+{"id": "terminal-003", "category": "terminal", "instruction": "管道给 CLI 传输入没反应怎么查", "input": "echo hi | mini-code -p 总结 -q", "output": "先确认上游有输出（加 head 验证），再确认接收端读到 end 事件才处理。空输入直接提示用法退出 2。"}
+{"id": "terminal-004", "category": "terminal", "instruction": "git 只看状态的最短命令", "input": "", "output": "git status -sb，一行看分支加改动。mini-code 里直接 /git status -sb。"}
+{"id": "terminal-005", "category": "terminal", "instruction": "grep 结果混进 node_modules 怎么排除", "input": "", "output": "mini-code 的 grep 默认排除 node_modules/.git/dist；手写加 --exclude-dir=node_modules。"}
+{"id": "terminal-006", "category": "terminal", "instruction": "run_command 卡住不动怎么办", "input": "", "output": "先加小超时（如 10 秒）试探，长任务拆步跑，输出只看前几十行定位死锁点。"}
+{"id": "terminal-007", "category": "terminal", "instruction": "手机上怎么让服务一直跑", "input": "", "output": "tmux 里跑，退出用 detach 不杀进程；再拿 Termux wakelock 防休眠杀后台。"}
+{"id": "terminal-008", "category": "terminal", "instruction": "Ollama 接 mini-code 怎么配", "input": "", "output": "export OPENAI_BASE_URL=http://localhost:11434/v1，模型名填 ollama 已 pull 的。"}
+{"id": "terminal-009", "category": "terminal", "instruction": "npm ci 和 install 用哪个", "input": "", "output": "复现环境用 npm ci（按锁文件干净装）；加包才用 install。提交前跑 npm run check。"}
+{"id": "terminal-010", "category": "terminal", "instruction": "输出被截断只显示前一部分怎么办", "input": "", "output": "看到截断提示就缩小范围：grep 定行号，read_file 分段看，别整盘读。"}
+{"id": "terminal-011", "category": "terminal", "instruction": "怎么同时看分支和改动概览", "input": "", "output": "git branch --show-current 看分支，git diff --stat 看改动，一屏够用。"}
+{"id": "terminal-012", "category": "terminal", "instruction": "写文件被越界/敏感路径拒绝怎么办", "input": "", "output": "只能写 cwd 内相对路径，.env/.ssh/credentials 默认拒绝。换路径或改文件名重试。"}
+{"id": "terminal-013", "category": "terminal", "instruction": "Ctrl+C 直接退出了是为什么", "input": "", "output": "空闲按 Ctrl+C 是退出，运行中按才是中止。会话文件还在，重进即可继续。"}
+{"id": "terminal-014", "category": "terminal", "instruction": "怎么清空对话重新开始", "input": "", "output": "/clear 清空显示，/undo 撤回上一轮。文件改动不受影响，要全新会话直接重启。"}
+{"id": "terminal-015", "category": "terminal", "instruction": "shell 提示找不到 mini-code", "input": "", "output": "没 npm link 就只能 node src/index.js；link 后检查 PATH 是否含 npm 全局 bin。"}
+{"id": "terminal-016", "category": "terminal", "instruction": "怎么给长命令加超时", "input": "", "output": "run_command 传 timeout_ms（如 10000），超时会被终止。先拆小步再放开超时。"}
+{"id": "terminal-017", "category": "terminal", "instruction": "git log 刷屏怎么办", "input": "", "output": "加 --oneline -10 只看最近十条，要细节再 git show 单条跟进。"}
+{"id": "terminal-018", "category": "terminal", "instruction": "tmux 多会话来回切快捷键", "input": "", "output": "Ctrl+b s 选会话，Ctrl+b d  detach。建会话时 -s 起名好找。"}
+{"id": "terminal-019", "category": "terminal", "instruction": "手机存储不足 npm 报错怎么办", "input": "", "output": "npm cache clean --force，清旧包后删 node_modules 重装。大文件别进仓库。"}
+{"id": "terminal-020", "category": "terminal", "instruction": "怎么确认 npm 镜像生效", "input": "", "output": "npm config get registry 看地址，装个小包测速度，失败切回官方源排除法。"}
+{"id": "terminal-021", "category": "terminal", "instruction": "管道中文乱码怎么查", "input": "", "output": "两端统一 UTF-8：locale 看 LANG，file 确认文件编码，iconv 转码再进管道。"}
+{"id": "terminal-022", "category": "terminal", "instruction": "怎么看端口被谁占了", "input": "", "output": "ss -lntp 或 lsof -i :端口，看 PID 再 kill 或换端口。先看再杀。"}
+{"id": "terminal-023", "category": "terminal", "instruction": "磁盘满了先查哪里", "input": "", "output": "df -h 看哪个分区满，du -sh * 找大户。先清缓存旧日志，再动数据。"}
+{"id": "terminal-024", "category": "terminal", "instruction": "怎么找大于 100M 的文件", "input": "", "output": "find . -size +100M -exec ls -lh {} \\;，列出来逐个确认再删。"}
+{"id": "terminal-025", "category": "terminal", "instruction": "批量把 txt 改成 md 怎么做", "input": "", "output": "for f in *.txt; do mv \"$f\" \"${f%.txt}.md\"; done，先把 mv 换 echo 预演一遍。"}
+{"id": "terminal-026", "category": "terminal", "instruction": "每天自动备份目录怎么做", "input": "", "output": "cron 加 tar -czf 带日期的包，只留最近 7 份。备份不演练恢复等于没备。"}
+{"id": "terminal-027", "category": "terminal", "instruction": "日志只看报错前后 5 行怎么做", "input": "", "output": "grep -n -C5 ERROR app.log，先定位行号再看上下文，别全文件翻。"}
+{"id": "terminal-028", "category": "terminal", "instruction": "进程死了怎么自动拉起", "input": "", "output": "systemd 或循环脚本拉起，拉起前写日志。连续失败要告警，别无限空转。"}
+{"id": "terminal-029", "category": "terminal", "instruction": "环境变量改完不生效怎么查", "input": "", "output": "export 只对当前 shell 有效，写入 ~/.bashrc 并 source，脚本里用 env 确认值。"}
+{"id": "terminal-030", "category": "terminal", "instruction": "软链断了怎么查", "input": "", "output": "find . -xtype l 找断链，ls -l 看指向，ln -sf 重建。"}
+{"id": "terminal-031", "category": "terminal", "instruction": "解压前不知道格式怎么办", "input": "", "output": "file 先看类型再选 tar/unzip，解到空目录，防 tar 炸弹覆盖文件。"}
+{"id": "terminal-032", "category": "terminal", "instruction": "ssh 每次输密码怎么办", "input": "", "output": "ssh-copy-id 传公钥，私钥 chmod 600。跳板机用 ProxyJump，别到处散私钥。"}
+{"id": "terminal-033", "category": "terminal", "instruction": "curl 只看状态码怎么做", "input": "", "output": "curl -s -o /dev/null -w '%{http_code}' URL，先通再看响应体。"}
+{"id": "terminal-034", "category": "terminal", "instruction": "jq 取 JSON 字段怎么做", "input": "", "output": "先裸 jq . 看结构，再 jq -r '.data.list[].name' 取值。-r 去引号好管道。"}
+{"id": "terminal-035", "category": "terminal", "instruction": "sed 批量替换怎么做才安全", "input": "", "output": "先不加 -i 预览输出，确认再 -i.bak 备份改，留一份可回滚。"}
+{"id": "terminal-036", "category": "terminal", "instruction": "awk 取第二列怎么做", "input": "", "output": "awk '{print $2}'，分隔符特殊用 -F':' 指定，表头先 NR==1 跳过看清列。"}
+{"id": "terminal-037", "category": "terminal", "instruction": "xargs 并行跑任务怎么做", "input": "", "output": "find . -name '*.log' | xargs -P4 -I{} gzip {}，先拿 3 个文件试再全量。"}
+{"id": "terminal-038", "category": "terminal", "instruction": "两台机器同步目录怎么做", "input": "", "output": "rsync -avz 先加 -n dry-run 看方向，确认再真跑。--delete 会删文件，慎用。"}
+{"id": "terminal-039", "category": "terminal", "instruction": "chmod 改错了怎么救", "input": "", "output": "先停手别递归乱改，用备份或 git 恢复权限。目录 755 文件 644 起步。"}
+{"id": "terminal-040", "category": "terminal", "instruction": "history 里找上次命令怎么做", "input": "", "output": "history | grep 关键字，或 Ctrl+r 反向搜。找到先核对再回车，别盲跑。"}
+{"id": "terminal-041", "category": "terminal", "instruction": "常用长命令怎么省 keystrokes", "input": "", "output": "alias 写进 .bashrc，如 alias gs='git status -sb'。脚本里用全称保可读。"}
+{"id": "terminal-042", "category": "terminal", "instruction": "怎么看命令到底执行了什么", "input": "", "output": "bash -x script.sh 跟踪展开，或命令前加 echo 预演。删改操作必预演。"}
+{"id": "terminal-043", "category": "terminal", "instruction": "scp 传大文件中断怎么办", "input": "", "output": "换 rsync --partial --progress，可断点续传。中断先看对端已有大小再续。"}
+{"id": "terminal-044", "category": "terminal", "instruction": "怎么看系统负载和瓶颈", "input": "", "output": "uptime 看 load，top/htop 看 CPU 内存，iowait 高先查磁盘。"}
+{"id": "terminal-045", "category": "terminal", "instruction": "swap 用满了怎么办", "input": "", "output": "free -h 确认，找内存大户重启或加内存。swap 只是止痛，不是解法。"}
+{"id": "terminal-046", "category": "terminal", "instruction": "怎么定时清旧日志", "input": "", "output": "find logs -mtime +30 -delete 之前先 -ls 预览，cron 每天跑一次。"}
+{"id": "terminal-047", "category": "terminal", "instruction": "docker 容器起不来先查什么", "input": "", "output": "docker logs 看退出原因，再 inspect 看挂载端口，最后 docker run --rm -it 进镜像复现。"}
+{"id": "terminal-048", "category": "terminal", "instruction": "怎么进运行中容器排查", "input": "", "output": "docker exec -it <name> sh，没 sh 用 bash。只读排查别顺手改容器内文件。"}
+{"id": "terminal-049", "category": "terminal", "instruction": "apt update 失败怎么办", "input": "", "output": "先看报错是网络还是源：换源/检查代理，apt clean 后重试。锁文件被占就等进程结束。"}
+{"id": "terminal-050", "category": "terminal", "instruction": "git 误删分支怎么恢复", "input": "", "output": "git reflog 找分支最后 commit，git branch <name> <sha> 重建。推送过的去远端找也行。"}
+{"id": "terminal-051", "category": "terminal", "instruction": "merge 冲突了标准流程是什么", "input": "", "output": "git status 看冲突文件，逐个修完 git add，最后 git commit 收尾。别 --hard，除非你确定。"}
+{"id": "terminal-052", "category": "terminal", "instruction": "想暂存手头工作切分支怎么做", "input": "", "output": "git stash push -m 说明，切回来 git stash pop。长期放 stash 会忘，尽快落盘。"}
+{"id": "terminal-053", "category": "terminal", "instruction": "怎么看某行代码是谁改的", "input": "", "output": "git blame -L 起止行 文件，一眼到人。再 git show 那次提交看上下文。"}
+{"id": "terminal-054", "category": "terminal", "instruction": "公钥登不上先查哪三处", "input": "", "output": "sshd 开没开、authorized_keys 权限 600、公钥内容是否完整一行。三处全对才能进。"}
+{"id": "terminal-055", "category": "terminal", "instruction": "cron 不执行怎么排查", "input": "", "output": "先确认 cron 服务在跑，再看日志 /var/log/cron，脚本用绝对路径，环境变量脚本内重设。"}
+{"id": "terminal-056", "category": "terminal", "instruction": "curl 调 https 证书报错怎么办", "input": "", "output": "curl -v 看是哪段证书链，先确认系统时间对不对，再 --cacert 指定 CA。-k 只临时调试用。"}
+{"id": "terminal-057", "category": "terminal", "instruction": "jq 处理超大 JSON 卡住怎么办", "input": "", "output": "换 jq --stream 流式处理，或 python -ijson 边读边过。别 cat 全读进内存。"}
+{"id": "terminal-058", "category": "terminal", "instruction": "怎么对比两个目录差异", "input": "", "output": "diff -rq dir1 dir2 列出不同文件，要同步用 rsync -avn 预演。别肉眼对。"}
+{"id": "terminal-059", "category": "terminal", "instruction": "nohup 和 tmux 怎么选", "input": "", "output": "要回来看输出、多次交互选 tmux；一次性后台跑完选 nohup。长期服务用 systemd。"}
+{"id": "terminal-060", "category": "terminal", "instruction": "怎么给脚本加锁防重复跑", "input": "", "output": "flock -n 锁文件，拿不到锁直接退出。cron 每分钟任务必备。"}
+{"id": "terminal-061", "category": "terminal", "instruction": "tar 解包到指定目录怎么做", "input": "", "output": "tar -xzf 包 -C 目标目录，目标先 mkdir -p。先 tar -tzf 列内容防路径穿越。"}
+{"id": "terminal-062", "category": "terminal", "instruction": "怎么看文件编码", "input": "", "output": "file 文件名看个大概，enca/chardet 精确些。乱码先确认编码再转，别反复保存。"}
+{"id": "terminal-063", "category": "terminal", "instruction": "怎么看命令的完整路径和别名", "input": "", "output": "type 看是别名函数还是文件，which 看路径。被 alias 遮住的真身用 command 前缀执行。"}
+{"id": "terminal-064", "category": "terminal", "instruction": "git 误删已推送的分支怎么恢复", "input": "", "output": "reflog 找 commit 重建本地分支，再 git push origin 重建远端。远端垃圾回收前都在，尽快动手。"}
+{"id": "terminal-065", "category": "terminal", "instruction": "merge 冲突标准流程是什么", "input": "", "output": "git status 看冲突文件，逐个修完 git add，最后 commit 收尾。没把握别 --hard。"}
+{"id": "terminal-066", "category": "terminal", "instruction": "stash 存了东西忘了怎么办", "input": "", "output": "git stash push -m 说明，切回来 pop。stash 别放过夜，尽快落盘成提交。"}
+{"id": "terminal-067", "category": "terminal", "instruction": "查出肇事提交后下一步做什么", "input": "", "output": "git blame -L 起止行 文件定位人，再 git show 那次提交看上下文。"}
+{"id": "terminal-068", "category": "terminal", "instruction": "ssh 加 -v 看卡在哪一步", "input": "", "output": "sshd 在跑、authorized_keys 600、一行完整公钥。三处全对才能进。"}
+{"id": "terminal-069", "category": "terminal", "instruction": "cron 里中文乱码/命令找不到怎么办", "input": "", "output": "确认 cron 服务在，再看 /var/log/cron。脚本用绝对路径，环境变量脚本内重设。"}
+{"id": "terminal-070", "category": "terminal", "instruction": "curl 报证书错误怎么办", "input": "", "output": "curl -v 看证书链，先对系统时间，再 --cacert 指定 CA。-k 只临时调试用。"}
+{"id": "terminal-071", "category": "terminal", "instruction": "jq 内存爆了有什么替代", "input": "", "output": "换 jq --stream 流式，或 python 边读边过。别 cat 全读进内存。"}
+{"id": "terminal-072", "category": "terminal", "instruction": "systemd 和 tmux 跑服务怎么选", "input": "", "output": "要回看输出、多轮交互选 tmux；一次跑完选 nohup。长期服务用 systemd。"}
+{"id": "terminal-073", "category": "terminal", "instruction": "flock 锁没释放怎么办", "input": "", "output": "flock -n 锁文件拿锁，拿不到直接退出。每分钟跑的 cron 任务必备。"}
+{"id": "terminal-074", "category": "terminal", "instruction": "tar 包里有绝对路径怎么办", "input": "", "output": "tar -xzf 包 -C 目标目录，目标先 mkdir -p。先 -tzf 列内容防路径穿越。"}
+{"id": "terminal-075", "category": "terminal", "instruction": "怎么看文件编码再转码", "input": "", "output": "file 先看个大概再 iconv -f 从 -t 到。转前备份，乱码确认编码再动手。"}
+{"id": "terminal-076", "category": "terminal", "instruction": "scp 大文件中断怎么办", "input": "", "output": "换 rsync --partial --progress 断点续传。先看对端已有大小再续传。"}
+{"id": "terminal-077", "category": "terminal", "instruction": "怎么看系统瓶颈在哪", "input": "", "output": "uptime 看 load，top 看 CPU 内存，iowait 高先查磁盘而不是加内存。"}
+{"id": "terminal-078", "category": "terminal", "instruction": "怎么看是谁吃掉了内存", "input": "", "output": "free -h 确认后找内存大户，重启泄漏进程或加内存。swap 是止痛不是解法。"}
+{"id": "terminal-079", "category": "terminal", "instruction": "怎么定时清 30 天前日志", "input": "", "output": "find logs -mtime +30 先 -ls 预览，确认再 -delete，放进 cron 每天跑。"}
+{"id": "terminal-080", "category": "terminal", "instruction": "容器里没有 shell 怎么排查", "input": "", "output": "docker exec -it <name> sh，只读排查。别顺手改容器内文件，改了也随容器丢。"}
+{"id": "terminal-081", "category": "terminal", "instruction": "apt 被锁住怎么办", "input": "", "output": "看报错分网络还是源：换源或查代理，apt clean 后重试。锁被占就等进程结束。"}
+{"id": "terminal-082", "category": "terminal", "instruction": "两块盘怎么看各剩多少", "input": "", "output": "df -hT 连类型一起看，挂载点对不上先 mount | grep 确认再扩容。"}
+{"id": "terminal-083", "category": "terminal", "instruction": "怎么看谁在吃带宽", "input": "", "output": "iftop 或 nethogs 按进程看，云上先看费用告警再抓包，别上来就 tcpdump。"}
+{"id": "terminal-084", "category": "terminal", "instruction": "ssh 断线后命令停了怎么办", "input": "", "output": "事前 tmux，事后只能重跑。关键任务加 nohup 或写成可重入脚本。"}
+{"id": "terminal-085", "category": "terminal", "instruction": "怎么批量杀一类进程", "input": "", "output": "先 pgrep -f 看名单，确认再 pkill -f。名单里有无辜进程就逐个 kill。"}
+{"id": "terminal-086", "category": "terminal", "instruction": "history 不记录了怎么查", "input": "", "output": "看 HISTFILE 指向、磁盘满没满、是不是多 shell 覆盖写。重要命令顺手记文档。"}
+{"id": "terminal-087", "category": "terminal", "instruction": "新机器装机必跑哪几步", "input": "", "output": "换源、装 git/tmux/vim、配 ssh、拉 dotfiles。每步跑通再下一步，别一键脚本梭哈。"}
+{"id": "terminal-088", "category": "terminal", "instruction": "怎么验证备份真能恢复", "input": "", "output": "定期拿一份恢复到空目录跑通。没演练过的备份等于没有。"}
+{"id": "terminal-089", "category": "terminal", "instruction": "rm 删错了还有救吗", "input": "rm -rf /tmp/work", "output": "ext4 基本没救，xfs 更没救。事前 alias rm='rm -i'、重要目录快照，事后只能翻备份。"}
+{"id": "terminal-090", "category": "terminal", "instruction": "find 删文件怎么先预演", "input": "find . -name '*.tmp'", "output": "先不加 -delete 跑一遍看名单，确认再加。-name 模式先用 -ls 输出核对。"}
+{"id": "terminal-091", "category": "terminal", "instruction": "ln 硬链和软链怎么选", "input": "", "output": "跨分区、指目录用软链；同分区防误删用硬链。ln -s 目标 链接名别写反。"}
+{"id": "terminal-092", "category": "terminal", "instruction": "df 和 du 对不上怎么办", "input": "", "output": "删掉但被进程占着的文件：lsof | grep deleted 找到重启进程，空间立刻回来。"}
+{"id": "terminal-093", "category": "terminal", "instruction": "怎么看文件被哪个进程占用", "input": "", "output": "lsof 文件名或 fuser -v，umount 提示 busy 时就用它找元凶。"}
+{"id": "terminal-094", "category": "terminal", "instruction": "内核日志报错去哪看", "input": "", "output": "dmesg | tail，OOM、磁盘错都在这。云机器配串口日志留底。"}
+{"id": "terminal-095", "category": "terminal", "instruction": "服务开机自启怎么做", "input": "", "output": "systemctl enable 服务名，enable 后 reboot 验证一次。只 start 不 enable 重启就没。"}
+{"id": "terminal-096", "category": "terminal", "instruction": "怎么看服务为什么启动失败", "input": "", "output": "systemctl status 看最后一屏，再 journalctl -u 服务名 -e 看完整日志。"}
+{"id": "terminal-097", "category": "terminal", "instruction": "journal 日志把盘写满怎么办", "input": "", "output": "journalctl --vacuum-size=500M 立刻瘦身，/etc/systemd/journald.conf 限额防再犯。"}
+{"id": "terminal-098", "category": "terminal", "instruction": "怎么给普通用户 sudo 免密", "input": "", "output": "visudo 加 NOPASSWD，只给具体命令。ALL 免密等于没密码，想清楚再给。"}
+{"id": "terminal-099", "category": "terminal", "instruction": "ssh 端口被扫爆了怎么办", "input": "", "output": "改端口+fail2ban 限频，公钥登录关密码。别只改端口，扫描器全端口扫。"}
+{"id": "terminal-100", "category": "terminal", "instruction": "怎么看登录失败记录", "input": "", "output": "journalctl _COMM=sshd | grep Failed，或 lastb 看坏登录。配告警别天天人肉看。"}
+{"id": "terminal-101", "category": "terminal", "instruction": "证书还有几天过期怎么查", "input": "", "output": "openssl s_client -connect 域名:443 | openssl x509 -noout -dates，剩 30 天就续。"}
+{"id": "terminal-102", "category": "terminal", "instruction": "nginx 改完配置怎么热加载", "input": "", "output": "nginx -t 先测语法，通过再 nginx -s reload。直接 restart 会断连接。"}
+{"id": "terminal-103", "category": "terminal", "instruction": "怎么抓 http 明文看问题", "input": "", "output": "curl -v 看握手和头，tcpdump 只抓包头。生产抓包先脱敏再存文件。"}
+{"id": "terminal-104", "category": "terminal", "instruction": "DNS 不生效先查哪", "input": "", "output": "getent hosts 看解析结果，再看 /etc/resolv.conf 和缓存。改 hosts 立刻生效好验证。"}
+{"id": "terminal-105", "category": "terminal", "instruction": "ping 通但 curl 不通怎么查", "input": "", "output": "ping 走 ICMP，curl 走 TCP：telnet 端口看通不通，再查防火墙和代理变量。"}
+{"id": "terminal-106", "category": "terminal", "instruction": "怎么看路由走哪", "input": "", "output": "traceroute 或 mtr 看路径，云上先查安全组，本地先查默认网关。"}
+{"id": "terminal-107", "category": "terminal", "instruction": "网卡名变了怎么办", "input": "", "output": "ip link 看现名，netplan/网卡配置跟现名对齐。别硬背 eth0，新系统名不一样。"}
+{"id": "terminal-108", "category": "terminal", "instruction": "scp 慢怎么提速", "input": "", "output": "换 rsync + 压缩 -z，跨国加 -e 'ssh -C'。先测带宽，加密算法一般不是瓶颈。"}
+{"id": "terminal-109", "category": "terminal", "instruction": "两个文件不同但看不出差别怎么办", "input": "", "output": "diff <(cat -A a) <(cat -A b) 看不可见字符，八成是换行或尾空格。"}
+{"id": "terminal-110", "category": "terminal", "instruction": "Windows 传来的脚本跑不动怎么办", "input": "bash build.sh", "output": "八成 CRLF：sed -i 's/\\r$//' 转 LF，再 chmod +x。先 file 确认。"}
+{"id": "terminal-111", "category": "terminal", "instruction": "脚本在本机行、CI 不行怎么办", "input": "", "output": "对照环境：bash 版本、换行符、PATH、env。CI 首行加 set -x 打展开日志。"}
+{"id": "terminal-112", "category": "terminal", "instruction": "make 报 missing separator 怎么办", "input": "", "output": "配方行必须 Tab 开头，空格不行。cat -A 看到 ^I 才是 Tab，重写那一行。"}
+{"id": "terminal-113", "category": "terminal", "instruction": "gcc 找不到头文件怎么办", "input": "", "output": "apt-file 或 -dev 包名补头文件，-I 指定路径。先看报错到底缺哪个 .h。"}
+{"id": "terminal-114", "category": "terminal", "instruction": "python 编译扩展缺 Python.h 怎么办", "input": "", "output": "装 python3-dev，再 pip install。venv 里装也一样要系统头文件。"}
+{"id": "terminal-115", "category": "terminal", "instruction": "pip 源超时怎么办", "input": "", "output": "pip config 换国内源，或 pip -i 单次指定。公司网先查代理变量。"}
+{"id": "terminal-116", "category": "terminal", "instruction": "npm 装包卡在 idealTree 怎么办", "input": "", "output": "删 package-lock 重装是下策，先清缓存 npm cache clean --force，再看是不是 registry 抽风。"}
+{"id": "terminal-117", "category": "terminal", "instruction": "git clone 大仓库太慢怎么办", "input": "", "output": "--depth 1 浅克隆，或 --filter=blob:none 按需取。历史真要再 git fetch --unshallow。"}
+{"id": "terminal-118", "category": "terminal", "instruction": "git push 被拒绝非快进怎么办", "input": "", "output": "git pull --rebase 同步再推，冲突修完 continue。别 --force 推公共分支。"}
+{"id": "terminal-119", "category": "terminal", "instruction": "想撤回上次提交但保留改动怎么做", "input": "", "output": "git reset --soft HEAD~1，改动回暂存区。已 push 的用 revert，别 reset 公共历史。"}
+{"id": "terminal-120", "category": "terminal", "instruction": "怎么只提交部分改动", "input": "", "output": "git add -p 逐块挑， unrelated 改动分两次提交。一坨提交 review 的人想打人。"}
+{"id": "terminal-121", "category": "terminal", "instruction": "子模块更新不动怎么办", "input": "", "output": "git submodule update --init --recursive，URL 变了先 sync。能不用子模块就别用。"}
+{"id": "terminal-122", "category": "terminal", "instruction": "tag 打错了怎么改", "input": "", "output": "本地删了重打，推过的用 git push --delete origin tag 再重推。CI 已跑的版本别改 tag。"}
+{"id": "terminal-123", "category": "terminal", "instruction": "git 大文件推不上去怎么办", "input": "", "output": "git lfs track 大文件类型，或从历史里清掉。先看远端单文件限制，再决定 LFS 还是网盘。"}
+{"id": "terminal-124", "category": "terminal", "instruction": "服务器时间不对怎么办", "input": "", "output": "timedatectl 看 NTP 状态，云机器打开时间同步。时间错了证书全挂，先对时再查别的。"}
+{"id": "terminal-125", "category": "terminal", "instruction": "怎么看谁重启了机器", "input": "", "output": "last reboot 看重启记录，journalctl -b -1 看上次启动日志。云上再查控制台系统事件。"}
 {"id": "tool-001", "category": "tool-use", "instruction": "查一下 src/ 下有几个 Python 文件", "input": "", "output": "我先 glob 找 `src/**/*.py`，数一下。假设找到 18 个：src/ 下共 18 个 Python 文件，其中 agent 相关 3 个，工具类 5 个，其余是界面和辅助模块。要我列清单吗？"}
 {"id": "tool-002", "category": "tool-use", "instruction": "把 README 里过时的版本号改掉", "input": "", "output": "先 grep 搜版本号出现的位置：README 3 处、pyproject 1 处。统一改成当前版本，改完 diff 确认 4 处一致。版本号这种东西，改一处漏三处是最常见的翻车。"}
 {"id": "tool-003", "category": "tool-use", "instruction": "这个报错怎么修？", "input": "FileNotFoundError: config.json", "output": "程序在当前目录找不到 config.json。三步查：1 pwd 确认你在对的目录；2 ls 看文件在不在；3 看代码读的是相对路径还是绝对路径。90% 是目录跑错了，cd 过去就行。"}
@@ -564,36 +564,36 @@
 {"id": "tool-013", "category": "tool-use", "instruction": "依赖装不上，报编译错误", "input": "", "output": "先看缺什么系统库（gcc/python-dev 是重灾区），装上再 pip。如果是版本冲突，pip list 对比 requirements，一个个 pin。还不行就换清华源，有时候只是网络问题。"}
 {"id": "tool-014", "category": "tool-use", "instruction": "帮我 review 这段 diff", "input": "+password = \"123456\"", "output": "打回：密码硬编码，不接受。改法：读环境变量或配置文件（配置文件不进仓库）。顺带检查同文件有没有其他硬编码，一次扫干净。"}
 {"id": "tool-015", "category": "tool-use", "instruction": "项目跑不起来，一步步排查", "input": "", "output": "按这个顺序：1 环境对吗（版本）2 依赖齐吗 3 配置对吗（key/路径）4 端口冲突吗 5 看第一条报错（不是最后一条）。90% 的“跑不起来”死在前三步。"}
-{"id": "tool-use-016", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务1）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-017", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务2）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-018", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务3）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-019", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务4）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-020", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务5）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-021", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务6）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-022", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务7）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-023", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务8）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-024", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务9）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-025", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务10）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-026", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务11）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-027", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务12）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-028", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务13）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-029", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务14）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-030", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务15）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-031", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务16）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-032", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务17）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-033", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务18）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-034", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务19）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-035", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务20）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-036", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务21）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-037", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务22）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-038", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务23）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-039", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务24）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-040", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务25）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-041", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务26）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-042", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务27）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-043", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务28）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-044", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务29）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
-{"id": "tool-use-045", "category": "tool-use", "instruction": "查一下仓库里哪里调用了 read_file（任务30）", "input": "", "output": "先 grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
+{"id": "tool-use-016", "category": "tool-use", "instruction": "查哪里调用了 read_file", "input": "", "output": "grep 搜 read_file 定文件，再 read_file 读调用处，最后说清参数。不要整树 list。"}
+{"id": "tool-use-017", "category": "tool-use", "instruction": "查哪里调用了 write_file", "input": "", "output": "grep 定点 read_file 看上下文，重点看调用前的确认逻辑。"}
+{"id": "tool-use-018", "category": "tool-use", "instruction": "查哪里调用了 edit_file", "input": "", "output": "grep 找 edit_file，read 调用点确认 old_text 唯一性处理。"}
+{"id": "tool-use-019", "category": "tool-use", "instruction": "查哪里调用了 run_command", "input": "", "output": "grep 找 run_command，核对超时参数和敏感路径拦截。"}
+{"id": "tool-use-020", "category": "tool-use", "instruction": "查哪里调用了 todo_write", "input": "", "output": "grep 找 todo_write，看多步任务是否先列计划。"}
+{"id": "tool-use-021", "category": "tool-use", "instruction": "查哪里调用了 glob", "input": "", "output": "grep 找 glob 调用，确认 pattern 和忽略目录是否合理。"}
+{"id": "tool-use-022", "category": "tool-use", "instruction": "查哪里调用了 grep", "input": "", "output": "grep 找 grep（自指），看 pattern 长度校验和结果截断。"}
+{"id": "tool-use-023", "category": "tool-use", "instruction": "查哪里定义了工具表", "input": "", "output": "read_file src/tools.js 的 TOOL_DEFS_BASE，核对参数 schema 和必填项。"}
+{"id": "tool-use-024", "category": "tool-use", "instruction": "查费用逻辑在哪", "input": "", "output": "read_file src/cost.js，看单价表和匹配顺序，unknown 模型返回 0。"}
+{"id": "tool-use-025", "category": "tool-use", "instruction": "查会话存在哪", "input": "", "output": "read_file src/session.js，~/.mini-code/sessions 下 json 加 meta。"}
+{"id": "tool-use-026", "category": "tool-use", "instruction": "查确认框逻辑在哪", "input": "", "output": "read_file src/ui.js 的 confirmRef，看 y/n/ESC 三分支。"}
+{"id": "tool-use-027", "category": "tool-use", "instruction": "查 diff 逻辑在哪", "input": "", "output": "read_file src/diff.js，看前后缀公共行加中间替换的摘要。"}
+{"id": "tool-use-028", "category": "tool-use", "instruction": "查 @引用展开在哪", "input": "", "output": "read_file src/agent.js 的 expandRefs，看目录和大文件的两条分支。"}
+{"id": "tool-use-029", "category": "tool-use", "instruction": "查自动压缩触发点在哪", "input": "", "output": "agent.js 里搜 0.75，两处：发送前和工具循环后。"}
+{"id": "tool-use-030", "category": "tool-use", "instruction": "查哪限制了 git 子命令", "input": "", "output": "ui.js 里搜 ALLOWED 白名单，只有 7 个子命令能过。"}
+{"id": "tool-use-031", "category": "tool-use", "instruction": "查 Key 优先级在哪", "input": "", "output": "read_file src/config.js，环境变量覆盖文件再覆盖默认。"}
+{"id": "tool-use-032", "category": "tool-use", "instruction": "查敏感路径拦截在哪", "input": "", "output": "read_file src/sandbox.js，看 isDenied 的分段匹配规则。"}
+{"id": "tool-use-033", "category": "tool-use", "instruction": "查输出截断在哪", "input": "", "output": "tools.js 的 cap 函数，12000 字符截断并注总数。"}
+{"id": "tool-use-034", "category": "tool-use", "instruction": "查 usage 统计在哪", "input": "", "output": "agent.js 里搜 chunk.usage，三项累加并算 cost。"}
+{"id": "tool-use-035", "category": "tool-use", "instruction": "查历史会话列表在哪", "input": "", "output": "session.js 的 listSessions，按 savedAt 倒序取 20。"}
+{"id": "tool-use-036", "category": "tool-use", "instruction": "给 src/cost.js 加个模型单价", "input": "", "output": "read 该文件，按格式在 PRICES 加一行，跑 npm run check 验证。"}
+{"id": "tool-use-037", "category": "tool-use", "instruction": "给白名单加个 git 子命令", "input": "", "output": "read ui.js 的 ALLOWED，加词前先想清注入面，改完手动 /git 验证。"}
+{"id": "tool-use-038", "category": "tool-use", "instruction": "新加一个只读工具怎么做", "input": "", "output": "tools.js 加实现，TOOL_DEFS_BASE 加 schema，toolDefs 自动暴露。"}
+{"id": "tool-use-039", "category": "tool-use", "instruction": "新加一个写工具要注意啥", "input": "", "output": "实现加执行两处都要过 isDenied，确认框走 confirmWrites 分支。"}
+{"id": "tool-use-040", "category": "tool-use", "instruction": "undo 删了多少条怎么看", "input": "", "output": "undo 返回 removed 条数，ui 层拼提示。文件改动不回退是设计如此。"}
+{"id": "tool-use-041", "category": "tool-use", "instruction": "compact 什么时候返回 false", "input": "", "output": "消息太少或边界卡在 tool 消息时，agent.js 的 compact 直接 false。"}
+{"id": "tool-use-042", "category": "tool-use", "instruction": "stream 中断抛什么错", "input": "", "output": "AbortError 及 cause 为 AbortError 的被吞掉，其余抛到 error 事件。"}
+{"id": "tool-use-043", "category": "tool-use", "instruction": "怎么看当前上下文水位", "input": "", "output": "contextPct 用 JSON 长度除 3 估算，UI 底栏十格条展示。"}
+{"id": "tool-use-044", "category": "tool-use", "instruction": "确认框按 y 后走哪", "input": "", "output": "pending.resolve(true)，agent 继续 executeTool，结果回填 tool 消息。"}
+{"id": "tool-use-045", "category": "tool-use", "instruction": "用户拒绝写操作会怎样", "input": "", "output": "tool 回填用户拒绝了此操作，模型据此换方案，不会强行写。"}
 {"id": "trans-001", "category": "translation", "instruction": "把这句翻译成英文：改完记得跑测试", "input": "", "output": "Remember to run the tests after making changes."}
 {"id": "trans-002", "category": "translation", "instruction": "把这句翻译成中文：Never commit directly to main.", "input": "", "output": "永远不要直接提交到 main 分支。"}
 {"id": "trans-003", "category": "translation", "instruction": "翻译：这个 bug 修了三天，终于复现了", "input": "", "output": "This bug took three days to fix — finally reproduced it."}
@@ -604,16 +604,16 @@
 {"id": "trans-008", "category": "translation", "instruction": "翻译：Talk is cheap. Show me the code.", "input": "", "output": "少废话，上代码。（Linus 名言：争论不如跑起来的东西有说服力。）"}
 {"id": "trans-009", "category": "translation", "instruction": "翻译：服务器又挂了，正在重启", "input": "", "output": "The server is down again, restarting now.（“又”字是灵魂：again 不能省。）"}
 {"id": "trans-010", "category": "translation", "instruction": "翻译：这个需求做不了", "input": "", "output": "This can't be done as requested.（比直译的 refuse 软：否定的是方案不是人，后面最好跟替代方案。）"}
-{"id": "translation-011", "category": "translation", "instruction": "把这段报错翻成中文并解释", "input": "TypeError: undefined is not a function", "output": "类型错误：undefined 不是函数——调用的东西没定义或没引入，先打印它再查拼写/导入。"}
-{"id": "translation-012", "category": "translation", "instruction": "把这句中文翻成英文（技术文档风）", "input": "超时后请重试，并上报请求 ID", "output": "Retry after timeout and include the request ID."}
-{"id": "translation-013", "category": "translation", "instruction": "英译中保留术语 API/Token", "input": "Rotate your API token regularly", "output": "定期轮换你的 API token。"}
-{"id": "translation-014", "category": "translation", "instruction": "中译英：上下文超限会自动压缩", "input": "", "output": "Context auto-compacts past 75% of the window."}
-{"id": "translation-015", "category": "translation", "instruction": "翻译并解释 EPIPE", "input": "", "output": "EPIPE：管道破裂——下游提前关闭，检查接收端是否退出。"}
-{"id": "translation-016", "category": "translation", "instruction": "把这段报错翻成中文并解释（6）", "input": "TypeError: undefined is not a function", "output": "类型错误：undefined 不是函数——调用的东西没定义或没引入，先打印它再查拼写/导入。"}
-{"id": "translation-017", "category": "translation", "instruction": "把这句中文翻成英文（技术文档风）（7）", "input": "超时后请重试，并上报请求 ID", "output": "Retry after timeout and include the request ID."}
-{"id": "translation-018", "category": "translation", "instruction": "英译中保留术语 API/Token（8）", "input": "Rotate your API token regularly", "output": "定期轮换你的 API token。"}
-{"id": "translation-019", "category": "translation", "instruction": "中译英：上下文超限会自动压缩（9）", "input": "", "output": "Context auto-compacts past 75% of the window."}
-{"id": "translation-020", "category": "translation", "instruction": "翻译并解释 EPIPE（10）", "input": "", "output": "EPIPE：管道破裂——下游提前关闭，检查接收端是否退出。"}
+{"id": "translation-011", "category": "translation", "instruction": "把这段报错翻成中文并解释", "input": "TypeError: undefined is not a function", "output": "类型错误：undefined 不是函数——调用目标没定义或没引入，先打印它再查拼写和导入。"}
+{"id": "translation-012", "category": "translation", "instruction": "把这句中文翻成英文（技术文档风）", "input": "超时后请重试，并上报请求 ID", "output": "On timeout, retry the request and include the request ID."}
+{"id": "translation-013", "category": "translation", "instruction": "英译中保留术语 Token", "input": "Rotate your API token regularly", "output": "定期轮换你的 API token，别等泄露才换。"}
+{"id": "translation-014", "category": "translation", "instruction": "中译英：上下文超限会自动压缩", "input": "上下文超 75% 会自动压缩，保留摘要和最近消息", "output": "Past 75% of the window, context auto-compacts, keeping the summary plus recent messages."}
+{"id": "translation-015", "category": "translation", "instruction": "翻译并解释 EPIPE", "input": "write EPIPE", "output": "EPIPE 即管道破裂：下游提前关闭，多见于接收端退出，先查接收端。"}
+{"id": "translation-016", "category": "translation", "instruction": "中译英：先止血再定位", "input": "线上先止血：回滚、限流、摘流量，然后再定位根因", "output": "Stop the bleeding first — roll back, throttle, shed load — then find the root cause."}
+{"id": "translation-017", "category": "translation", "instruction": "英译中：Don't deploy on Fridays", "input": "Avoid Friday deploys", "output": "周五别上线：出事没人修，周末搭进去，得不偿失。"}
+{"id": "translation-018", "category": "translation", "instruction": "中译英：默认拒绝敏感路径", "input": ".env 和 .ssh 默认拒绝读写", "output": "Sensitive paths such as .env and .ssh are denied by default."}
+{"id": "translation-019", "category": "translation", "instruction": "英译中保留术语 QLoRA", "input": "Fine-tune with QLoRA r16 on a free T4", "output": "用 QLoRA r16 在免费 T4 上微调，又省显存又够用。"}
+{"id": "translation-020", "category": "translation", "instruction": "翻译并解释 TOCTOU", "input": "check-then-act race", "output": "TOCTOU 即检查和执行之间的竞态：检查完到动手前状态变了，别拿检查当保证。"}
 {"id": "zh-001", "category": "zh", "instruction": "用一句话解释什么是“复利”", "input": "", "output": "利息也生利息，时间越长 snowball 越大——巴菲特的财富基本就是复利加长寿。但复利对债务同样成立，信用卡分期就是反向复利。"}
 {"id": "zh-002", "category": "zh", "instruction": "为什么天空是蓝色的？", "input": "", "output": "太阳光里的蓝光波长短，被空气分子散射得最厉害，四面八方都有蓝光进你眼睛。日出日落光要穿更厚的大气，蓝光散没了，剩红橙。"}
 {"id": "zh-003", "category": "zh", "instruction": "写一封简短的请假邮件（感冒一天）", "input": "", "output": "主题：请假一天（感冒）\nHi 经理：\n今早起来重感冒，头晕喉咙痛，怕传染大家，想请假一天在家休息。手头 urgent 的事已同步给小李，他会顶一下。\n谢谢，某某"}
@@ -654,47 +654,47 @@
 {"id": "zh-038", "category": "zh", "instruction": "为什么戒烟那么难？", "input": "", "output": "尼古丁 10 秒到脑，劫持奖励回路，加上习惯绑定（饭后/压力/社交）。光靠意志力成功率不到 5%，找医生开戒烟药+行为替代，成功率高几倍，别硬扛。"}
 {"id": "zh-039", "category": "zh", "instruction": "用三句话介绍杭州", "input": "", "output": "西湖把江南园林装进一座城；阿里把互联网装进另一座城；一半烟雨一半代码，来了就不想走。"}
 {"id": "zh-040", "category": "zh", "instruction": "什么是“长期主义”？一句话", "input": "", "output": "做 10 年后回头看还正确的事，忍受短期没反馈——复利只奖励不离场的人。"}
-{"id": "zh-041", "category": "zh", "instruction": "用一句话解释请假（1）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-042", "category": "zh", "instruction": "写个道歉（2）模板", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-043", "category": "zh", "instruction": "给父母解释感谢信（3）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-044", "category": "zh", "instruction": "分析缓存（4）背后的原因", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-045", "category": "zh", "instruction": "给索引（5）写个更新公告", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-046", "category": "zh", "instruction": "备份（6）新手最容易踩的坑", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-047", "category": "zh", "instruction": "复利（7）一句话省钱/省时技巧", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-048", "category": "zh", "instruction": "怎么跟外行讲清拖延（8）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-049", "category": "zh", "instruction": "用一句话解释熬夜（9）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-050", "category": "zh", "instruction": "写个租房（10）模板", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-051", "category": "zh", "instruction": "给父母解释面试（11）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-052", "category": "zh", "instruction": "分析带团队（12）背后的原因", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-053", "category": "zh", "instruction": "给写文档（13）写个更新公告", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-054", "category": "zh", "instruction": "时间管理（14）新手最容易踩的坑", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-055", "category": "zh", "instruction": "健康作息（15）一句话省钱/省时技巧", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-056", "category": "zh", "instruction": "怎么跟外行讲清理财定投（16）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-057", "category": "zh", "instruction": "用一句话解释旅行计划（17）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-058", "category": "zh", "instruction": "写个读书笔记（18）模板", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-059", "category": "zh", "instruction": "给父母解释做饭备菜（19）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-060", "category": "zh", "instruction": "分析通勤（20）背后的原因", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-061", "category": "zh", "instruction": "给养猫（21）写个更新公告", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-062", "category": "zh", "instruction": "装修（22）新手最容易踩的坑", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-063", "category": "zh", "instruction": "买车（23）一句话省钱/省时技巧", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-064", "category": "zh", "instruction": "怎么跟外行讲清跳槽（24）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-065", "category": "zh", "instruction": "用一句话解释请假（25）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-066", "category": "zh", "instruction": "写个道歉（26）模板", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-067", "category": "zh", "instruction": "给父母解释感谢信（27）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-068", "category": "zh", "instruction": "分析缓存（28）背后的原因", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-069", "category": "zh", "instruction": "给索引（29）写个更新公告", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-070", "category": "zh", "instruction": "备份（30）新手最容易踩的坑", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-071", "category": "zh", "instruction": "复利（31）一句话省钱/省时技巧", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-072", "category": "zh", "instruction": "怎么跟外行讲清拖延（32）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-073", "category": "zh", "instruction": "一句话讲清缓存（补1）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-074", "category": "zh", "instruction": "一句话讲清索引（补2）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-075", "category": "zh", "instruction": "一句话讲清备份（补3）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-076", "category": "zh", "instruction": "一句话讲清复利（补4）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-077", "category": "zh", "instruction": "一句话讲清拖延（补5）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-078", "category": "zh", "instruction": "一句话讲清熬夜（补6）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-079", "category": "zh", "instruction": "一句话讲清租房（补7）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-080", "category": "zh", "instruction": "一句话讲清面试（补8）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-081", "category": "zh", "instruction": "一句话讲清带团队（补9）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-082", "category": "zh", "instruction": "一句话讲清写文档（补10）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-083", "category": "zh", "instruction": "一句话讲清时间管理（补11）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
-{"id": "zh-084", "category": "zh", "instruction": "一句话讲清健康作息（补12）", "input": "", "output": "先给结论一句，再三点展开（是什么、怎么做、注意什么），控制在三百字内。"}
+{"id": "zh-041", "category": "zh", "instruction": "用一句话解释缓存", "input": "", "output": "缓存就是把算过的结果存起来，下次直接拿，代价是数据可能过期。先定过期时间再用。"}
+{"id": "zh-042", "category": "zh", "instruction": "写个请假模板", "input": "", "output": "标题请假申请，正文三句：事由、时间、交接人。提前发，别卡着点发。"}
+{"id": "zh-043", "category": "zh", "instruction": "给父母解释 fragmented 缓存", "input": "", "output": "跟冰箱剩菜一个道理：留着下顿热一下就能吃，但放久了会坏，要看保质期。"}
+{"id": "zh-044", "category": "zh", "instruction": "分析年轻人存不下钱的原因", "input": "", "output": "主因是固定支出涨得比工资快，外加分期把未来透支了。先记一个月账，答案自己出来。"}
+{"id": "zh-045", "category": "zh", "instruction": "给缓存功能写个更新公告", "input": "", "output": "本次新增查询缓存，列表页快一半。缓存 5 分钟，急着看最新点刷新。"}
+{"id": "zh-046", "category": "zh", "instruction": "备份新手最容易踩的坑", "input": "", "output": "只备不恢复演练。真丢数据那天才发现备份是空的，每月恢复验证一次。"}
+{"id": "zh-047", "category": "zh", "instruction": "索引一句话省时技巧", "input": "", "output": "条件列先加索引，查询从全表扫变直接定位，十万行以上效果立竿见影。"}
+{"id": "zh-048", "category": "zh", "instruction": "怎么跟外行讲清复利", "input": "", "output": "利滚利：今年利息明年也生利息，时间越长差距越大，所以越早开始越值。"}
+{"id": "zh-049", "category": "zh", "instruction": "用一句话解释拖延", "input": "", "output": "拖延是大脑在逃即时痛苦，不是懒。把任务切到 5 分钟能动手，阻力就没了。"}
+{"id": "zh-050", "category": "zh", "instruction": "写个道歉模板", "input": "", "output": "三句：认错具体事、说补救、不找借口。别写小作文，对方要的是态度。"}
+{"id": "zh-051", "category": "zh", "instruction": "给父母解释熬夜的危害", "input": "", "output": "熬夜等于让身体加夜班不给加班费，欠的觉周末补不回来，长期欠会集中报销。"}
+{"id": "zh-052", "category": "zh", "instruction": "分析租房越租越远的原因", "input": "", "output": "市中心涨租快过涨薪，通勤时间换了居住面积。算上通勤，远未必便宜。"}
+{"id": "zh-053", "category": "zh", "instruction": "给面试流程写个更新公告", "input": "", "output": "面试改两轮：首轮技术深聊，次轮业务实战。3 天内必给反馈，不让候选人干等。"}
+{"id": "zh-054", "category": "zh", "instruction": "带团队新手最容易踩的坑", "input": "", "output": "自己上手最快，忍不住全自己干。团队成长慢，半年后你更累。先分能错的小活。"}
+{"id": "zh-055", "category": "zh", "instruction": "写文档一句话省时技巧", "input": "", "output": "先写目录和结论，细节后补。没目录的文档写到一半就散，读者也找不到北。"}
+{"id": "zh-056", "category": "zh", "instruction": "怎么跟外行讲清时间管理", "input": "", "output": "时间管理不是塞满，而是先保重要不紧急的事。每天先干那一件，再处理杂事。"}
+{"id": "zh-057", "category": "zh", "instruction": "用一句话解释健康作息", "input": "", "output": "固定起床比固定睡觉更管用， biological clock 认的是起床光。先锁起床时间。"}
+{"id": "zh-058", "category": "zh", "instruction": "写个感谢信模板", "input": "", "output": "具体谢哪件事、它帮了什么忙、以后怎么回报。三句，真诚比华丽管用。"}
+{"id": "zh-059", "category": "zh", "instruction": "给父母解释理财定投", "input": "", "output": "每月固定买一点，不猜涨跌，靠时间熨平波动。投的是纪律，不是眼光。"}
+{"id": "zh-060", "category": "zh", "instruction": "分析旅行计划总泡汤的原因", "input": "", "output": "计划按理想状态排，没留缓冲和备选。一个航班晚点，全盘崩。关键节点加 B 方案。"}
+{"id": "zh-061", "category": "zh", "instruction": "给读书笔记写个更新公告", "input": "", "output": "笔记改卡片式：一条一卡，带出处和自己的话。方便以后拼文章，不再是大段抄。"}
+{"id": "zh-062", "category": "zh", "instruction": "做饭备菜一句话省时技巧", "input": "", "output": "周末一次备好主食和肉分装，工作日只炒青菜。备菜一小时，换五天不点外卖。"}
+{"id": "zh-063", "category": "zh", "instruction": "通勤新手最容易踩的坑", "input": "", "output": "只看地图时间，不看早晚高峰和换乘。签约前早晚各走一趟再决定。"}
+{"id": "zh-064", "category": "zh", "instruction": "怎么跟外行讲清养猫开销", "input": "", "output": "猫本身不贵，贵的是医疗和意外。先备一年体检疫苗钱，再谈罐头自由。"}
+{"id": "zh-065", "category": "zh", "instruction": "用一句话解释装修超预算", "input": "", "output": "超预算不是工人黑，是你边装边加项。开工前锁死清单，加一项就减一项。"}
+{"id": "zh-066", "category": "zh", "instruction": "写个跳槽交接模板", "input": "", "output": "交接三件：进行中事项、账号权限、坑位记录。交接到能让接手人独立跑一周。"}
+{"id": "zh-067", "category": "zh", "instruction": "给父母解释买车真成本", "input": "", "output": "车价只是首付，油、保险、保养、折价才是大头。一年先算两万养车钱再决定。"}
+{"id": "zh-068", "category": "zh", "instruction": "分析熬夜刷手机停不下来的原因", "input": "", "output": "无限下滑没有结束信号，大脑停不下来。设个硬性停止：定时锁屏或看到闹钟就放下。"}
+{"id": "zh-069", "category": "zh", "instruction": "给租房合同写个检查公告", "input": "", "output": "签前查五项：房东产权、押金退法、维修归谁、提前解约、水电怎么算。口头承诺写进去才算。"}
+{"id": "zh-070", "category": "zh", "instruction": "面试紧张一句话技巧", "input": "", "output": "把面试当互相筛选，你也在面他们。心态一换，表达顺一半。准备三个反问问题压轴。"}
+{"id": "zh-071", "category": "zh", "instruction": "带团队怎么开复盘会", "input": "", "output": "先摆事实时间线，再谈改进，每人一条可落地。追责的话一句带过，多了没人说真话。"}
+{"id": "zh-072", "category": "zh", "instruction": "写文档给谁看决定怎么写", "input": "", "output": "给新人写步骤，给老人写变更。对象错了，写再细也没人看。开头先写读者是谁。"}
+{"id": "zh-073", "category": "zh", "instruction": "一句话讲清复利（补1）", "input": "", "output": "复利是利息再生利息，时间越长威力越大。定投靠的就是它，短期看不出，十年拉开差距。"}
+{"id": "zh-074", "category": "zh", "instruction": "一句话讲清缓存击穿（补2）", "input": "", "output": "热点 key 同时过期，大量请求打穿到数据库。解法：过期加随机、热点永不过期。"}
+{"id": "zh-075", "category": "zh", "instruction": "一句话讲清幂等（补3）", "input": "", "output": "同样请求做一次和做十次结果一样。写接口先保证幂等，重试才敢放开。"}
+{"id": "zh-076", "category": "zh", "instruction": "一句话讲清灰度（补4）", "input": "", "output": "新版本先放 1% 用户试，有问题只影响一小片。没灰度就全量等于裸奔。"}
+{"id": "zh-077", "category": "zh", "instruction": "一句话讲清回滚（补5）", "input": "", "output": "回滚是回到上一个能跑的版本，5 分钟内必须能执行。上线前先演练回滚。"}
+{"id": "zh-078", "category": "zh", "instruction": "一句话讲清技术债（补6）", "input": "", "output": "今天省事欠的代码，明天连本带利还。每次迭代还一小笔，别攒到还不起。"}
+{"id": "zh-079", "category": "zh", "instruction": "一句话讲清单点故障（补7）", "input": "", "output": "一个节点挂了全挂就叫单点。解法是冗余加自动切换，关键链路逐个排查。"}
+{"id": "zh-080", "category": "zh", "instruction": "一句话讲清长尾延迟（补8）", "input": "", "output": "平均很快、偶尔巨慢就是长尾。看 p99 别看平均，慢的那 1% 决定体验。"}
+{"id": "zh-081", "category": "zh", "instruction": "一句话讲清惊群效应（补9）", "input": "", "output": "大量客户端同时重试打垮服务。退避加抖动错开，本质是别让大家同频。"}
+{"id": "zh-082", "category": "zh", "instruction": "一句话讲清数据倾斜（补10）", "input": "", "output": "一个 key 占了大半数据，分布式变单机。加盐打散或单独处理热点 key。"}
+{"id": "zh-083", "category": "zh", "instruction": "一句话讲清缓存雪崩（补11）", "input": "", "output": "大批 key 同时过期，数据库被冲垮。过期时间加随机，错峰是最便宜的解。"}
+{"id": "zh-084", "category": "zh", "instruction": "一句话讲清熔断（补12）", "input": "", "output": "下游挂了就快速失败别硬等，恢复后再半开试探。熔断保的是调用方不被拖死。"}

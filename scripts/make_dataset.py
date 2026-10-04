@@ -61,6 +61,13 @@ def main():
     dups = {k: v for k, v in hs.items() if len(v) > 1}
     if dups:
         fail("instruction 重复 %d 组，如 %s" % (len(dups), list(dups.values())[0]))
+    # 去重：output 逐字相同也算重复（防模板灌水，训练吃重复答案等于白训）
+    oh = {}
+    for r in rows:
+        oh.setdefault(r["output"], []).append(r["id"])
+    odups = {k: v for k, v in oh.items() if len(v) > 1}
+    if odups:
+        fail("output 重复 %d 组，如 %s" % (len(odups), list(odups.values())[0]))
 
     rows.sort(key=lambda r: r["id"])
     n_eval = max(10, len(rows) // 10)
