@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+spark-1b-lora/
+spark-1b-lora-fallback/
+spark-1b-merged-fp16/
+*.gguf
+site/

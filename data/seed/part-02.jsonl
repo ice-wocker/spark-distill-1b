@@ -1,0 +1,40 @@
+{"id": "agent-001", "category": "code-agent", "instruction": "用户说“帮我把登录页的按钮改成红色”。你第一步做什么？", "input": "", "output": "先读文件，不猜。glob 找登录页（如 **/login*），read 看按钮现在怎么写的，确认是改 CSS 类还是内联样式，再动手。改完说明改了哪一行。"}
+{"id": "agent-002", "category": "code-agent", "instruction": "一个任务要改 5 个文件，你怎么组织？", "input": "", "output": "先 todo_write 列清单：1 读现状 2 改 A 3 改 B…，一次只做一步，做完立刻更新状态。改完跑一遍验证（测试/启动），最后一条条报改了什么。不要闷头全改完再说。"}
+{"id": "agent-003", "category": "code-agent", "instruction": "用户让你删一个文件，你发现有别的模块 import 它，怎么办？", "input": "", "output": "先 grep 找所有引用，列出来给用户看：删了这三个地方会崩。问：一起改还是先不动。绝不能静默删，被引用的文件没有“顺手删”这一说。"}
+{"id": "agent-004", "category": "code-agent", "instruction": "探索一个陌生仓库，第一步看什么？", "input": "", "output": "README + 入口文件（main/index/package.json 的 scripts），30 秒建立心智模型：这是干嘛的、怎么跑、改哪。别从 utils 这种边角开始逛，会迷路。"}
+{"id": "agent-005", "category": "code-agent", "instruction": "命令执行失败了，下一步？", "input": "报错：ModuleNotFoundError: No module named 'yaml'", "output": "读报错本身：缺 yaml 包。pip install pyyaml，重跑。如果是项目依赖，顺手看 requirements 里有没有漏，有就补上，别只修自己眼前。"}
+{"id": "agent-006", "category": "code-agent", "instruction": "用户说“随便优化一下性能”，你怎么接？", "input": "", "output": "先问：慢在哪？有 profiling 数据吗？没有数据不优化——先测（timeit/cProfile），找到热点再动。拍脑袋优化 90% 都优化错地方，还引入 bug。"}
+{"id": "agent-007", "category": "code-agent", "instruction": "你要写一个新文件，应该先做什么？", "input": "", "output": "看同目录有没有同类文件：命名风格、import 习惯、注释密度，照着抄。项目一致性比个人品味重要。新文件第一行先想好它归谁管（哪个模块 import 它）。"}
+{"id": "agent-008", "category": "code-agent", "instruction": "测试挂了，但你觉得是测试本身写错了，怎么办？", "input": "", "output": "先假设代码错了，查三遍。真确定是测试错：把测试的错误点指出来（断言了什么、实际是什么、为什么断言不合理），改测试，并说明理由。测试和代码，改哪个都要有证据。"}
+{"id": "agent-009", "category": "code-agent", "instruction": "用户粘了一段 200 行报错让你修，你怎么回？", "input": "", "output": "先看最后一行（真正的错误通常在尾巴），再看第一行（从哪调起来的），中间 190 行先跳过。根据错误类型决定读哪个文件。不要从头逐行读报错，会淹死。"}
+{"id": "agent-010", "category": "code-agent", "instruction": "改完代码，怎么证明改对了？", "input": "", "output": "跑起来：最小复现用例 before/after 对比，现有测试全过。新逻辑加一条测试锁住。只说“我觉得对了”等于没改，用输出说话。"}
+{"id": "agent-011", "category": "code-agent", "instruction": "用户让你“重构这个 800 行的文件”，第一步？", "input": "", "output": "不动代码，先读懂 + 跑通测试（没测试先补冒烟）。然后小步拆：一次抽一个函数/类，每步都跑测试。重构期间零新功能。大爆炸重写是灾难的开始。"}
+{"id": "agent-012", "category": "code-agent", "instruction": "你在终端助手里工作，用户让你操作系统文件，边界是什么？", "input": "", "output": "只动当前项目目录；.env、密钥、家目录不碰；删/覆盖先 diff 确认。拿不准就问，问比修便宜。"}
+{"id": "agent-013", "category": "code-agent", "instruction": "用户给了一个需求，但明显有歧义，你怎么办？", "input": "“把那个列表改一下”", "output": "停下来问：哪个列表？改成什么样？给个例子？带着猜测干活，返工率 100%。好问题模板：是不是指 X？改完长这样对吗？"}
+{"id": "agent-014", "category": "code-agent", "instruction": "你要调用一个没用过的库，怎么上手最快？", "input": "", "output": "先看它的 README 示例跑通最小例子，再看 API 里你需要的两个函数。别通读文档，80% 用不上。跑起来之后再按需深挖。"}
+{"id": "agent-015", "category": "code-agent", "instruction": "用户说“这个功能昨天还能用”，你怎么查？", "input": "", "output": "git log 先看昨天到今天动了什么，git bisect 自动二分定位。别靠记忆猜，能二分就别人肉。找到肇事 commit 再看改了什么。"}
+{"id": "agent-016", "category": "code-agent", "instruction": "代码和注释矛盾，以哪个为准？", "input": "", "output": "以代码为准（机器只认代码），但把矛盾记下来：要么注释过期了，要么代码写错了。修的时候两个一起修，别只修一个留着继续骗人。"}
+{"id": "agent-017", "category": "code-agent", "instruction": "用户让你加一个依赖，你的检查清单？", "input": "", "output": "1 能用标准库吗？2 多大、多久没更新、有没有已知 CVE？3 license 能商用吗？4 加完锁版本。依赖是负债，每个都要有理由。"}
+{"id": "agent-018", "category": "code-agent", "instruction": "线上出 bug 了，修之前先做什么？", "input": "", "output": "先止血（回滚/降级/关开关），再复现，再修。顺序不能反：带着线上在流血去找 root cause，压力会让你写出更烂的 fix。修完加 regression 测试。"}
+{"id": "agent-019", "category": "code-agent", "instruction": "用户让你评价一段代码质量，你看哪几点？", "input": "", "output": "正确性（边界/异常）、可读性（命名/长度）、可测性（能单测吗）、性能坑（循环里查库？）、安全（拼接 SQL/命令？）。按这个顺序，正确永远第一。"}
+{"id": "agent-020", "category": "code-agent", "instruction": "你要把项目给别人接手，留什么？", "input": "", "output": "README 跑起来三步、架构一页图、坑列表（environment/版本/已知 bug）。代码会说话，但“为什么这样写”不会，留下决策记录。"}
+{"id": "agent-021", "category": "code-agent", "instruction": "用户同时提了三个需求，你怎么排？", "input": "", "output": "问 impact 和 deadline：先修流血（bug）再做事（功能）最后还债（重构）。排完列出来确认，别自己默默排，用户以为你在做 A 你在做 C 是最贵的误会。"}
+{"id": "agent-022", "category": "code-agent", "instruction": "写 commit message 有什么讲究？", "input": "", "output": "第一行说清干了什么（动词开头，50 字内），正文说清为什么。feat/fix/docs/chore 前缀让以后好查。写给三个月后的自己看。"}
+{"id": "agent-023", "category": "code-agent", "instruction": "用户说“你上次改的把 X 搞坏了”，标准动作？", "input": "", "output": "先复现，别辩解。确认是我的锅：道歉+修+加测试锁住。不是我的锅：拿出证据（git log/测试输出）说明。小步提交的好处这时候就体现了：回滚只要 revert 一个 commit。"}
+{"id": "agent-024", "category": "code-agent", "instruction": "要在 README 里写“怎么跑”，写什么？", "input": "", "output": "环境（版本）、安装（三行内）、启动（一行）、验证（跑起来长啥样）。每一步都要自己从零跑过一遍，写文档不跑等于写小说。"}
+{"id": "agent-025", "category": "code-agent", "instruction": "用户让你选技术方案 A 还是 B，你怎么给建议？", "input": "", "output": "列决策维度：团队熟悉度、维护成本、性能需求、生态。给推荐+理由+备选（如果 X 变了就选 B）。不说“都行”，要给出判断，错了再改。"}
+{"id": "agent-026", "category": "code-agent", "instruction": "发现一个隐藏很深的 bug，修完之后还应该做什么？", "input": "", "output": "写 regression 测试（保证它永远不再回来），顺手 grep 有没有同类写法（一个 bug 出现一次， codebase 里大概率还有三个兄弟），更新到坑列表。"}
+{"id": "agent-027", "category": "code-agent", "instruction": "用户让你“看着办”，你的自由度边界？", "input": "", "output": "小事直接办（命名、格式、文案），大事先说（删数据、改接口、加依赖、花钱）。“看着办”不是空白支票，花的是用户的信任额度。"}
+{"id": "agent-028", "category": "code-agent", "instruction": "代码 review 时看到不懂的写法，你怎么办？", "input": "", "output": "先查（文档/源码），查不到就问作者，别装懂点 approve。review 的价值就是第二双眼睛，不懂装懂等于没 review。好问题本身就是贡献。"}
+{"id": "agent-029", "category": "code-agent", "instruction": "用户催得急，但你还没验证完，发还是不发？", "input": "", "output": "不发没验证的代码。跟用户说：再给我 X 分钟跑完验证，或者先发回滚预案。赶工发版的 bug，修的时间是验证时间的十倍。"}
+{"id": "agent-030", "category": "code-agent", "instruction": "任务做完了，收尾汇报写什么？", "input": "", "output": "改了什么（文件+行）、怎么验证的（测试输出/截图）、没做什么（明确边界）、下一步建议。让用户一眼知道“可以合了”还是“还有坑”。"}
+{"id": "math-001", "category": "math", "instruction": "一个水池，甲管 3 小时注满，乙管 4 小时注满，两管齐开几小时满？", "input": "", "output": "效率相加：1/3 + 1/4 = 7/12，每小时注 7/12 池。所以 12/7 ≈ 1.71 小时，即 1 小时 43 分钟。"}
+{"id": "math-002", "category": "math", "instruction": "1 到 100 里 3 的倍数有多少个？和是多少？", "input": "", "output": "100 ÷ 3 = 33 余 1，共 33 个。等差数列求和：(3 + 99) × 33 ÷ 2 = 1683。"}
+{"id": "math-003", "category": "math", "instruction": "鸡兔同笼：35 个头，94 只脚，鸡兔各几只？", "input": "", "output": "设鸡 x 只：2x + 4(35-x) = 94，解得 x = 23。所以鸡 23 只，兔 12 只。验算：23×2 + 12×4 = 46 + 48 = 94 ✓"}
+{"id": "math-004", "category": "math", "instruction": "把 0.625 化成最简分数", "input": "", "output": "0.625 = 625/1000，分子分母同除 125 得 5/8。记几个常用小数：0.5=1/2，0.25=1/4，0.75=3/4，0.125=1/8，0.625=5/8。"}
+{"id": "math-005", "category": "math", "instruction": "等比数列 2, 6, 18, …，第 10 项和前 10 项和？", "input": "", "output": "公比 q=3。a10 = 2×3⁹ = 39366。前 10 项和 = 2×(3¹⁰-1)/(3-1) = 3¹⁰-1 = 59048。"}
+{"id": "math-006", "category": "math", "instruction": "一个骰子掷两次，两次点数之和为 7 的概率？", "input": "", "output": "总共 36 种等可能结果。和为 7 的组合：(1,6)(2,5)(3,4)(4,3)(5,2)(6,1)，6 种。概率 6/36 = 1/6。"}
+{"id": "math-007", "category": "math", "instruction": "解方程：2x² - 7x + 3 = 0", "input": "", "output": "十字相乘：(2x-1)(x-3) = 0，得 x = 1/2 或 x = 3。验算代入原式均为 0 ✓"}
+{"id": "math-008", "category": "math", "instruction": "100 个人里至少两人生日相同的概率大概多少？（一年 365 天）", "input": "", "output": "用对立面：全不同的概率 = 365/365 × 364/365 × … × 266/365 ≈ 0.3%。所以至少两人相同 ≈ 99.7%。直觉觉得要 183 人，实际 23 人就过半——这就是生日悖论。"}
+{"id": "math-009", "category": "math", "instruction": "log₂32 + log₃27 - log₁₀100 = ?", "input": "", "output": "log₂32 = 5（2⁵=32），log₃27 = 3，log₁₀100 = 2。5 + 3 - 2 = 6。"}
+{"id": "math-010", "category": "math", "instruction": "一件商品先涨价 20% 再降价 20%，比原价贵还是便宜？", "input": "", "output": "便宜。设原价 1：涨后 1.2，再降 20% 是 1.2×0.8 = 0.96，是原价的 96%。涨跌基数不一样，先涨后降永远亏 4%（一般地亏 a²%）。"}

@@ -1,0 +1,34 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 校验数据集（格式/去重/切分）
+        run: python3 scripts/make_dataset.py
+      - name: 训练脚本语法检查
+        run: |
+          python3 -m compileall -q scripts train export
+          python3 - <<'EOF'
+          import json
+          nb = json.load(open("train/notebook.ipynb", encoding="utf-8"))
+          n = 0
+          for i, c in enumerate(nb["cells"]):
+              if c["cell_type"] == "code":
+                  src = "\n".join(l for l in "".join(c["source"]).split("\n")
+                                  if not l.strip().startswith("!"))
+                  if src.strip():
+                      compile(src, f"cell{i}", "exec")
+                      n += 1
+          print("notebook code cells ok:", n)
+          EOF
+      - name: 扩量脚本冒烟
+        run: python3 scripts/expand.py --n 5 --out /tmp/x.txt && head -2 /tmp/x.txt

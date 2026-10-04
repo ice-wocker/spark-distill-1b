@@ -1,0 +1,27 @@
+{"id": "agent-002", "category": "code-agent", "instruction": "一个任务要改 5 个文件，你怎么组织？", "input": "", "output": "先 todo_write 列清单：1 读现状 2 改 A 3 改 B…，一次只做一步，做完立刻更新状态。改完跑一遍验证（测试/启动），最后一条条报改了什么。不要闷头全改完再说。"}
+{"id": "agent-005", "category": "code-agent", "instruction": "命令执行失败了，下一步？", "input": "报错：ModuleNotFoundError: No module named 'yaml'", "output": "读报错本身：缺 yaml 包。pip install pyyaml，重跑。如果是项目依赖，顺手看 requirements 里有没有漏，有就补上，别只修自己眼前。"}
+{"id": "agent-017", "category": "code-agent", "instruction": "用户让你加一个依赖，你的检查清单？", "input": "", "output": "1 能用标准库吗？2 多大、多久没更新、有没有已知 CVE？3 license 能商用吗？4 加完锁版本。依赖是负债，每个都要有理由。"}
+{"id": "agent-020", "category": "code-agent", "instruction": "你要把项目给别人接手，留什么？", "input": "", "output": "README 跑起来三步、架构一页图、坑列表（environment/版本/已知 bug）。代码会说话，但“为什么这样写”不会，留下决策记录。"}
+{"id": "agent-029", "category": "code-agent", "instruction": "用户催得急，但你还没验证完，发还是不发？", "input": "", "output": "不发没验证的代码。跟用户说：再给我 X 分钟跑完验证，或者先发回滚预案。赶工发版的 bug，修的时间是验证时间的十倍。"}
+{"id": "code-zh-005", "category": "code-zh", "instruction": "这段代码的 bug 在哪？", "input": "def add(a, b=[]):\n    b.append(a)\n    return b\nprint(add(1))\nprint(add(2))", "output": "经典坑：默认参数 b=[] 只创建一次，两次调用共享。第二次会输出 [1, 2]。改法：def add(a, b=None): b = b or []。"}
+{"id": "code-zh-012", "category": "code-zh", "instruction": "Python 深拷贝和浅拷贝的区别，一句话加一个例子", "input": "", "output": "浅拷贝只拷外壳，里面还是同一份引用。a = [[1]]; b = a.copy(); b[0].append(2) 后 a 也变成 [[1, 2]]。要彻底独立用 copy.deepcopy()。"}
+{"id": "en-008", "category": "en", "instruction": "Why do we use version control?", "input": "", "output": "Three reasons: time travel (undo anything), collaboration (merge work without emailing zip files), and blame that actually helps (find which change broke things, then fix it). Everything else is bonus."}
+{"id": "en-030", "category": "en", "instruction": "What is the difference between AI, ML, and deep learning?", "input": "", "output": "AI is the whole field (machines doing smart things). ML is one approach (learn from examples). Deep learning is one ML technique (neural networks with many layers). All deep learning is ML, all ML is AI — not the reverse."}
+{"id": "math-003", "category": "math", "instruction": "鸡兔同笼：35 个头，94 只脚，鸡兔各几只？", "input": "", "output": "设鸡 x 只：2x + 4(35-x) = 94，解得 x = 23。所以鸡 23 只，兔 12 只。验算：23×2 + 12×4 = 46 + 48 = 94 ✓"}
+{"id": "misc-005", "category": "misc", "instruction": "用 emoji 给今天定个调：周一", "input": "", "output": "☕💻🔥 咖啡拉满，代码拉满，deadline 也拉满。周一不相信眼泪，相信咖啡因。"}
+{"id": "reason-001", "category": "reasoning", "instruction": "甲说乙在说谎，乙说丙在说谎，丙说甲乙都在说谎。已知只有一人在说谎，是谁？", "input": "", "output": "逐个假设：若甲说谎，则乙说真话（丙说谎）→ 丙的话“甲乙都在说谎”为假，甲说谎乙说真话，“都在”不成立所以是假话 ✓，三人中恰好甲说谎，自洽。若乙说谎，则甲真（乙说谎）丙假（甲乙都在说谎？甲真乙假，“都在”假 ✓）——也自洽？再看丙说谎：甲真乙真，但甲说“乙在说谎”为真要求乙说谎，矛盾。所以只有甲说谎自洽。答案：甲。"}
+{"id": "reason-006", "category": "reasoning", "instruction": "8 个球 1 个偏重，天平最少几次找出？", "input": "", "output": "2 次。第一次 3 vs 3：平衡则在剩下 2 个里称一次；不平衡取重的那边 1 vs 1。信息论视角：每次称重 3 种结果，3²=9≥8，两次是理论下限。"}
+{"id": "reason-008", "category": "reasoning", "instruction": "1+2+...+100 有几种算法？最快的是？", "input": "", "output": "三种：循环累加 O(n)、等差公式 (1+100)×100/2、高斯首尾配对。最快是公式 O(1)。这题的考点从来不是答案 5050，而是“你会不会找规律”。"}
+{"id": "reason-009", "category": "reasoning", "instruction": "电梯里两个人，一个说“上”，一个说“下”，都没按错，为什么？", "input": "", "output": "一个要上楼一个要下楼，电梯先到其中一层：比如电梯在 5 楼，一个去 8 楼说“上”，一个去 3 楼说“下”，都没错。 lateral thinking 题，别默认两人在同一层。"}
+{"id": "tool-012", "category": "tool-use", "instruction": "这个端口被谁占了？", "input": "", "output": "lsof -i :8080（或 ss -tlnp）找进程。开发机常见凶手：上次没关的服务、两个项目撞端口。找到后 kill 或换端口，别硬重启机器。"}
+{"id": "tool-013", "category": "tool-use", "instruction": "依赖装不上，报编译错误", "input": "", "output": "先看缺什么系统库（gcc/python-dev 是重灾区），装上再 pip。如果是版本冲突，pip list 对比 requirements，一个个 pin。还不行就换清华源，有时候只是网络问题。"}
+{"id": "trans-004", "category": "translation", "instruction": "翻译：What gets measured gets managed.", "input": "", "output": "能量化的才能被管理。（德鲁克。引申：想改进什么，先把它变成数字。）"}
+{"id": "trans-010", "category": "translation", "instruction": "翻译：这个需求做不了", "input": "", "output": "This can't be done as requested.（比直译的 refuse 软：否定的是方案不是人，后面最好跟替代方案。）"}
+{"id": "zh-001", "category": "zh", "instruction": "用一句话解释什么是“复利”", "input": "", "output": "利息也生利息，时间越长 snowball 越大——巴菲特的财富基本就是复利加长寿。但复利对债务同样成立，信用卡分期就是反向复利。"}
+{"id": "zh-012", "category": "zh", "instruction": "为什么手机越用越卡？三个主要原因", "input": "", "output": "1 存储快满了（剩 10% 以下系统连缓存都腾挪不开）。2 后台 App 越装越多，内存常年告急。3 系统和 App 越更新越吃资源，硬件没变需求涨了。先清存储，效果最明显。"}
+{"id": "zh-014", "category": "zh", "instruction": "给新员工写三条入职建议", "input": "", "output": "1 前两周多问，问得多不丢人，三个月后还问基础问题才丢人。2 把听到的都记下来，人的记忆不如烂笔头。3 先搞懂“为什么这么做”，再提优化建议——没理解背景的建议都是添乱。"}
+{"id": "zh-017", "category": "zh", "instruction": "写一条 30 字内的生日祝福（给朋友，幽默风）", "input": "", "output": "生日快乐！又老一岁，智慧没涨，饭量见长，继续保持！"}
+{"id": "zh-023", "category": "zh", "instruction": "为什么存钱总是存不下来？", "input": "", "output": "因为顺序反了：花剩下才存，永远剩不下。改成“先存后花”——工资到账自动转走 20%，剩下的才是你的。存钱靠系统不靠意志力。"}
+{"id": "zh-025", "category": "zh", "instruction": "给团队写个周报要点（3条）", "input": "", "output": "1 本周交付了什么（结果，不是过程）。2 遇到什么卡点，需要谁。3 下周干什么。超过半页没人看，数字比形容词有说服力。"}
+{"id": "zh-028", "category": "zh", "instruction": "为什么说“早起”不一定健康？", "input": "", "output": "健康的是“睡够”，不是“起得早”。每天睡 5 小时+5 点起，不如睡 7 小时+7 点起。 chronotype（晨型/夜型）一半是基因，硬拗不如保证时长+规律。"}
+{"id": "zh-037", "category": "zh", "instruction": "给父母解释什么是“云存储”", "input": "", "output": "照片存在别人家大电脑上，手机丢了照片还在，换手机登录账号就回来。坏处是：人家服务器挂了你也看不了，重要东西本地再存一份。"}

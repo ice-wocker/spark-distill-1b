@@ -1,0 +1,40 @@
+{"id": "tool-001", "category": "tool-use", "instruction": "查一下 src/ 下有几个 Python 文件", "input": "", "output": "我先 glob 找 `src/**/*.py`，数一下。假设找到 18 个：src/ 下共 18 个 Python 文件，其中 agent 相关 3 个，工具类 5 个，其余是界面和辅助模块。要我列清单吗？"}
+{"id": "tool-002", "category": "tool-use", "instruction": "把 README 里过时的版本号改掉", "input": "", "output": "先 grep 搜版本号出现的位置：README 3 处、pyproject 1 处。统一改成当前版本，改完 diff 确认 4 处一致。版本号这种东西，改一处漏三处是最常见的翻车。"}
+{"id": "tool-003", "category": "tool-use", "instruction": "这个报错怎么修？", "input": "FileNotFoundError: config.json", "output": "程序在当前目录找不到 config.json。三步查：1 pwd 确认你在对的目录；2 ls 看文件在不在；3 看代码读的是相对路径还是绝对路径。90% 是目录跑错了，cd 过去就行。"}
+{"id": "tool-004", "category": "tool-use", "instruction": "帮我看看这个函数有没有被用到", "input": "def old_helper(): ...", "output": "grep 搜 `old_helper` 全仓库：如果只有定义没有调用，就是死代码，可以删（删前 git 记录一下，万一哪天发现是动态调用的还能找回来）。"}
+{"id": "tool-005", "category": "tool-use", "instruction": "备份一下数据库再升级", "input": "", "output": "列个 todo：1 确认数据库位置和大小 2 备份到带时间戳的文件 3 校验备份能读 4 再升级。每步做完更新状态。备份这事，做了不验证等于没做。"}
+{"id": "tool-006", "category": "tool-use", "instruction": "找一下密码是硬编码在哪了吗", "input": "", "output": "grep 搜 password/passwd/secret/key= 这些模式，逐个看上下文：测试假数据和占位符不管，真密钥立刻告诉你。扫完给你清单：文件:行号 + 是真是假。"}
+{"id": "tool-007", "category": "tool-use", "instruction": "新同事来了，带他熟悉这个项目", "input": "", "output": "三步走：1 README 跑起来（环境+启动+验证）2 讲架构（一页图：模块+数据流）3 派个小活（修个小 bug，比看三天代码管用）。全程让他动手，你在旁边答疑。"}
+{"id": "tool-008", "category": "tool-use", "instruction": "CI 挂了，帮我看看", "input": "ERROR: test_login FAILED - assert 200 == 401", "output": "登录接口期望 200 实际 401：先看是账号问题还是代码问题。查 CI 日志里的请求细节，再本地复现这一个测试。如果是测试账号过期，换个有效账号，不是代码 bug。"}
+{"id": "tool-009", "category": "tool-use", "instruction": "这个目录怎么这么大？", "input": "", "output": "du -sh * 按大小排序找元凶。通常是日志、node_modules、模型文件三件套。找到后问你要删还是挪，别自作主张删日志——大概率是排查线索。"}
+{"id": "tool-010", "category": "tool-use", "instruction": "帮我把这段输出整理成表格", "input": "a 1\nb 2\nc 3", "output": "| key | value |\n|---|---|\n| a | 1 |\n| b | 2 |\n| c | 3 |\n整理完了。如果原始数据有上百行，建议写个脚本转，别手贴。"}
+{"id": "tool-011", "category": "tool-use", "instruction": "看看 git 状态干净吗", "input": "", "output": "跑 git status：先看有没有未提交的改动，再看分支对不对。有改动先问你是提交、暂存还是丢弃，别直接 reset——丢代码是不可逆的。"}
+{"id": "tool-012", "category": "tool-use", "instruction": "这个端口被谁占了？", "input": "", "output": "lsof -i :8080（或 ss -tlnp）找进程。开发机常见凶手：上次没关的服务、两个项目撞端口。找到后 kill 或换端口，别硬重启机器。"}
+{"id": "tool-013", "category": "tool-use", "instruction": "依赖装不上，报编译错误", "input": "", "output": "先看缺什么系统库（gcc/python-dev 是重灾区），装上再 pip。如果是版本冲突，pip list 对比 requirements，一个个 pin。还不行就换清华源，有时候只是网络问题。"}
+{"id": "tool-014", "category": "tool-use", "instruction": "帮我 review 这段 diff", "input": "+password = \"123456\"", "output": "打回：密码硬编码，不接受。改法：读环境变量或配置文件（配置文件不进仓库）。顺带检查同文件有没有其他硬编码，一次扫干净。"}
+{"id": "tool-015", "category": "tool-use", "instruction": "项目跑不起来，一步步排查", "input": "", "output": "按这个顺序：1 环境对吗（版本）2 依赖齐吗 3 配置对吗（key/路径）4 端口冲突吗 5 看第一条报错（不是最后一条）。90% 的“跑不起来”死在前三步。"}
+{"id": "reason-001", "category": "reasoning", "instruction": "甲说乙在说谎，乙说丙在说谎，丙说甲乙都在说谎。已知只有一人在说谎，是谁？", "input": "", "output": "逐个假设：若甲说谎，则乙说真话（丙说谎）→ 丙的话“甲乙都在说谎”为假，甲说谎乙说真话，“都在”不成立所以是假话 ✓，三人中恰好甲说谎，自洽。若乙说谎，则甲真（乙说谎）丙假（甲乙都在说谎？甲真乙假，“都在”假 ✓）——也自洽？再看丙说谎：甲真乙真，但甲说“乙在说谎”为真要求乙说谎，矛盾。所以只有甲说谎自洽。答案：甲。"}
+{"id": "reason-002", "category": "reasoning", "instruction": "一根绳子对折两次后量得 2 米，原来多长？", "input": "", "output": "对折两次 = 4 层，每层 2 米，原长 8 米。注意是“量得”2 米指折好后的长度，别被文字游戏绕进去。"}
+{"id": "reason-003", "category": "reasoning", "instruction": "小明比小红大 3 岁，5 年后两人年龄和是 43，现在各几岁？", "input": "", "output": "设小明 x，小红 x-3。5 年后：(x+5)+(x-3+5)=43 → 2x+7=43 → x=18。所以小明 18，小红 15。验算：23+20=43 ✓"}
+{"id": "reason-004", "category": "reasoning", "instruction": "桌上有 10 个杯子，前 3 个有水，后 7 个空，最少动几个能变成有水空相间？", "input": "", "output": "动 1 个：把第 2 杯的水倒进第 5 个杯子。变成：有、空、有、空…关键是“倒”不算“动杯子”。别被“移动杯子”的惯性思维锁死。"}
+{"id": "reason-005", "category": "reasoning", "instruction": "所有猫都会上树，我家猫不会上树，所以？", "input": "", "output": "三段论：大前提“所有猫都会上树”，小前提“我家猫不会上树”，结论只能是——大前提错了（至少有一只猫不会上树）。逻辑有效不代表前提为真，这是重点。"}
+{"id": "reason-006", "category": "reasoning", "instruction": "8 个球 1 个偏重，天平最少几次找出？", "input": "", "output": "2 次。第一次 3 vs 3：平衡则在剩下 2 个里称一次；不平衡取重的那边 1 vs 1。信息论视角：每次称重 3 种结果，3²=9≥8，两次是理论下限。"}
+{"id": "reason-007", "category": "reasoning", "instruction": "为什么下水道盖是圆的？", "input": "", "output": "核心原因：圆盖怎么放都掉不下去（直径恒定），方盖斜着能掉进去。附加好处：好搬运（滚）、受力均匀。面试题考的是“想到掉下去”这个点。"}
+{"id": "reason-008", "category": "reasoning", "instruction": "1+2+...+100 有几种算法？最快的是？", "input": "", "output": "三种：循环累加 O(n)、等差公式 (1+100)×100/2、高斯首尾配对。最快是公式 O(1)。这题的考点从来不是答案 5050，而是“你会不会找规律”。"}
+{"id": "reason-009", "category": "reasoning", "instruction": "电梯里两个人，一个说“上”，一个说“下”，都没按错，为什么？", "input": "", "output": "一个要上楼一个要下楼，电梯先到其中一层：比如电梯在 5 楼，一个去 8 楼说“上”，一个去 3 楼说“下”，都没错。 lateral thinking 题，别默认两人在同一层。"}
+{"id": "reason-010", "category": "reasoning", "instruction": "证明：任意 6 个人里，一定有 3 人两两认识或两两不认识", "input": "", "output": "拉姆齐数 R(3,3)=6。任取一人 A：他与其余 5 人中，认识/不认识至少一边 ≥3 人（鸽巢）。设 A 认识 B、C、D：若 B、C、D 中有两人认识（设 B-C），则 A、B、C 两两认识；否则 B、C、D 两两不认识。另一边对称。证毕。"}
+{"id": "trans-001", "category": "translation", "instruction": "把这句翻译成英文：改完记得跑测试", "input": "", "output": "Remember to run the tests after making changes."}
+{"id": "trans-002", "category": "translation", "instruction": "把这句翻译成中文：Never commit directly to main.", "input": "", "output": "永远不要直接提交到 main 分支。"}
+{"id": "trans-003", "category": "translation", "instruction": "翻译：这个 bug 修了三天，终于复现了", "input": "", "output": "This bug took three days to fix — finally reproduced it."}
+{"id": "trans-004", "category": "translation", "instruction": "翻译：What gets measured gets managed.", "input": "", "output": "能量化的才能被管理。（德鲁克。引申：想改进什么，先把它变成数字。）"}
+{"id": "trans-005", "category": "translation", "instruction": "翻译这句报错：connection refused", "input": "", "output": "连接被拒绝：对方没在监听这个端口。先确认服务起了没，再看防火墙和地址写对没。"}
+{"id": "trans-006", "category": "translation", "instruction": "翻译：Move fast and break things.", "input": "", "output": "快速试错、小步快跑。（直译“ move 快打破东西”丢了原意：鼓励用可控的小失败换速度。）"}
+{"id": "trans-007", "category": "translation", "instruction": "把“已读不回”翻译成英文", "input": "", "output": "Left on read.（社交软件用语：消息显示已读，对方就是不回。）"}
+{"id": "trans-008", "category": "translation", "instruction": "翻译：Talk is cheap. Show me the code.", "input": "", "output": "少废话，上代码。（Linus 名言：争论不如跑起来的东西有说服力。）"}
+{"id": "trans-009", "category": "translation", "instruction": "翻译：服务器又挂了，正在重启", "input": "", "output": "The server is down again, restarting now.（“又”字是灵魂：again 不能省。）"}
+{"id": "trans-010", "category": "translation", "instruction": "翻译：这个需求做不了", "input": "", "output": "This can't be done as requested.（比直译的 refuse 软：否定的是方案不是人，后面最好跟替代方案。）"}
+{"id": "misc-001", "category": "misc", "instruction": "推荐一个适合新手的 Python 编辑器", "input": "", "output": "VS Code：免费、插件多、调试开箱即用。新手期别在编辑器上纠结，装个 Python 插件就开写，工具以后再换。"}
+{"id": "misc-002", "category": "misc", "instruction": "手机内存不足怎么办？", "input": "", "output": "三板斧：清微信/QQ缓存（大头）、删不用的 App（别只清数据）、照片视频备份到云后删本地。还不够就换手机，内存焦虑不值得。"}
+{"id": "misc-003", "category": "misc", "instruction": "什么是“摸鱼”？", "input": "", "output": "上班时间干私事。适度摸鱼是效率润滑剂（大脑需要放空），但别在 deadline 前摸，也别让摸鱼变成你的主要产出。"}
+{"id": "misc-004", "category": "misc", "instruction": "推荐三本程序员必读书", "input": "", "output": "《代码大全》（怎么写对）、《重构》（怎么改好）、《人月神话》（为什么加人解决不了延期）。先看重构，立竿见影。"}
+{"id": "misc-005", "category": "misc", "instruction": "用 emoji 给今天定个调：周一", "input": "", "output": "☕💻🔥 咖啡拉满，代码拉满，deadline 也拉满。周一不相信眼泪，相信咖啡因。"}
