@@ -6,13 +6,14 @@
 
 把 **Muse Spark 1.3** 的问答风格，蒸馏进 **MiniCPM5-1B**（1B，手机能跑）。
 
-**Distill Muse Spark 1.3's style into MiniCPM5-1B: 200 seed pairs + free-GPU LoRA pipeline.**
+**Distill Muse Spark 1.3's style into MiniCPM5-1B: 700 pairs + free-GPU LoRA pipeline.**
 
 ## 这是什么蒸馏（先讲清方法，再谈效果）
 
 API 拿不到 Muse 的 logits，所以是**黑盒数据蒸馏**：老师（Muse Spark）出高质量问答，
 学生（MiniCPM5-1B-Base）用 SFT 吃下去。这是业界标准做法，效果上限取决于
-数据量和多样性——200 条种子只能定风格、跑通链路，**不是终点**。
+数据量和多样性——目前 700 条（200 种子 + 500 扩量，含 code-en/terminal），
+覆盖代码、终端、中文、英文、数学、推理主要分类，可跑完整蒸馏。
 
 - 基座：`openbmb/MiniCPM5-1B-Base`（标准 Llama 架构，Apache-2.0，无需魔改）。
   用 Base 不用 SFT 版：风格从零学，不跟原厂 SFT 打架。
