@@ -8,7 +8,10 @@
  "output": "老师模型的回答（100-500 字，短平快）"}
 ```
 
-- `id` 全局唯一，前缀即分类。
+- `id` 全局唯一，前缀即分类。历史例外：part-01..05 用缩写前缀
+  （`agent-`=`code-agent`、`tool-`=`tool-use`、`trans-`=`translation`、
+  `safe-`=`safety`、`reason-`=`reasoning`），已冻结不再改动；
+  part-06 起严格执行 `category-NNN`。
 - 分类：`code-zh` / `code-agent` / `zh` / `en` / `math` /
   `reasoning` / `translation` / `misc` / `safety` / `tool-use` /
   `code-en`（英文代码问答） / `terminal`（终端/Termux/shell/git 操作）。

@@ -10,7 +10,7 @@
 {"id": "math-020", "category": "math", "instruction": "解方程 2x+5=17", "input": "", "output": "移项 2x=12，得 x=6。代回验算 12+5=17，一步一验防符号错。"}
 {"id": "math-021", "category": "math", "instruction": "商品先涨 20% 再降 20%，亏赚", "input": "", "output": "设原价 100：涨后 120，降后 96，净亏 4%。涨降基数不同，先涨后降必亏。"}
 {"id": "math-022", "category": "math", "instruction": "存款年利 3%，10 年翻几倍", "input": "", "output": "1.03^10 ≈ 1.344，十年涨约 34%。别用单利乘，利滚利才对。"}
-{"id": "math-023", "category": "math", "instruction": "班级 40 人，至少两人同月生日概率", "input": "", "output": "1 - P(40,12)/12^40，40 人远超 12 个月，几乎 100%。这是鸽巢不是巧合。"}
+{"id": "math-023", "category": "math", "instruction": "班级 40 人，至少两人同月生日概率", "input": "", "output": "100%。12 个月 40 人，按鸽巢原理必有同月，连算都不用算。"}
 {"id": "math-024", "category": "math", "instruction": "骰子连掷两次和为 9 有几种", "input": "", "output": "36 种等可能里 (3,6)(4,5)(5,4)(6,3) 共 4 种，概率 1/9。列表数清别猜。"}
 {"id": "math-025", "category": "math", "instruction": "数列 1,1,2,3,5,…第 10 项", "input": "", "output": "斐波那契：前两项和得后项，数到第 10 项是 55。写前几项验规律再往后推。"}
 {"id": "math-026", "category": "math", "instruction": "梯形上底 6 下底 10 高 4 面积", "input": "", "output": "(6+10)×4/2 = 32。公式是上下底和乘高除二，别忘除二。"}
